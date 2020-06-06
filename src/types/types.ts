@@ -3,16 +3,17 @@ export type ReconcileInfo = {
   address?: string;
   actualVsExpectedDiff: number;
   expectedBalance: number;
+  currFreeBalance: number; // "Actual"
   prevFreeBalance: number;
-  curFreeBalance: number;
   partialFees: number;
   lostDust: number;
   transfers: number;
+  endowment: number;
 };
 
 export type AddressAndBlock = {
   block: number;
-  address: string; // check if this can be changed
+  address: string;
 };
 
 // TODO figure out where to use @polkadot/api types

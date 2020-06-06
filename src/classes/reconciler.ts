@@ -22,34 +22,37 @@ export default class Reconciler {
     const block = await this.api.getBlock(height);
 
     const prevFreeBalance = this.parseNumber(prevBalance.free);
-    const curFreeBalance = this.parseNumber(curBalance.free);
+    const currFreeBalance = this.parseNumber(curBalance.free);
 
     const partialFees = this.partialFees(address, block);
 
     const transfers = this.transfers(address, block);
+    const endowment = this.endowment(address, block);
+    // TODO? if endowed then expected_previous_balance == 0
     const lostDust = this.lostDust(address, block);
 
     const expectedBalance: number =
-      prevFreeBalance - transfers - lostDust - partialFees;
+      prevFreeBalance - transfers - lostDust - partialFees + endowment;
 
     return {
       // maybe should add a notes section
       block: height,
       address,
-      actualVsExpectedDiff: curFreeBalance - expectedBalance,
+      actualVsExpectedDiff: currFreeBalance - expectedBalance,
+      currFreeBalance,
       expectedBalance,
       prevFreeBalance,
-      curFreeBalance,
       partialFees,
       lostDust,
       transfers,
+      endowment,
     };
   }
 
   // In the future, it may be nice to log all the relevant extrinsics to the address
   // for better records.
 
-  // Also these function should be broken up so that operate within a loop that goes
+  // Also these functions could be broken up so that operate within a loop that goes
   // through extrinsics instead of each doing there own loop.
   private partialFees(address: string, block: BlockResponse): number {
     const { extrinsics } = block;
@@ -96,6 +99,26 @@ export default class Reconciler {
     return sum;
   }
 
+  private endowment(address: string, block: BlockResponse): number {
+    const { extrinsics } = block;
+    let endowed = 0;
+    extrinsics.forEach((ext): void => {
+      const { events } = ext;
+
+      events.forEach((event: PEvent): void => {
+        const { method, data } = event;
+        const [endowAddr, amount] = data;
+
+        // we should have these methods as constants somewhere to avoid fat thumb errors
+        if (method === "balances.Endowed" && endowAddr === address) {
+          endowed += this.parseNumber(amount);
+        }
+      });
+    });
+
+    return endowed;
+  }
+
   private lostDust(address: string, block: BlockResponse): number {
     const killed = this.killedAccounts(block);
 
@@ -111,7 +134,7 @@ export default class Reconciler {
         const [deadAddr, amount] = data;
 
         if (method === "balances.DustLost" && deadAddr === address) {
-          dust += this.parseNumber(amount); // Can we break here?
+          dust += this.parseNumber(amount);
         }
       });
     });
