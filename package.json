@@ -6,7 +6,7 @@
   "author": "Zeke Mostov",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf lib/ && tsc -p tsconfig.build.json",
+    "start": "ts-node src/main.ts",
     "lint": "tsc --noEmit && eslint . --ext ts"
   },
   "devDependencies": {
