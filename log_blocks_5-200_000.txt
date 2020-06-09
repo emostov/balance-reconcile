@@ -1,0 +1,2464 @@
+
+Log for block number 892 
+892 looks ok 
+Found 0 discrepancies 
+Log for block number 1411 
+1411 looks ok 
+Found 0 discrepancies 
+Log for block number 1448 
+1448 looks ok 
+Found 0 discrepancies 
+Log for block number 1455 
+1455 looks ok 
+Found 0 discrepancies 
+Log for block number 1463 
+1463 looks ok 
+Found 0 discrepancies 
+Log for block number 1468 
+1468 looks ok 
+Found 0 discrepancies 
+Log for block number 1469 
+1469 looks ok 
+Found 0 discrepancies 
+Log for block number 1475 
+1475 looks ok 
+Found 0 discrepancies 
+Log for block number 1502 
+1502 looks ok 
+Found 0 discrepancies 
+Log for block number 1510 
+1510 looks ok 
+Found 0 discrepancies 
+Log for block number 1583 
+1583 looks ok 
+Found 0 discrepancies 
+Log for block number 1601 
+1601 looks ok 
+Found 0 discrepancies 
+Log for block number 1632 
+1632 looks ok 
+Found 0 discrepancies 
+Log for block number 1634 
+1634 looks ok 
+Found 0 discrepancies 
+Log for block number 1636 
+1636 looks ok 
+Found 0 discrepancies 
+Log for block number 1661 
+1661 looks ok 
+Found 0 discrepancies 
+Log for block number 1667 
+1667 looks ok 
+Found 0 discrepancies 
+Log for block number 1675 
+1675 looks ok 
+1675 looks ok 
+Found 0 discrepancies 
+Log for block number 1682 
+1682 looks ok 
+1682 looks ok 
+Found 0 discrepancies 
+Log for block number 1683 
+1683 looks ok 
+Found 0 discrepancies 
+Log for block number 1712 
+1712 looks ok 
+Found 0 discrepancies 
+Log for block number 1733 
+1733 looks ok 
+Found 0 discrepancies 
+Log for block number 1774 
+1774 looks ok 
+Found 0 discrepancies 
+Log for block number 1778 
+1778 looks ok 
+Found 0 discrepancies 
+Log for block number 1785 
+1785 looks ok 
+Found 0 discrepancies 
+Log for block number 1790 
+1790 looks ok 
+Found 0 discrepancies 
+Log for block number 1832 
+1832 looks ok 
+Found 0 discrepancies 
+Log for block number 1836 
+1836 looks ok 
+Found 0 discrepancies 
+Log for block number 1837 
+1837 looks ok 
+Found 0 discrepancies 
+Log for block number 1841 
+1841 looks ok 
+Found 0 discrepancies 
+Log for block number 1875 
+1875 looks ok 
+Found 0 discrepancies 
+Log for block number 1876 
+1876 looks ok 
+Found 0 discrepancies 
+Log for block number 1896 
+1896 looks ok 
+Found 0 discrepancies 
+Log for block number 1934 
+1934 looks ok 
+Found 0 discrepancies 
+Log for block number 1968 
+1968 looks ok 
+Found 0 discrepancies 
+Log for block number 1976 
+1976 looks ok 
+Found 0 discrepancies 
+Log for block number 1981 
+1981 looks ok 
+Found 0 discrepancies 
+Log for block number 1985 
+1985 looks ok 
+Found 0 discrepancies 
+Log for block number 2019 
+2019 looks ok 
+Found 0 discrepancies 
+Log for block number 2037 
+2037 looks ok 
+Found 0 discrepancies 
+Log for block number 2042 
+2042 looks ok 
+Found 0 discrepancies 
+Log for block number 2046 
+2046 looks ok 
+Found 0 discrepancies 
+Log for block number 2049 
+2049 looks ok 
+Found 0 discrepancies 
+Log for block number 2059 
+2059 looks ok 
+Found 0 discrepancies 
+Log for block number 2060 
+2060 looks ok 
+Found 0 discrepancies 
+Log for block number 2063 
+2063 looks ok 
+Found 0 discrepancies 
+Log for block number 2101 
+2101 looks ok 
+Found 0 discrepancies 
+Log for block number 2108 
+2108 looks ok 
+Found 0 discrepancies 
+Log for block number 2137 
+2137 looks ok 
+Found 0 discrepancies 
+Log for block number 2147 
+2147 looks ok 
+2147 looks ok 
+Found 0 discrepancies 
+Log for block number 2154 
+2154 looks ok 
+Found 0 discrepancies 
+Log for block number 2157 
+2157 looks ok 
+Found 0 discrepancies 
+Log for block number 2163 
+2163 looks ok 
+Found 0 discrepancies 
+Log for block number 2167 
+2167 looks ok 
+Found 0 discrepancies 
+Log for block number 2172 
+2172 looks ok 
+Found 0 discrepancies 
+Log for block number 2181 
+2181 looks ok 
+Found 0 discrepancies 
+Log for block number 2185 
+2185 looks ok 
+Found 0 discrepancies 
+Log for block number 2232 
+2232 looks ok 
+Found 0 discrepancies 
+Log for block number 2245 
+2245 looks ok 
+Found 0 discrepancies 
+Log for block number 2263 
+2263 looks ok 
+Found 0 discrepancies 
+Log for block number 2270 
+2270 looks ok 
+Found 0 discrepancies 
+Log for block number 2273 
+2273 looks ok 
+Found 0 discrepancies 
+Log for block number 2275 
+2275 looks ok 
+Found 0 discrepancies 
+Log for block number 2394 
+2394 looks ok 
+Found 0 discrepancies 
+Log for block number 2495 
+2495 looks ok 
+Found 0 discrepancies 
+Log for block number 2548 
+2548 looks ok 
+Found 0 discrepancies 
+Log for block number 2570 
+2570 looks ok 
+Found 0 discrepancies 
+Log for block number 2571 
+2571 looks ok 
+Found 0 discrepancies 
+Log for block number 2707 
+2707 looks ok 
+Found 0 discrepancies 
+Log for block number 2735 
+2735 looks ok 
+Found 0 discrepancies 
+Log for block number 2752 
+2752 looks ok 
+Found 0 discrepancies 
+Log for block number 2766 
+2766 looks ok 
+Found 0 discrepancies 
+Log for block number 2798 
+2798 looks ok 
+Found 0 discrepancies 
+Log for block number 2803 
+2803 looks ok 
+Found 0 discrepancies 
+Log for block number 2847 
+2847 looks ok 
+Found 0 discrepancies 
+Log for block number 2860 
+2860 looks ok 
+Found 0 discrepancies 
+Log for block number 2861 
+2861 looks ok 
+Found 0 discrepancies 
+Log for block number 2863 
+2863 looks ok 
+Found 0 discrepancies 
+Log for block number 2876 
+2876 looks ok 
+Found 0 discrepancies 
+Log for block number 2878 
+2878 looks ok 
+Found 0 discrepancies 
+Log for block number 2883 
+2883 looks ok 
+Found 0 discrepancies 
+Log for block number 2938 
+2938 looks ok 
+Found 0 discrepancies 
+Log for block number 2956 
+2956 looks ok 
+Found 0 discrepancies 
+Log for block number 2982 
+2982 looks ok 
+Found 0 discrepancies 
+Log for block number 2991 
+2991 looks ok 
+Found 0 discrepancies 
+Log for block number 3022 
+3022 looks ok 
+Found 0 discrepancies 
+Log for block number 3054 
+3054 looks ok 
+Found 0 discrepancies 
+Log for block number 3077 
+3077 looks ok 
+3077 looks ok 
+Found 0 discrepancies 
+Log for block number 3081 
+3081 looks ok 
+Found 0 discrepancies 
+Log for block number 3099 
+3099 looks ok 
+Found 0 discrepancies 
+Log for block number 3110 
+3110 looks ok 
+Found 0 discrepancies 
+Log for block number 3150 
+3150 looks ok 
+Found 0 discrepancies 
+Log for block number 3178 
+3178 looks ok 
+Found 0 discrepancies 
+Log for block number 3256 
+3256 looks ok 
+Found 0 discrepancies 
+Log for block number 3281 
+3281 looks ok 
+Found 0 discrepancies 
+Log for block number 3284 
+3284 looks ok 
+Found 0 discrepancies 
+Log for block number 3353 
+3353 looks ok 
+Found 0 discrepancies 
+Log for block number 3391 
+3391 looks ok 
+Found 0 discrepancies 
+Log for block number 3848 
+3848 looks ok 
+Found 0 discrepancies 
+Log for block number 3861 
+3861 looks ok 
+Found 0 discrepancies 
+Log for block number 3867 
+3867 looks ok 
+Found 0 discrepancies 
+Log for block number 3873 
+3873 looks ok 
+Found 0 discrepancies 
+Log for block number 3980 
+3980 looks ok 
+Found 0 discrepancies 
+Log for block number 4013 
+4013 looks ok 
+Found 0 discrepancies 
+Log for block number 4033 
+4033 looks ok 
+Found 0 discrepancies 
+Log for block number 4127 
+4127 looks ok 
+Found 0 discrepancies 
+Log for block number 4159 
+4159 looks ok 
+Found 0 discrepancies 
+Log for block number 4202 
+4202 looks ok 
+Found 0 discrepancies 
+Log for block number 4280 
+4280 looks ok 
+Found 0 discrepancies 
+Log for block number 4304 
+4304 looks ok 
+Found 0 discrepancies 
+Log for block number 4317 
+4317 looks ok 
+Found 0 discrepancies 
+Log for block number 4486 
+4486 looks ok 
+Found 0 discrepancies 
+Log for block number 4502 
+4502 looks ok 
+Found 0 discrepancies 
+Log for block number 4525 
+4525 looks ok 
+Found 0 discrepancies 
+Log for block number 4543 
+4543 looks ok 
+Found 0 discrepancies 
+Log for block number 4576 
+4576 looks ok 
+Found 0 discrepancies 
+Log for block number 4612 
+4612 looks ok 
+Found 0 discrepancies 
+Log for block number 4782 
+4782 looks ok 
+Found 0 discrepancies 
+Log for block number 4832 
+4832 looks ok 
+Found 0 discrepancies 
+Log for block number 4917 
+4917 looks ok 
+Found 0 discrepancies 
+Log for block number 4944 
+4944 looks ok 
+Found 0 discrepancies 
+Log for block number 4960 
+4960 looks ok 
+Found 0 discrepancies 
+Log for block number 5101 
+5101 looks ok 
+Found 0 discrepancies 
+Log for block number 5106 
+5106 looks ok 
+Found 0 discrepancies 
+Log for block number 5108 
+5108 looks ok 
+Found 0 discrepancies 
+Log for block number 5136 
+5136 looks ok 
+Found 0 discrepancies 
+Log for block number 5139 
+5139 looks ok 
+Found 0 discrepancies 
+Log for block number 5140 
+5140 looks ok 
+Found 0 discrepancies 
+Log for block number 5360 
+5360 looks ok 
+Found 0 discrepancies 
+Log for block number 5507 
+5507 looks ok 
+Found 0 discrepancies 
+Log for block number 5509 
+5509 looks ok 
+Found 0 discrepancies 
+Log for block number 5827 
+5827 looks ok 
+Found 0 discrepancies 
+Log for block number 5832 
+5832 looks ok 
+Found 0 discrepancies 
+Log for block number 5836 
+5836 looks ok 
+Found 0 discrepancies 
+Log for block number 5929 
+5929 looks ok 
+Found 0 discrepancies 
+Log for block number 5970 
+5970 looks ok 
+Found 0 discrepancies 
+Log for block number 5980 
+5980 looks ok 
+Found 0 discrepancies 
+Log for block number 5989 
+5989 looks ok 
+Found 0 discrepancies 
+Log for block number 6001 
+6001 looks ok 
+Found 0 discrepancies 
+Log for block number 6044 
+6044 looks ok 
+Found 0 discrepancies 
+Log for block number 6238 
+6238 looks ok 
+Found 0 discrepancies 
+Log for block number 6350 
+6350 looks ok 
+Found 0 discrepancies 
+Log for block number 6354 
+6354 looks ok 
+Found 0 discrepancies 
+Log for block number 6421 
+6421 looks ok 
+Found 0 discrepancies 
+Log for block number 6441 
+6441 looks ok 
+Found 0 discrepancies 
+Log for block number 6469 
+6469 looks ok 
+Found 0 discrepancies 
+Log for block number 6491 
+6491 looks ok 
+Found 0 discrepancies 
+Log for block number 6521 
+6521 looks ok 
+Found 0 discrepancies 
+Log for block number 6567 
+6567 looks ok 
+Found 0 discrepancies 
+Log for block number 6575 
+6575 looks ok 
+Found 0 discrepancies 
+Log for block number 6581 
+6581 looks ok 
+Found 0 discrepancies 
+Log for block number 6586 
+6586 looks ok 
+Found 0 discrepancies 
+Log for block number 6600 
+6600 looks ok 
+Found 0 discrepancies 
+Log for block number 6618 
+6618 looks ok 
+Found 0 discrepancies 
+Log for block number 6621 
+6621 looks ok 
+Found 0 discrepancies 
+Log for block number 6651 
+6651 looks ok 
+Found 0 discrepancies 
+Log for block number 6654 
+6654 looks ok 
+Found 0 discrepancies 
+Log for block number 6730 
+6730 looks ok 
+Found 0 discrepancies 
+Log for block number 6842 
+6842 looks ok 
+Found 0 discrepancies 
+Log for block number 6923 
+6923 looks ok 
+Found 0 discrepancies 
+Log for block number 6953 
+6953 looks ok 
+Found 0 discrepancies 
+Log for block number 6990 
+6990 looks ok 
+Found 0 discrepancies 
+Log for block number 6998 
+6998 looks ok 
+Found 0 discrepancies 
+Log for block number 7004 
+7004 looks ok 
+Found 0 discrepancies 
+Log for block number 7007 
+7007 looks ok 
+Found 0 discrepancies 
+Log for block number 7009 
+7009 looks ok 
+Found 0 discrepancies 
+Log for block number 7075 
+7075 looks ok 
+Found 0 discrepancies 
+Log for block number 7116 
+7116 looks ok 
+Found 0 discrepancies 
+Log for block number 7133 
+7133 looks ok 
+Found 0 discrepancies 
+Log for block number 7142 
+7142 looks ok 
+Found 0 discrepancies 
+Log for block number 7191 
+7191 looks ok 
+Found 0 discrepancies 
+Log for block number 7232 
+7232 looks ok 
+Found 0 discrepancies 
+Log for block number 7284 
+7284 looks ok 
+Found 0 discrepancies 
+Log for block number 7290 
+7290 looks ok 
+Found 0 discrepancies 
+Log for block number 7316 
+7316 looks ok 
+Found 0 discrepancies 
+Log for block number 7352 
+7352 looks ok 
+Found 0 discrepancies 
+Log for block number 7371 
+7371 looks ok 
+Found 0 discrepancies 
+Log for block number 7377 
+7377 looks ok 
+Found 0 discrepancies 
+Log for block number 7461 
+7461 looks ok 
+Found 0 discrepancies 
+Log for block number 7476 
+7476 looks ok 
+Found 0 discrepancies 
+Log for block number 7510 
+7510 looks ok 
+Found 0 discrepancies 
+Log for block number 7522 
+7522 looks ok 
+Found 0 discrepancies 
+Log for block number 7550 
+7550 looks ok 
+Found 0 discrepancies 
+Log for block number 7604 
+7604 looks ok 
+Found 0 discrepancies 
+Log for block number 7671 
+7671 looks ok 
+Found 0 discrepancies 
+Log for block number 7861 
+7861 looks ok 
+Found 0 discrepancies 
+Log for block number 7873 
+7873 looks ok 
+Found 0 discrepancies 
+Log for block number 7921 
+7921 looks ok 
+Found 0 discrepancies 
+Log for block number 8271 
+8271 looks ok 
+Found 0 discrepancies 
+Log for block number 8314 
+8314 looks ok 
+Found 0 discrepancies 
+Log for block number 8338 
+8338 looks ok 
+Found 0 discrepancies 
+Log for block number 8422 
+8422 looks ok 
+Found 0 discrepancies 
+Log for block number 8572 
+8572 looks ok 
+Found 0 discrepancies 
+Log for block number 8579 
+8579 looks ok 
+Found 0 discrepancies 
+Log for block number 8584 
+8584 looks ok 
+Found 0 discrepancies 
+Log for block number 8588 
+8588 looks ok 
+Found 0 discrepancies 
+Log for block number 8729 
+8729 looks ok 
+Found 0 discrepancies 
+Log for block number 8732 
+8732 looks ok 
+Found 0 discrepancies 
+Log for block number 8735 
+8735 looks ok 
+Found 0 discrepancies 
+Log for block number 8749 
+8749 looks ok 
+Found 0 discrepancies 
+Log for block number 8910 
+8910 looks ok 
+Found 0 discrepancies 
+Log for block number 8950 
+8950 looks ok 
+Found 0 discrepancies 
+Log for block number 8961 
+8961 looks ok 
+Found 0 discrepancies 
+Log for block number 9045 
+9045 looks ok 
+Found 0 discrepancies 
+Log for block number 9050 
+9050 looks ok 
+Found 0 discrepancies 
+Log for block number 9180 
+9180 looks ok 
+Found 0 discrepancies 
+Log for block number 9305 
+9305 looks ok 
+Found 0 discrepancies 
+Log for block number 9311 
+9311 looks ok 
+Found 0 discrepancies 
+Log for block number 9444 
+9444 looks ok 
+Found 0 discrepancies 
+Log for block number 9471 
+9471 looks ok 
+Found 0 discrepancies 
+Log for block number 9527 
+9527 looks ok 
+Found 0 discrepancies 
+Log for block number 9536 
+9536 looks ok 
+Found 0 discrepancies 
+Log for block number 9551 
+9551 looks ok 
+Found 0 discrepancies 
+Log for block number 9564 
+9564 looks ok 
+Found 0 discrepancies 
+Log for block number 9585 
+9585 looks ok 
+Found 0 discrepancies 
+Log for block number 9590 
+9590 looks ok 
+Found 0 discrepancies 
+Log for block number 9701 
+9701 looks ok 
+Found 0 discrepancies 
+Log for block number 9776 
+9776 looks ok 
+Found 0 discrepancies 
+Log for block number 9829 
+9829 looks ok 
+Found 0 discrepancies 
+Log for block number 9917 
+9917 looks ok 
+Found 0 discrepancies 
+Log for block number 10013 
+10013 looks ok 
+Found 0 discrepancies 
+Log for block number 10040 
+10040 looks ok 
+Found 0 discrepancies 
+Log for block number 10081 
+10081 looks ok 
+Found 0 discrepancies 
+Log for block number 10134 
+10134 looks ok 
+Found 0 discrepancies 
+Log for block number 10181 
+10181 looks ok 
+Found 0 discrepancies 
+Log for block number 10184 
+10184 looks ok 
+Found 0 discrepancies 
+Log for block number 10205 
+10205 looks ok 
+Found 0 discrepancies 
+Log for block number 10223 
+10223 looks ok 
+Found 0 discrepancies 
+Log for block number 10254 
+10254 looks ok 
+Found 0 discrepancies 
+Log for block number 10260 
+10260 looks ok 
+Found 0 discrepancies 
+Log for block number 10278 
+10278 looks ok 
+Found 0 discrepancies 
+Log for block number 10280 
+10280 looks ok 
+Found 0 discrepancies 
+Log for block number 10401 
+10401 looks ok 
+Found 0 discrepancies 
+Log for block number 10407 
+10407 looks ok 
+Found 0 discrepancies 
+Log for block number 10412 
+10412 looks ok 
+Found 0 discrepancies 
+Log for block number 10416 
+10416 looks ok 
+Found 0 discrepancies 
+Log for block number 10421 
+10421 looks ok 
+Found 0 discrepancies 
+Log for block number 10422 
+10422 looks ok 
+Found 0 discrepancies 
+Log for block number 10507 
+10507 looks ok 
+Found 0 discrepancies 
+Log for block number 10534 
+10534 looks ok 
+Found 0 discrepancies 
+Log for block number 10540 
+10540 looks ok 
+Found 0 discrepancies 
+Log for block number 10542 
+10542 looks ok 
+Found 0 discrepancies 
+Log for block number 10585 
+10585 looks ok 
+Found 0 discrepancies 
+Log for block number 10594 
+10594 looks ok 
+Found 0 discrepancies 
+Log for block number 10618 
+10618 looks ok 
+Found 0 discrepancies 
+Log for block number 10697 
+10697 looks ok 
+Found 0 discrepancies 
+Log for block number 10734 
+10734 looks ok 
+Found 0 discrepancies 
+Log for block number 10867 
+10867 looks ok 
+Found 0 discrepancies 
+Log for block number 10879 
+10879 looks ok 
+Found 0 discrepancies 
+Log for block number 10890 
+10890 looks ok 
+Found 0 discrepancies 
+Log for block number 11063 
+11063 looks ok 
+Found 0 discrepancies 
+Log for block number 11090 
+11090 looks ok 
+Found 0 discrepancies 
+Log for block number 11094 
+11094 looks ok 
+Found 0 discrepancies 
+Log for block number 11203 
+11203 looks ok 
+Found 0 discrepancies 
+Log for block number 11333 
+11333 looks ok 
+Found 0 discrepancies 
+Log for block number 11343 
+11343 looks ok 
+Found 0 discrepancies 
+Log for block number 11363 
+11363 looks ok 
+Found 0 discrepancies 
+Log for block number 11369 
+11369 looks ok 
+Found 0 discrepancies 
+Log for block number 11375 
+11375 looks ok 
+Found 0 discrepancies 
+Log for block number 11417 
+11417 looks ok 
+Found 0 discrepancies 
+Log for block number 11425 
+11425 looks ok 
+Found 0 discrepancies 
+Log for block number 11563 
+11563 looks ok 
+Found 0 discrepancies 
+Log for block number 11604 
+11604 looks ok 
+Found 0 discrepancies 
+Log for block number 11701 
+11701 looks ok 
+Found 0 discrepancies 
+Log for block number 11795 
+11795 looks ok 
+Found 0 discrepancies 
+Log for block number 12060 
+12060 looks ok 
+Found 0 discrepancies 
+Log for block number 12242 
+12242 looks ok 
+Found 0 discrepancies 
+Log for block number 12340 
+12340 looks ok 
+Found 0 discrepancies 
+Log for block number 12561 
+12561 looks ok 
+Found 0 discrepancies 
+Log for block number 12663 
+12663 looks ok 
+Found 0 discrepancies 
+Log for block number 12665 
+12665 looks ok 
+Found 0 discrepancies 
+Log for block number 12695 
+12695 looks ok 
+Found 0 discrepancies 
+Log for block number 12753 
+12753 looks ok 
+Found 0 discrepancies 
+Log for block number 12814 
+12814 looks ok 
+Found 0 discrepancies 
+Log for block number 12984 
+12984 looks ok 
+Found 0 discrepancies 
+Log for block number 13010 
+13010 looks ok 
+Found 0 discrepancies 
+Log for block number 13014 
+13014 looks ok 
+Found 0 discrepancies 
+Log for block number 13163 
+13163 looks ok 
+Found 0 discrepancies 
+Log for block number 13186 
+13186 looks ok 
+Found 0 discrepancies 
+Log for block number 13288 
+13288 looks ok 
+Found 0 discrepancies 
+Log for block number 13310 
+13310 looks ok 
+Found 0 discrepancies 
+Log for block number 13313 
+13313 looks ok 
+Found 0 discrepancies 
+Log for block number 13315 
+13315 looks ok 
+Found 0 discrepancies 
+Log for block number 13351 
+13351 looks ok 
+Found 0 discrepancies 
+Log for block number 13463 
+13463 looks ok 
+Found 0 discrepancies 
+Log for block number 13493 
+13493 looks ok 
+Found 0 discrepancies 
+Log for block number 13639 
+13639 looks ok 
+Found 0 discrepancies 
+Log for block number 14219 
+14219 looks ok 
+Found 0 discrepancies 
+Log for block number 14274 
+14274 looks ok 
+Found 0 discrepancies 
+Log for block number 14981 
+14981 looks ok 
+Found 0 discrepancies 
+Log for block number 15450 
+15450 looks ok 
+Found 0 discrepancies 
+Log for block number 15454 
+15454 looks ok 
+Found 0 discrepancies 
+Log for block number 15459 
+15459 looks ok 
+Found 0 discrepancies 
+Log for block number 15466 
+15466 looks ok 
+Found 0 discrepancies 
+Log for block number 15473 
+15473 looks ok 
+Found 0 discrepancies 
+Log for block number 15494 
+15494 looks ok 
+Found 0 discrepancies 
+Log for block number 15525 
+15525 looks ok 
+Found 0 discrepancies 
+Log for block number 15657 
+15657 looks ok 
+Found 0 discrepancies 
+Log for block number 15685 
+15685 looks ok 
+Found 0 discrepancies 
+Log for block number 15726 
+15726 looks ok 
+Found 0 discrepancies 
+Log for block number 15916 
+15916 looks ok 
+Found 0 discrepancies 
+Log for block number 15965 
+15965 looks ok 
+15965 looks ok 
+Found 0 discrepancies 
+Log for block number 16336 
+16336 looks ok 
+Found 0 discrepancies 
+Log for block number 16339 
+16339 looks ok 
+Found 0 discrepancies 
+Log for block number 16424 
+16424 looks ok 
+Found 0 discrepancies 
+Log for block number 16526 
+16526 looks ok 
+Found 0 discrepancies 
+Log for block number 16580 
+16580 looks ok 
+Found 0 discrepancies 
+Log for block number 16758 
+16758 looks ok 
+Found 0 discrepancies 
+Log for block number 17020 
+17020 looks ok 
+Found 0 discrepancies 
+Log for block number 17024 
+17024 looks ok 
+Found 0 discrepancies 
+Log for block number 17198 
+17198 looks ok 
+Found 0 discrepancies 
+Log for block number 17237 
+17237 looks ok 
+Found 0 discrepancies 
+Log for block number 17242 
+17242 looks ok 
+Found 0 discrepancies 
+Log for block number 17261 
+17261 looks ok 
+Found 0 discrepancies 
+Log for block number 17299 
+17299 looks ok 
+Found 0 discrepancies 
+Log for block number 17339 
+17339 looks ok 
+Found 0 discrepancies 
+Log for block number 17786 
+17786 looks ok 
+Found 0 discrepancies 
+Log for block number 17990 
+17990 looks ok 
+Found 0 discrepancies 
+Log for block number 17994 
+17994 looks ok 
+Found 0 discrepancies 
+Log for block number 17997 
+17997 looks ok 
+Found 0 discrepancies 
+Log for block number 17999 
+17999 looks ok 
+Found 0 discrepancies 
+Log for block number 18033 
+18033 looks ok 
+Found 0 discrepancies 
+Log for block number 18149 
+18149 looks ok 
+Found 0 discrepancies 
+Log for block number 18150 
+18150 looks ok 
+Found 0 discrepancies 
+Log for block number 18423 
+18423 looks ok 
+Found 0 discrepancies 
+Log for block number 18448 
+18448 looks ok 
+Found 0 discrepancies 
+Log for block number 19509 
+19509 looks ok 
+Found 0 discrepancies 
+Log for block number 19535 
+19535 looks ok 
+Found 0 discrepancies 
+Log for block number 19552 
+19552 looks ok 
+Found 0 discrepancies 
+Log for block number 19564 
+19564 looks ok 
+Found 0 discrepancies 
+Log for block number 19584 
+19584 looks ok 
+Found 0 discrepancies 
+Log for block number 19600 
+19600 looks ok 
+Found 0 discrepancies 
+Log for block number 19845 
+19845 looks ok 
+Found 0 discrepancies 
+Log for block number 20007 
+20007 looks ok 
+Found 0 discrepancies 
+Log for block number 20317 
+20317 looks ok 
+Found 0 discrepancies 
+Log for block number 20516 
+20516 looks ok 
+Found 0 discrepancies 
+Log for block number 20685 
+20685 looks ok 
+Found 0 discrepancies 
+Log for block number 21236 
+21236 looks ok 
+Found 0 discrepancies 
+Log for block number 21994 
+21994 looks ok 
+Found 0 discrepancies 
+Log for block number 21998 
+21998 looks ok 
+Found 0 discrepancies 
+Log for block number 22010 
+22010 looks ok 
+Found 0 discrepancies 
+Log for block number 22438 
+22438 looks ok 
+Found 0 discrepancies 
+Log for block number 22539 
+22539 looks ok 
+Found 0 discrepancies 
+Log for block number 22862 
+22862 looks ok 
+Found 0 discrepancies 
+Log for block number 23009 
+23009 looks ok 
+Found 0 discrepancies 
+Log for block number 23191 
+23191 looks ok 
+Found 0 discrepancies 
+Log for block number 24087 
+24087 looks ok 
+Found 0 discrepancies 
+Log for block number 24123 
+24123 looks ok 
+Found 0 discrepancies 
+Log for block number 24147 
+24147 looks ok 
+Found 0 discrepancies 
+Log for block number 24190 
+24190 looks ok 
+Found 0 discrepancies 
+Log for block number 24239 
+24239 looks ok 
+Found 0 discrepancies 
+Log for block number 24297 
+24297 looks ok 
+Found 0 discrepancies 
+Log for block number 24307 
+24307 looks ok 
+Found 0 discrepancies 
+Log for block number 24318 
+24318 looks ok 
+Found 0 discrepancies 
+Log for block number 24460 
+24460 looks ok 
+Found 0 discrepancies 
+Log for block number 24559 
+24559 looks ok 
+Found 0 discrepancies 
+Log for block number 24887 
+24887 looks ok 
+Found 0 discrepancies 
+Log for block number 24963 
+24963 looks ok 
+Found 0 discrepancies 
+Log for block number 25008 
+25008 looks ok 
+Found 0 discrepancies 
+Log for block number 25062 
+25062 looks ok 
+Found 0 discrepancies 
+Log for block number 25292 
+25292 looks ok 
+Found 0 discrepancies 
+Log for block number 25315 
+25315 looks ok 
+Found 0 discrepancies 
+Log for block number 25319 
+25319 looks ok 
+Found 0 discrepancies 
+Log for block number 25334 
+25334 looks ok 
+Found 0 discrepancies 
+Log for block number 25404 
+25404 looks ok 
+Found 0 discrepancies 
+Log for block number 25435 
+25435 looks ok 
+Found 0 discrepancies 
+Log for block number 25443 
+25443 looks ok 
+Found 0 discrepancies 
+Log for block number 25507 
+25507 looks ok 
+25507 looks ok 
+Found 0 discrepancies 
+Log for block number 25567 
+25567 looks ok 
+Found 0 discrepancies 
+Log for block number 25632 
+25632 looks ok 
+Found 0 discrepancies 
+Log for block number 25821 
+25821 looks ok 
+Found 0 discrepancies 
+Log for block number 25842 
+25842 looks ok 
+Found 0 discrepancies 
+Log for block number 26022 
+26022 looks ok 
+Found 0 discrepancies 
+Log for block number 26084 
+26084 looks ok 
+Found 0 discrepancies 
+Log for block number 26149 
+26149 looks ok 
+Found 0 discrepancies 
+Log for block number 26444 
+26444 looks ok 
+Found 0 discrepancies 
+Log for block number 26460 
+26460 looks ok 
+Found 0 discrepancies 
+Log for block number 26541 
+26541 looks ok 
+Found 0 discrepancies 
+Log for block number 27360 
+27360 looks ok 
+Found 0 discrepancies 
+Log for block number 28141 
+28141 looks ok 
+Found 0 discrepancies 
+Log for block number 28373 
+28373 looks ok 
+Found 0 discrepancies 
+Log for block number 28597 
+28597 looks ok 
+Found 0 discrepancies 
+Log for block number 28831 
+28831 looks ok 
+Found 0 discrepancies 
+Log for block number 29231 
+29231 looks ok 
+Found 0 discrepancies 
+Log for block number 29242 
+29242 looks ok 
+Found 0 discrepancies 
+Log for block number 29258 
+29258 looks ok 
+Found 0 discrepancies 
+Log for block number 29544 
+29544 looks ok 
+Found 0 discrepancies 
+Log for block number 29557 
+29557 looks ok 
+Found 0 discrepancies 
+Log for block number 29575 
+29575 looks ok 
+Found 0 discrepancies 
+Log for block number 29576 
+29576 looks ok 
+Found 0 discrepancies 
+Log for block number 30377 
+30377 looks ok 
+Found 0 discrepancies 
+Log for block number 30585 
+30585 looks ok 
+Found 0 discrepancies 
+Log for block number 30622 
+30622 looks ok 
+Found 0 discrepancies 
+Log for block number 30822 
+30822 looks ok 
+Found 0 discrepancies 
+Log for block number 30976 
+30976 looks ok 
+Found 0 discrepancies 
+Log for block number 31484 
+31484 looks ok 
+Found 0 discrepancies 
+Log for block number 31614 
+31614 looks ok 
+Found 0 discrepancies 
+Log for block number 31640 
+31640 looks ok 
+Found 0 discrepancies 
+Log for block number 31948 
+31948 looks ok 
+Found 0 discrepancies 
+Log for block number 32412 
+32412 looks ok 
+Found 0 discrepancies 
+Log for block number 32674 
+32674 looks ok 
+Found 0 discrepancies 
+Log for block number 32716 
+32716 looks ok 
+Found 0 discrepancies 
+Log for block number 32927 
+32927 looks ok 
+Found 0 discrepancies 
+Log for block number 32949 
+32949 looks ok 
+Found 0 discrepancies 
+Log for block number 32965 
+32965 looks ok 
+Found 0 discrepancies 
+Log for block number 33014 
+33014 looks ok 
+Found 0 discrepancies 
+Log for block number 33032 
+33032 looks ok 
+Found 0 discrepancies 
+Log for block number 33048 
+33048 looks ok 
+Found 0 discrepancies 
+Log for block number 33085 
+33085 looks ok 
+Found 0 discrepancies 
+Log for block number 33719 
+33719 looks ok 
+Found 0 discrepancies 
+Log for block number 33848 
+33848 looks ok 
+Found 0 discrepancies 
+Log for block number 33984 
+33984 looks ok 
+Found 0 discrepancies 
+Log for block number 34001 
+34001 looks ok 
+Found 0 discrepancies 
+Log for block number 34006 
+34006 looks ok 
+Found 0 discrepancies 
+Log for block number 34079 
+34079 looks ok 
+Found 0 discrepancies 
+Log for block number 34816 
+34816 looks ok 
+Found 0 discrepancies 
+Log for block number 34833 
+34833 looks ok 
+Found 0 discrepancies 
+Log for block number 34838 
+34838 looks ok 
+Found 0 discrepancies 
+Log for block number 35018 
+35018 looks ok 
+Found 0 discrepancies 
+Log for block number 35666 
+35666 looks ok 
+Found 0 discrepancies 
+Log for block number 35669 
+35669 looks ok 
+Found 0 discrepancies 
+Log for block number 35722 
+35722 looks ok 
+Found 0 discrepancies 
+Log for block number 35990 
+35990 looks ok 
+Found 0 discrepancies 
+Log for block number 36018 
+36018 looks ok 
+Found 0 discrepancies 
+Log for block number 36730 
+36730 looks ok 
+Found 0 discrepancies 
+Log for block number 36751 
+36751 looks ok 
+Found 0 discrepancies 
+Log for block number 36788 
+36788 looks ok 
+Found 0 discrepancies 
+Log for block number 36873 
+36873 looks ok 
+Found 0 discrepancies 
+Log for block number 36886 
+36886 looks ok 
+Found 0 discrepancies 
+Log for block number 36895 
+36895 looks ok 
+Found 0 discrepancies 
+Log for block number 36900 
+36900 looks ok 
+Found 0 discrepancies 
+Log for block number 36908 
+36908 looks ok 
+Found 0 discrepancies 
+Log for block number 37050 
+37050 looks ok 
+Found 0 discrepancies 
+Log for block number 37059 
+37059 looks ok 
+Found 0 discrepancies 
+Log for block number 37207 
+37207 looks ok 
+Found 0 discrepancies 
+Log for block number 37227 
+37227 looks ok 
+Found 0 discrepancies 
+Log for block number 37501 
+37501 looks ok 
+Found 0 discrepancies 
+Log for block number 37509 
+37509 looks ok 
+Found 0 discrepancies 
+Log for block number 37516 
+37516 looks ok 
+Found 0 discrepancies 
+Log for block number 37837 
+37837 looks ok 
+Found 0 discrepancies 
+Log for block number 37881 
+37881 looks ok 
+Found 0 discrepancies 
+Log for block number 38307 
+38307 looks ok 
+Found 0 discrepancies 
+Log for block number 38338 
+38338 looks ok 
+Found 0 discrepancies 
+Log for block number 38444 
+38444 looks ok 
+Found 0 discrepancies 
+Log for block number 38571 
+38571 looks ok 
+Found 0 discrepancies 
+Log for block number 38783 
+38783 looks ok 
+Found 0 discrepancies 
+Log for block number 38816 
+38816 looks ok 
+Found 0 discrepancies 
+Log for block number 38887 
+38887 looks ok 
+Found 0 discrepancies 
+Log for block number 38916 
+38916 looks ok 
+Found 0 discrepancies 
+Log for block number 38960 
+38960 looks ok 
+Found 0 discrepancies 
+Log for block number 38978 
+38978 looks ok 
+Found 0 discrepancies 
+Log for block number 39058 
+39058 looks ok 
+Found 0 discrepancies 
+Log for block number 39117 
+39117 looks ok 
+Found 0 discrepancies 
+Log for block number 39146 
+39146 looks ok 
+Found 0 discrepancies 
+Log for block number 39156 
+39156 looks ok 
+Found 0 discrepancies 
+Log for block number 39225 
+39225 looks ok 
+Found 0 discrepancies 
+Log for block number 39227 
+39227 looks ok 
+Found 0 discrepancies 
+Log for block number 39306 
+39306 looks ok 
+Found 0 discrepancies 
+Log for block number 39332 
+39332 looks ok 
+Found 0 discrepancies 
+Log for block number 39341 
+39341 looks ok 
+Found 0 discrepancies 
+Log for block number 39348 
+39348 looks ok 
+Found 0 discrepancies 
+Log for block number 39354 
+39354 looks ok 
+Found 0 discrepancies 
+Log for block number 39378 
+39378 looks ok 
+Found 0 discrepancies 
+Log for block number 39601 
+39601 looks ok 
+Found 0 discrepancies 
+Log for block number 39665 
+39665 looks ok 
+Found 0 discrepancies 
+Log for block number 39673 
+39673 looks ok 
+Found 0 discrepancies 
+Log for block number 39680 
+39680 looks ok 
+Found 0 discrepancies 
+Log for block number 39686 
+39686 looks ok 
+Found 0 discrepancies 
+Log for block number 39804 
+39804 looks ok 
+Found 0 discrepancies 
+Log for block number 39807 
+39807 looks ok 
+Found 0 discrepancies 
+Log for block number 39888 
+39888 looks ok 
+Found 0 discrepancies 
+Log for block number 39916 
+39916 looks ok 
+Found 0 discrepancies 
+Log for block number 39969 
+39969 looks ok 
+Found 0 discrepancies 
+Log for block number 40249 
+40249 looks ok 
+Found 0 discrepancies 
+Log for block number 40330 
+40330 looks ok 
+Found 0 discrepancies 
+Log for block number 40430 
+40430 looks ok 
+Found 0 discrepancies 
+Log for block number 40550 
+40550 looks ok 
+Found 0 discrepancies 
+Log for block number 40567 
+40567 looks ok 
+Found 0 discrepancies 
+Log for block number 40570 
+40570 looks ok 
+Found 0 discrepancies 
+Log for block number 40596 
+40596 looks ok 
+Found 0 discrepancies 
+Log for block number 40599 
+40599 looks ok 
+Found 0 discrepancies 
+Log for block number 40639 
+40639 looks ok 
+Found 0 discrepancies 
+Log for block number 41095 
+41095 looks ok 
+Found 0 discrepancies 
+Log for block number 41110 
+41110 looks ok 
+Found 0 discrepancies 
+Log for block number 41202 
+41202 looks ok 
+Found 0 discrepancies 
+Log for block number 41398 
+41398 looks ok 
+Found 0 discrepancies 
+Log for block number 41431 
+41431 looks ok 
+Found 0 discrepancies 
+Log for block number 41448 
+41448 looks ok 
+Found 0 discrepancies 
+Log for block number 41456 
+41456 looks ok 
+Found 0 discrepancies 
+Log for block number 41459 
+41459 looks ok 
+Found 0 discrepancies 
+Log for block number 41463 
+41463 looks ok 
+Found 0 discrepancies 
+Log for block number 41493 
+41493 looks ok 
+Found 0 discrepancies 
+Log for block number 41719 
+41719 looks ok 
+Found 0 discrepancies 
+Log for block number 41738 
+41738 looks ok 
+Found 0 discrepancies 
+Log for block number 41757 
+41757 looks ok 
+Found 0 discrepancies 
+Log for block number 41762 
+41762 looks ok 
+Found 0 discrepancies 
+Log for block number 41929 
+41929 looks ok 
+Found 0 discrepancies 
+Log for block number 41950 
+41950 looks ok 
+Found 0 discrepancies 
+Log for block number 42087 
+42087 looks ok 
+Found 0 discrepancies 
+Log for block number 42237 
+42237 looks ok 
+Found 0 discrepancies 
+Log for block number 42239 
+42239 looks ok 
+Found 0 discrepancies 
+Log for block number 42240 
+42240 looks ok 
+Found 0 discrepancies 
+Log for block number 42243 
+42243 looks ok 
+Found 0 discrepancies 
+Log for block number 42245 
+42245 looks ok 
+Found 0 discrepancies 
+Log for block number 42308 
+42308 looks ok 
+Found 0 discrepancies 
+Log for block number 42370 
+42370 looks ok 
+Found 0 discrepancies 
+Log for block number 42379 
+42379 looks ok 
+Found 0 discrepancies 
+Log for block number 42382 
+42382 looks ok 
+Found 0 discrepancies 
+Log for block number 42688 
+42688 looks ok 
+Found 0 discrepancies 
+Log for block number 42692 
+42692 looks ok 
+Found 0 discrepancies 
+Log for block number 42720 
+42720 looks ok 
+Found 0 discrepancies 
+Log for block number 42786 
+42786 looks ok 
+Found 0 discrepancies 
+Log for block number 42789 
+42789 looks ok 
+Found 0 discrepancies 
+Log for block number 42808 
+42808 looks ok 
+Found 0 discrepancies 
+Log for block number 42814 
+42814 looks ok 
+Found 0 discrepancies 
+Log for block number 43088 
+43088 looks ok 
+Found 0 discrepancies 
+Log for block number 43140 
+43140 looks ok 
+Found 0 discrepancies 
+Log for block number 43183 
+43183 looks ok 
+Found 0 discrepancies 
+Log for block number 43188 
+43188 looks ok 
+Found 0 discrepancies 
+Log for block number 43208 
+43208 looks ok 
+Found 0 discrepancies 
+Log for block number 43252 
+43252 looks ok 
+Found 0 discrepancies 
+Log for block number 43306 
+43306 looks ok 
+Found 0 discrepancies 
+Log for block number 43460 
+43460 looks ok 
+Found 0 discrepancies 
+Log for block number 43499 
+43499 looks ok 
+Found 0 discrepancies 
+Log for block number 43800 
+43800 looks ok 
+Found 0 discrepancies 
+Log for block number 43922 
+43922 looks ok 
+Found 0 discrepancies 
+Log for block number 44270 
+44270 looks ok 
+Found 0 discrepancies 
+Log for block number 44298 
+44298 looks ok 
+Found 0 discrepancies 
+Log for block number 44303 
+44303 looks ok 
+Found 0 discrepancies 
+Log for block number 44603 
+44603 looks ok 
+Found 0 discrepancies 
+Log for block number 44932 
+44932 looks ok 
+Found 0 discrepancies 
+Log for block number 45060 
+45060 looks ok 
+Found 0 discrepancies 
+Log for block number 45073 
+45073 looks ok 
+Found 0 discrepancies 
+Log for block number 45097 
+45097 looks ok 
+Found 0 discrepancies 
+Log for block number 45455 
+45455 looks ok 
+Found 0 discrepancies 
+Log for block number 45769 
+45769 looks ok 
+Found 0 discrepancies 
+Log for block number 45787 
+45787 looks ok 
+Found 0 discrepancies 
+Log for block number 45789 
+45789 looks ok 
+Found 0 discrepancies 
+Log for block number 45792 
+45792 looks ok 
+Found 0 discrepancies 
+Log for block number 45794 
+45794 looks ok 
+Found 0 discrepancies 
+Log for block number 45796 
+45796 looks ok 
+Found 0 discrepancies 
+Log for block number 45798 
+45798 looks ok 
+Found 0 discrepancies 
+Log for block number 45800 
+45800 looks ok 
+Found 0 discrepancies 
+Log for block number 45801 
+45801 looks ok 
+Found 0 discrepancies 
+Log for block number 45803 
+45803 looks ok 
+Found 0 discrepancies 
+Log for block number 45804 
+45804 looks ok 
+Found 0 discrepancies 
+Log for block number 45805 
+45805 looks ok 
+Found 0 discrepancies 
+Log for block number 45807 
+45807 looks ok 
+Found 0 discrepancies 
+Log for block number 45809 
+45809 looks ok 
+Found 0 discrepancies 
+Log for block number 45840 
+45840 looks ok 
+Found 0 discrepancies 
+Log for block number 45842 
+45842 looks ok 
+Found 0 discrepancies 
+Log for block number 45844 
+45844 looks ok 
+Found 0 discrepancies 
+Log for block number 45845 
+45845 looks ok 
+Found 0 discrepancies 
+Log for block number 45847 
+45847 looks ok 
+Found 0 discrepancies 
+Log for block number 46177 
+46177 looks ok 
+Found 0 discrepancies 
+Log for block number 46522 
+46522 looks ok 
+Found 0 discrepancies 
+Log for block number 46609 
+46609 looks ok 
+Found 0 discrepancies 
+Log for block number 46688 
+46688 looks ok 
+Found 0 discrepancies 
+Log for block number 47117 
+47117 looks ok 
+Found 0 discrepancies 
+Log for block number 47595 
+47595 looks ok 
+Found 0 discrepancies 
+Log for block number 48491 
+48491 looks ok 
+Found 0 discrepancies 
+Log for block number 48527 
+48527 looks ok 
+Found 0 discrepancies 
+Log for block number 48538 
+48538 looks ok 
+Found 0 discrepancies 
+Log for block number 48766 
+48766 looks ok 
+Found 0 discrepancies 
+Log for block number 48870 
+48870 looks ok 
+Found 0 discrepancies 
+Log for block number 52368 
+52368 looks ok 
+Found 0 discrepancies 
+Log for block number 52893 
+52893 looks ok 
+Found 0 discrepancies 
+Log for block number 52976 
+52976 looks ok 
+Found 0 discrepancies 
+Log for block number 54106 
+54106 looks ok 
+Found 0 discrepancies 
+Log for block number 54448 
+54448 looks ok 
+Found 0 discrepancies 
+Log for block number 54457 
+54457 looks ok 
+Found 0 discrepancies 
+Log for block number 54523 
+54523 looks ok 
+Found 0 discrepancies 
+Log for block number 55033 
+55033 looks ok 
+Found 0 discrepancies 
+Log for block number 55341 
+55341 looks ok 
+Found 0 discrepancies 
+Log for block number 55391 
+55391 looks ok 
+Found 0 discrepancies 
+Log for block number 55678 
+55678 looks ok 
+Found 0 discrepancies 
+Log for block number 55757 
+55757 looks ok 
+Found 0 discrepancies 
+Log for block number 55812 
+55812 looks ok 
+Found 0 discrepancies 
+Log for block number 55937 
+55937 looks ok 
+Found 0 discrepancies 
+Log for block number 56451 
+56451 looks ok 
+Found 0 discrepancies 
+Log for block number 56497 
+56497 looks ok 
+Found 0 discrepancies 
+Log for block number 56930 
+56930 looks ok 
+Found 0 discrepancies 
+Log for block number 56943 
+56943 looks ok 
+Found 0 discrepancies 
+Log for block number 57039 
+57039 looks ok 
+Found 0 discrepancies 
+Log for block number 57612 
+57612 looks ok 
+Found 0 discrepancies 
+Log for block number 58753 
+58753 has an issue 
+[object Object] 
+Found 1 discrepancies 
+Log for block number 59770 
+59770 looks ok 
+Found 0 discrepancies 
+Log for block number 60651 
+60651 looks ok 
+Found 0 discrepancies 
+Log for block number 60799 
+60799 looks ok 
+Found 0 discrepancies 
+Log for block number 66286 
+66286 looks ok 
+Found 0 discrepancies 
+Log for block number 66927 
+66927 looks ok 
+Found 0 discrepancies 
+Log for block number 67562 
+67562 looks ok 
+Found 0 discrepancies 
+Log for block number 69365 
+69365 looks ok 
+Found 0 discrepancies 
+Log for block number 69982 
+69982 looks ok 
+Found 0 discrepancies 
+Log for block number 70885 
+70885 looks ok 
+Found 0 discrepancies 
+Log for block number 70898 
+70898 looks ok 
+Found 0 discrepancies 
+Log for block number 71265 
+71265 looks ok 
+Found 0 discrepancies 
+Log for block number 71997 
+71997 looks ok 
+Found 0 discrepancies 
+Log for block number 71998 
+71998 looks ok 
+Found 0 discrepancies 
+Log for block number 72003 
+72003 looks ok 
+Found 0 discrepancies 
+Log for block number 72022 
+72022 looks ok 
+Found 0 discrepancies 
+Log for block number 72087 
+72087 looks ok 
+Found 0 discrepancies 
+Log for block number 72092 
+72092 looks ok 
+Found 0 discrepancies 
+Log for block number 72530 
+72530 looks ok 
+Found 0 discrepancies 
+Log for block number 74076 
+74076 looks ok 
+Found 0 discrepancies 
+Log for block number 74642 
+74642 looks ok 
+Found 0 discrepancies 
+Log for block number 74980 
+74980 looks ok 
+Found 0 discrepancies 
+Log for block number 76278 
+76278 looks ok 
+Found 0 discrepancies 
+Log for block number 76290 
+76290 looks ok 
+Found 0 discrepancies 
+Log for block number 77162 
+77162 looks ok 
+Found 0 discrepancies 
+Log for block number 77404 
+77404 looks ok 
+Found 0 discrepancies 
+Log for block number 77428 
+77428 looks ok 
+Found 0 discrepancies 
+Log for block number 77443 
+77443 looks ok 
+Found 0 discrepancies 
+Log for block number 77546 
+77546 looks ok 
+Found 0 discrepancies 
+Log for block number 77767 
+77767 looks ok 
+Found 0 discrepancies 
+Log for block number 77775 
+77775 looks ok 
+Found 0 discrepancies 
+Log for block number 78052 
+78052 looks ok 
+Found 0 discrepancies 
+Log for block number 78523 
+78523 looks ok 
+Found 0 discrepancies 
+Log for block number 78529 
+78529 looks ok 
+Found 0 discrepancies 
+Log for block number 78884 
+78884 looks ok 
+Found 0 discrepancies 
+Log for block number 79102 
+79102 looks ok 
+Found 0 discrepancies 
+Log for block number 79161 
+79161 looks ok 
+Found 0 discrepancies 
+Log for block number 79325 
+79325 looks ok 
+Found 0 discrepancies 
+Log for block number 79356 
+79356 looks ok 
+Found 0 discrepancies 
+Log for block number 80124 
+80124 looks ok 
+Found 0 discrepancies 
+Log for block number 80906 
+80906 looks ok 
+Found 0 discrepancies 
+Log for block number 81828 
+81828 looks ok 
+Found 0 discrepancies 
+Log for block number 82045 
+82045 looks ok 
+Found 0 discrepancies 
+Log for block number 82060 
+82060 looks ok 
+Found 0 discrepancies 
+Log for block number 82362 
+82362 looks ok 
+Found 0 discrepancies 
+Log for block number 82591 
+82591 looks ok 
+Found 0 discrepancies 
+Log for block number 82658 
+82658 looks ok 
+Found 0 discrepancies 
+Log for block number 82690 
+82690 looks ok 
+Found 0 discrepancies 
+Log for block number 82700 
+82700 looks ok 
+Found 0 discrepancies 
+Log for block number 82932 
+82932 looks ok 
+Found 0 discrepancies 
+Log for block number 83473 
+83473 looks ok 
+Found 0 discrepancies 
+Log for block number 83801 
+83801 looks ok 
+Found 0 discrepancies 
+Log for block number 83810 
+83810 looks ok 
+Found 0 discrepancies 
+Log for block number 83994 
+83994 looks ok 
+Found 0 discrepancies 
+Log for block number 84052 
+84052 looks ok 
+Found 0 discrepancies 
+Log for block number 84056 
+84056 looks ok 
+Found 0 discrepancies 
+Log for block number 84216 
+84216 looks ok 
+Found 0 discrepancies 
+Log for block number 85439 
+85439 looks ok 
+Found 0 discrepancies 
+Log for block number 85462 
+85462 looks ok 
+Found 0 discrepancies 
+Log for block number 85751 
+85751 looks ok 
+Found 0 discrepancies 
+Log for block number 85758 
+85758 looks ok 
+Found 0 discrepancies 
+Log for block number 85851 
+85851 looks ok 
+Found 0 discrepancies 
+Log for block number 86027 
+86027 looks ok 
+Found 0 discrepancies 
+Log for block number 86581 
+86581 looks ok 
+Found 0 discrepancies 
+Log for block number 87781 
+87781 looks ok 
+Found 0 discrepancies 
+Log for block number 88126 
+88126 looks ok 
+Found 0 discrepancies 
+Log for block number 88309 
+88309 looks ok 
+Found 0 discrepancies 
+Log for block number 89017 
+89017 looks ok 
+Found 0 discrepancies 
+Log for block number 89117 
+89117 looks ok 
+Found 0 discrepancies 
+Log for block number 90819 
+90819 looks ok 
+Found 0 discrepancies 
+Log for block number 90930 
+90930 looks ok 
+Found 0 discrepancies 
+Log for block number 91048 
+91048 looks ok 
+Found 0 discrepancies 
+Log for block number 91163 
+91163 looks ok 
+Found 0 discrepancies 
+Log for block number 91261 
+91261 looks ok 
+Found 0 discrepancies 
+Log for block number 91267 
+91267 looks ok 
+Found 0 discrepancies 
+Log for block number 91297 
+91297 looks ok 
+Found 0 discrepancies 
+Log for block number 91327 
+91327 looks ok 
+Found 0 discrepancies 
+Log for block number 92527 
+92527 looks ok 
+Found 0 discrepancies 
+Log for block number 92753 
+92753 looks ok 
+Found 0 discrepancies 
+Log for block number 92791 
+92791 looks ok 
+Found 0 discrepancies 
+Log for block number 93911 
+93911 looks ok 
+Found 0 discrepancies 
+Log for block number 94415 
+94415 looks ok 
+Found 0 discrepancies 
+Log for block number 95181 
+95181 looks ok 
+Found 0 discrepancies 
+Log for block number 95997 
+95997 looks ok 
+Found 0 discrepancies 
+Log for block number 96491 
+96491 looks ok 
+Found 0 discrepancies 
+Log for block number 96549 
+96549 looks ok 
+Found 0 discrepancies 
+Log for block number 96613 
+96613 looks ok 
+Found 0 discrepancies 
+Log for block number 96802 
+96802 looks ok 
+Found 0 discrepancies 
+Log for block number 96810 
+96810 looks ok 
+Found 0 discrepancies 
+Log for block number 96816 
+96816 looks ok 
+Found 0 discrepancies 
+Log for block number 96820 
+96820 looks ok 
+Found 0 discrepancies 
+Log for block number 97137 
+97137 looks ok 
+Found 0 discrepancies 
+Log for block number 97182 
+97182 looks ok 
+Found 0 discrepancies 
+Log for block number 97240 
+97240 looks ok 
+Found 0 discrepancies 
+Log for block number 97644 
+97644 looks ok 
+Found 0 discrepancies 
+Log for block number 97647 
+97647 looks ok 
+Found 0 discrepancies 
+Log for block number 97650 
+97650 looks ok 
+Found 0 discrepancies 
+Log for block number 97654 
+97654 looks ok 
+Found 0 discrepancies 
+Log for block number 97657 
+97657 looks ok 
+Found 0 discrepancies 
+Log for block number 97664 
+97664 looks ok 
+Found 0 discrepancies 
+Log for block number 97667 
+97667 looks ok 
+Found 0 discrepancies 
+Log for block number 97670 
+97670 looks ok 
+Found 0 discrepancies 
+Log for block number 98245 
+98245 looks ok 
+Found 0 discrepancies 
+Log for block number 98758 
+98758 looks ok 
+Found 0 discrepancies 
+Log for block number 98762 
+98762 looks ok 
+Found 0 discrepancies 
+Log for block number 98765 
+98765 looks ok 
+Found 0 discrepancies 
+Log for block number 98768 
+98768 looks ok 
+Found 0 discrepancies 
+Log for block number 98771 
+98771 looks ok 
+Found 0 discrepancies 
+Log for block number 98774 
+98774 looks ok 
+Found 0 discrepancies 
+Log for block number 98777 
+98777 looks ok 
+Found 0 discrepancies 
+Log for block number 98780 
+98780 looks ok 
+Found 0 discrepancies 
+Log for block number 98782 
+98782 looks ok 
+Found 0 discrepancies 
+Log for block number 98785 
+98785 looks ok 
+Found 0 discrepancies 
+Log for block number 98787 
+98787 looks ok 
+Found 0 discrepancies 
+Log for block number 98790 
+98790 looks ok 
+Found 0 discrepancies 
+Log for block number 98792 
+98792 looks ok 
+Found 0 discrepancies 
+Log for block number 98794 
+98794 looks ok 
+Found 0 discrepancies 
+Log for block number 98796 
+98796 looks ok 
+Found 0 discrepancies 
+Log for block number 98798 
+98798 looks ok 
+Found 0 discrepancies 
+Log for block number 98800 
+98800 looks ok 
+Found 0 discrepancies 
+Log for block number 98802 
+98802 looks ok 
+Found 0 discrepancies 
+Log for block number 98804 
+98804 looks ok 
+Found 0 discrepancies 
+Log for block number 98806 
+98806 looks ok 
+Found 0 discrepancies 
+Log for block number 98808 
+98808 looks ok 
+Found 0 discrepancies 
+Log for block number 98810 
+98810 looks ok 
+Found 0 discrepancies 
+Log for block number 99160 
+99160 looks ok 
+Found 0 discrepancies 
+Log for block number 99294 
+99294 looks ok 
+Found 0 discrepancies 
+Log for block number 99329 
+99329 looks ok 
+Found 0 discrepancies 
+Log for block number 99518 
+99518 looks ok 
+Found 0 discrepancies 
+Log for block number 100404 
+100404 looks ok 
+Found 0 discrepancies 
+Log for block number 101543 
+101543 looks ok 
+Found 0 discrepancies 
+Log for block number 102532 
+102532 looks ok 
+Found 0 discrepancies 
+Log for block number 102786 
+102786 looks ok 
+Found 0 discrepancies 
+Log for block number 102787 
+102787 looks ok 
+Found 0 discrepancies 
+Log for block number 102788 
+102788 looks ok 
+Found 0 discrepancies 
+Log for block number 102789 
+102789 looks ok 
+Found 0 discrepancies 
+Log for block number 102791 
+102791 looks ok 
+102791 looks ok 
+Found 0 discrepancies 
+Log for block number 102792 
+102792 looks ok 
+Found 0 discrepancies 
+Log for block number 102793 
+102793 looks ok 
+Found 0 discrepancies 
+Log for block number 102795 
+102795 looks ok 
+Found 0 discrepancies 
+Log for block number 102796 
+102796 looks ok 
+Found 0 discrepancies 
+Log for block number 102797 
+102797 looks ok 
+Found 0 discrepancies 
+Log for block number 102798 
+102798 looks ok 
+Found 0 discrepancies 
+Log for block number 102799 
+102799 looks ok 
+Found 0 discrepancies 
+Log for block number 102800 
+102800 looks ok 
+Found 0 discrepancies 
+Log for block number 102801 
+102801 looks ok 
+Found 0 discrepancies 
+Log for block number 102810 
+102810 looks ok 
+Found 0 discrepancies 
+Log for block number 102837 
+102837 looks ok 
+Found 0 discrepancies 
+Log for block number 102838 
+102838 looks ok 
+Found 0 discrepancies 
+Log for block number 102839 
+102839 looks ok 
+Found 0 discrepancies 
+Log for block number 102840 
+102840 looks ok 
+Found 0 discrepancies 
+Log for block number 102841 
+102841 looks ok 
+Found 0 discrepancies 
+Log for block number 102842 
+102842 looks ok 
+Found 0 discrepancies 
+Log for block number 102843 
+102843 looks ok 
+Found 0 discrepancies 
+Log for block number 102844 
+102844 looks ok 
+Found 0 discrepancies 
+Log for block number 102845 
+102845 looks ok 
+Found 0 discrepancies 
+Log for block number 102846 
+102846 looks ok 
+Found 0 discrepancies 
+Log for block number 102847 
+102847 looks ok 
+Found 0 discrepancies 
+Log for block number 102848 
+102848 looks ok 
+Found 0 discrepancies 
+Log for block number 102849 
+102849 looks ok 
+Found 0 discrepancies 
+Log for block number 102850 
+102850 looks ok 
+Found 0 discrepancies 
+Log for block number 102851 
+102851 looks ok 
+Found 0 discrepancies 
+Log for block number 102852 
+102852 looks ok 
+Found 0 discrepancies 
+Log for block number 102853 
+102853 looks ok 
+Found 0 discrepancies 
+Log for block number 102854 
+102854 looks ok 
+Found 0 discrepancies 
+Log for block number 102895 
+102895 looks ok 
+Found 0 discrepancies 
+Log for block number 102901 
+102901 looks ok 
+Found 0 discrepancies 
+Log for block number 102913 
+102913 looks ok 
+Found 0 discrepancies 
+Log for block number 102916 
+102916 looks ok 
+Found 0 discrepancies 
+Log for block number 102919 
+102919 looks ok 
+Found 0 discrepancies 
+Log for block number 102924 
+102924 looks ok 
+Found 0 discrepancies 
+Log for block number 102926 
+102926 looks ok 
+Found 0 discrepancies 
+Log for block number 103184 
+103184 has an issue 
+[object Object] 
+Found 1 discrepancies 
+Log for block number 103224 
+103224 has an issue 
+[object Object] 
+Found 1 discrepancies 
+Log for block number 103256 
+103256 looks ok 
+Found 0 discrepancies 
+Log for block number 103342 
+103342 has an issue 
+[object Object] 
+Found 1 discrepancies 
+Log for block number 103458 
+103458 looks ok 
+Found 0 discrepancies 
+Log for block number 103462 
+103462 looks ok 
+Found 0 discrepancies 
+Log for block number 103464 
+103464 looks ok 
+Found 0 discrepancies 
+Log for block number 103466 
+103466 looks ok 
+Found 0 discrepancies 
+Log for block number 103469 
+103469 looks ok 
+Found 0 discrepancies 
+Log for block number 103471 
+103471 looks ok 
+Found 0 discrepancies 
+Log for block number 103474 
+103474 looks ok 
+Found 0 discrepancies 
+Log for block number 103477 
+103477 looks ok 
+Found 0 discrepancies 
+Log for block number 103970 
+103970 looks ok 
+Found 0 discrepancies 
+Log for block number 103993 
+103993 looks ok 
+Found 0 discrepancies 
+Log for block number 103997 
+103997 looks ok 
+Found 0 discrepancies 
+Log for block number 105296 
+105296 looks ok 
+Found 0 discrepancies 
+Log for block number 107079 
+107079 looks ok 
+Found 0 discrepancies 
+Log for block number 107845 
+107845 looks ok 
+Found 0 discrepancies 
+Log for block number 110854 
+110854 looks ok 
+Found 0 discrepancies 
+Log for block number 110861 
+110861 looks ok 
+Found 0 discrepancies 
+Log for block number 110927 
+110927 looks ok 
+Found 0 discrepancies 
+Log for block number 110966 
+110966 looks ok 
+Found 0 discrepancies 
+Log for block number 110982 
+110982 looks ok 
+Found 0 discrepancies 
+Log for block number 111033 
+111033 looks ok 
+Found 0 discrepancies 
+Log for block number 111077 
+111077 looks ok 
+Found 0 discrepancies 
+Log for block number 111101 
+111101 looks ok 
+Found 0 discrepancies 
+Log for block number 111109 
+111109 looks ok 
+Found 0 discrepancies 
+Log for block number 111170 
+111170 looks ok 
+111170 looks ok 
+Found 0 discrepancies 
+Log for block number 111198 
+111198 looks ok 
+Found 0 discrepancies 
+Log for block number 111209 
+111209 looks ok 
+Found 0 discrepancies 
+Log for block number 111213 
+111213 looks ok 
+Found 0 discrepancies 
+Log for block number 111215 
+111215 looks ok 
+Found 0 discrepancies 
+Log for block number 111217 
+111217 looks ok 
+Found 0 discrepancies 
+Log for block number 111252 
+111252 looks ok 
+Found 0 discrepancies 
+Log for block number 111257 
+111257 looks ok 
+Found 0 discrepancies 
+Log for block number 111265 
+111265 looks ok 
+Found 0 discrepancies 
+Log for block number 111287 
+111287 looks ok 
+Found 0 discrepancies 
+Log for block number 111681 
+111681 looks ok 
+Found 0 discrepancies 
+Log for block number 111701 
+111701 looks ok 
+Found 0 discrepancies 
+Log for block number 111914 
+111914 looks ok 
+Found 0 discrepancies 
+Log for block number 111955 
+111955 looks ok 
+Found 0 discrepancies 
+Log for block number 112167 
+112167 looks ok 
+Found 0 discrepancies 
+Log for block number 112173 
+112173 looks ok 
+Found 0 discrepancies 
+Log for block number 112710 
+112710 looks ok 
+Found 0 discrepancies 
+Log for block number 112798 
+112798 looks ok 
+Found 0 discrepancies 
+Log for block number 113024 
+113024 looks ok 
+Found 0 discrepancies 
+Log for block number 113119 
+113119 looks ok 
+Found 0 discrepancies 
+Log for block number 113370 
+113370 looks ok 
+Found 0 discrepancies 
+Log for block number 113749 
+113749 looks ok 
+Found 0 discrepancies 
+Log for block number 113759 
+113759 looks ok 
+Found 0 discrepancies 
+Log for block number 114106 
+114106 looks ok 
+Found 0 discrepancies 
+Log for block number 114289 
+114289 looks ok 
+Found 0 discrepancies 
+Log for block number 114322 
+114322 looks ok 
+Found 0 discrepancies 
+Log for block number 114357 
+114357 looks ok 
+Found 0 discrepancies 
+Log for block number 114421 
+114421 looks ok 
+Found 0 discrepancies 
+Log for block number 114465 
+114465 looks ok 
+Found 0 discrepancies 
+Log for block number 114633 
+114633 looks ok 
+Found 0 discrepancies 
+Log for block number 114844 
+114844 looks ok 
+Found 0 discrepancies 
+Log for block number 114860 
+114860 looks ok 
+Found 0 discrepancies 
+Log for block number 114874 
+114874 looks ok 
+Found 0 discrepancies 

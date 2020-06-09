@@ -1,0 +1,211 @@
+
+Log for block number 188836 
+188836 looks ok 
+
+Log for block number 188868 
+188868 looks ok 
+
+Log for block number 188878 
+188878 looks ok 
+
+Log for block number 188902 
+188902 looks ok 
+
+Log for block number 188911 
+188911 looks ok 
+
+Log for block number 188969 
+188969 looks ok 
+
+Log for block number 189082 
+189082 looks ok 
+
+Log for block number 189271 
+189271 looks ok 
+
+Log for block number 189295 
+189295 looks ok 
+
+Log for block number 189321 
+189321 looks ok 
+
+Log for block number 189369 
+189369 looks ok 
+
+Log for block number 189380 
+189380 looks ok 
+
+Log for block number 189397 
+189397 looks ok 
+
+Log for block number 189397 
+189397 looks ok 
+
+Log for block number 189403 
+189403 looks ok 
+
+Log for block number 189406 
+189406 looks ok 
+
+Log for block number 189421 
+189421 looks ok 
+
+Log for block number 189434 
+189434 looks ok 
+
+Log for block number 189439 
+189439 looks ok 
+
+Log for block number 189520 
+189520 looks ok 
+
+Log for block number 189558 
+189558 looks ok 
+
+Log for block number 189564 
+189564 looks ok 
+
+Log for block number 189574 
+189574 looks ok 
+
+Log for block number 189586 
+189586 looks ok 
+
+Log for block number 189594 
+189594 has an issue 
+
+Log for block number 189595 
+189595 looks ok 
+
+Log for block number 189597 
+189597 looks ok 
+
+Log for block number 189599 
+189599 has an issue 
+
+Log for block number 189620 
+189620 looks ok 
+
+Log for block number 189641 
+189641 looks ok 
+
+Log for block number 189648 
+189648 looks ok 
+
+Log for block number 189706 
+189706 looks ok 
+
+Log for block number 189820 
+189820 looks ok 
+
+Log for block number 189823 
+189823 looks ok 
+
+Log for block number 189834 
+189834 looks ok 
+189834 looks ok 
+
+Log for block number 189843 
+189843 looks ok 
+
+Log for block number 189843 
+189843 looks ok 
+
+Log for block number 189846 
+189846 looks ok 
+
+Log for block number 189898 
+189898 looks ok 
+
+Log for block number 189947 
+189947 looks ok 
+
+Log for block number 189996 
+189996 looks ok 
+
+Log for block number 190022 
+190022 looks ok 
+
+Log for block number 190087 
+190087 looks ok 
+
+Log for block number 190141 
+190141 looks ok 
+
+Log for block number 190166 
+190166 looks ok 
+
+Log for block number 190166 
+190166 looks ok 
+
+Log for block number 190249 
+190249 looks ok 
+
+Log for block number 190265 
+190265 looks ok 
+
+Log for block number 190287 
+190287 looks ok 
+
+Log for block number 190303 
+190303 has an issue 
+
+Log for block number 190354 
+190354 looks ok 
+
+Log for block number 190689 
+190689 looks ok 
+
+Log for block number 190741 
+190741 has an issue 
+
+Log for block number 190797 
+190797 looks ok 
+
+Log for block number 190934 
+190934 looks ok 
+
+Log for block number 190941 
+190941 looks ok 
+
+Log for block number 190983 
+190983 looks ok 
+
+Log for block number 190983 
+190983 looks ok 
+
+Log for block number 191001 
+191001 looks ok 
+
+Log for block number 191044 
+191044 looks ok 
+
+Log for block number 191046 
+191046 looks ok 
+
+Log for block number 191063 
+191063 looks ok 
+
+Log for block number 191070 
+191070 looks ok 
+
+Log for block number 191081 
+191081 looks ok 
+
+Log for block number 191083 
+191083 looks ok 
+
+Log for block number 191083 
+191083 looks ok 
+
+Log for block number 191141 
+191141 looks ok 
+
+Log for block number 191141 
+191141 looks ok 
+
+Log for block number 193240 
+193240 looks ok 
+
+Log for block number 193554 
+193554 looks ok 
