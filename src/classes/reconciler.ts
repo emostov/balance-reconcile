@@ -190,13 +190,12 @@ export default class Reconciler {
 
         if (
           (rewardDestination === "Staked" || rewardDestination === "Stash") &&
-          bonded === address
+          stash === address
         ) {
           rewards += this.parseNumber(amount);
+        } else if (rewardDestination === "Controller" && bonded === address) {
+          rewards += this.parseNumber(amount);
         }
-
-        // TODO figure out what to do if the reward destination is a controller
-        // else if (rewardDestination === "Controller" && controller === address)
       }
     }
 

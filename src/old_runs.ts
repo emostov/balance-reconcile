@@ -1,3 +1,36 @@
+
+
+
+async function rangeLogKM(start: number, end: number, sidecarUrl: string): Promise<void> {
+	const crawler = new NaiveCrawler(sidecarUrl);
+	const fileName = `log_KM_${start}+${end}`;
+
+	// Restarting check with reconciler updated for staking rewards
+	for (let i = start; i < end; i += 1) {
+		console.log(`Checking block ${i}`);
+		try {
+			const result = await crawler.crawlBlock(i);
+			crawler.warnWhenDiff(result).forEach((line) => {
+				const withNewLine = `\n${line} `;
+				console.log(withNewLine);
+				// eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+				fs.writeFileSync(fileName, withNewLine, {
+					flag: "a+",
+				});
+			});
+			if (result.length) {
+				// eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+				fs.writeFileSync(fileName, "\n", {
+					flag: "a+",
+				});
+			}
+		} catch (e) {
+			console.log(e);
+		}
+	}
+}
+
+
 async function KM1062Check3(): Promise<void> {
 	const crawler = new NaiveCrawler("http://127.0.0.1:5000");
 
