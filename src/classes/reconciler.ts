@@ -8,6 +8,8 @@ import SideCarApi from "./sidecar_api";
 
 export default class Reconciler {
   api: SideCarApi;
+  // Not 100% sure this is accurate since I could not find def in runtime.
+  readonly DOLLAR = 10_000_000_000;
   constructor(sidecarBaseUrl: string) {
     this.api = new SideCarApi(sidecarBaseUrl);
   }
@@ -35,6 +37,7 @@ export default class Reconciler {
     const claimed = this.claimed(address, block);
     // TODO? if endowed then expected_previous_balance == 0
     const lostDust = this.lostDust(address, block);
+    const repatriatedReserves = this.repatriatedReserved(address, block);
 
     const expectedBalance: number =
       prevFreeBalance +
@@ -46,7 +49,8 @@ export default class Reconciler {
       endowment +
       incomingTransfers +
       stakingRewards +
-      claimed;
+      claimed +
+      repatriatedReserves;
 
     return {
       // maybe should add a notes section
@@ -67,6 +71,7 @@ export default class Reconciler {
       stakingRewards,
       tips,
       claimed,
+      repatriatedReserves,
     };
   }
 
@@ -283,6 +288,30 @@ export default class Reconciler {
     });
 
     return claimed;
+  }
+
+  private repatriatedReserved(address: string, block: BlockResponse): number {
+    let repatriated = 0;
+    const { extrinsics } = block;
+
+    extrinsics.forEach((ext): void => {
+      const { events } = ext;
+
+      events.forEach((event: PEvent): void => {
+        const { method, data } = event;
+        const [, reporter, isSuccess] = data;
+
+        if (
+          method === "electionsPhragmen.VoterReported" &&
+          isSuccess &&
+          reporter === address
+        ) {
+          repatriated += 5 * this.DOLLAR;
+        }
+      });
+    });
+
+    return repatriated;
   }
 
   private parseNumber(n: string): number {

@@ -8,17 +8,17 @@ const sleep = promisify(setTimeout);
 
 async function main(): Promise<void> {
   const url = "http://127.0.0.1:6161/";
-  // await singleBlock(189594, "http://127.0.0.1:8080");
+	console.log(await singleBlock(2610041, url));
 
-  void rangeLogKM(2_548_000, 2_573_000, url);
+  // void rangeLogKM(2_548_000, 2_573_000, url);
 
-  void rangeLogKM(2_573_000, 2_598_000, url);
+  // void rangeLogKM(2_573_000, 2_598_000, url);
 
-  void rangeLogKM(2_598_000, 2_623_000, url);
+  // void rangeLogKM(2_598_000, 2_623_000, url);
 
-  await sleep(10 * 1000);
+  // await sleep(10 * 1000);
 
-  await rangeLogKM(2_623_000, 2_648_000, url);
+  // await rangeLogKM(2_623_000, 2_648_000, url);
 }
 
 main().catch(console.log);

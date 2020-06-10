@@ -15,6 +15,7 @@ export type ReconcileInfo = {
   stakingRewards: number;
   tips: number;
   claimed: number;
+  repatriatedReserves: number;
 };
 
 export type AddressAndBlock = {
