@@ -1,14 +1,21 @@
 export type ReconcileInfo = {
-  block?: number;
-  address?: string;
+  block: number;
+  address: string;
   actualVsExpectedDiff: number;
   expectedBalance: number;
-  currFreeBalance: number; // "Actual"
+  currFreeBalance: number;
+  currReserveBalance: number;
   prevFreeBalance: number;
+  prevReserveBalance: number;
   partialFees: number;
   lostDust: number;
   transfers: number;
+  incomingTransfers: number;
   endowment: number;
+  stakingRewards: number;
+  tips: number;
+  claimed: number;
+  repatriatedReserves: number;
 };
 
 export type AddressAndBlock = {
@@ -30,6 +37,29 @@ export type BlockResponse = {
   onFinalize: Record<string, unknown[]>;
 };
 
+export type StakingResponse = {
+  at: {
+    hash: string;
+    height: string;
+  };
+  staking: {
+    stash: string;
+    total: string;
+    active: string;
+    unlocking: string;
+    claimedRewards: string[];
+  };
+};
+
+export type PayoutResponse = {
+  at: {
+    hash: string;
+    height: string;
+  };
+  rewardDestination: string;
+  bonded: string;
+};
+
 export type Signature = {
   signature: string;
   signer: string;
@@ -42,7 +72,7 @@ export type Extrinsic = {
   method?: string;
   callIndex: Record<string, unknown[]>;
   args: string[];
-  tip: number;
+  tip: string;
   hash: string;
   info: {
     weight: number;

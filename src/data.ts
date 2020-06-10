@@ -68,3 +68,9 @@ export const postUpgrade0Staking = [
     address: "131RjRMtuURJDWsprv42MFnJuo7SnrN1GPz8rTtqNT9UQ2Ts",
   },
 ];
+
+export const postUpgrade0StakingHeights = [154_547, 152_718, 147_071, 139_579];
+
+// left off at 28_979 going down
+// these are claims and for some reason not being picked up
+export const preUpgrade0RandomHeights = [29_130, 29_037];

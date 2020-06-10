@@ -1,6 +1,11 @@
 import axios, { AxiosInstance } from "axios";
 
-import { Balance, BlockResponse } from "../types/types";
+import {
+  Balance,
+  BlockResponse,
+  PayoutResponse,
+  StakingResponse,
+} from "../types/types";
 
 export default class SideCarApi {
   api: AxiosInstance;
@@ -21,5 +26,24 @@ export default class SideCarApi {
       ? await this.api.get(`/balance/${account}/${height}`)
       : await this.api.get(`/balance/${account}`);
     return response.data as Balance;
+  }
+
+  async getStaking(account: string, height?: number): Promise<StakingResponse> {
+    const response = height
+      ? await this.api.get(`/staking/${account}/${height}`)
+      : await this.api.get(`/staking/${account}`);
+
+    return response.data as StakingResponse;
+  }
+
+  async getPayoutInfo(
+    account: string,
+    height?: number
+  ): Promise<PayoutResponse> {
+    const response = height
+      ? await this.api.get(`/payout/${account}/${height}`)
+      : await this.api.get(`/payout/${account}`);
+
+    return response.data as PayoutResponse;
   }
 }
