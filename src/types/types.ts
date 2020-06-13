@@ -14,6 +14,7 @@ export type ReconcileInfo = {
   endowment: bigint;
   stakingRewards: bigint;
   tips: bigint;
+  slashes: bigint;
   claimed: bigint;
   repatriatedReserves: bigint;
   blockReward: bigint;
