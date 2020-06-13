@@ -1,26 +1,22 @@
-# Reconcile what??
-
-Balances
-
 ## Install and Usage
 
+Install dependencies.
 ```
 yarn
 ```
 
+Use an example by running main.
+> Remember @parity/substrate-api-sidecar must be up and running on the url you specify for it.
 ```
 yarn start
 ```
 
+If you are contributing, make sure to lint.
 ```
 yarn lint
 ```
 
-## Background
-
-There are 3 classes, `sidecar_api` for http requests to sidecar, `reconciler` for doing the business logic of calculated expected balance, and `naive_crawler` which can take in an array `[{address: 'aK1..', block: 255}]` and run the reconciler on each entry.
-
-Currently `main` is setup to connect to the default dev url for sidecar and assumes sidecar is connected to Polkadot CC1 and using a version of sidecar that supports `partialFee`
+Consult `examples` directory for usage inspiration.
 
 ### Improvements
 
