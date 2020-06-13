@@ -2,7 +2,7 @@ import NaiveCrawler from "../classes/naive_crawler";
 
 async function main(): Promise<void> {
   const sidecarUrl = "http://127.0.0.1:6161/";
-  console.log(await singleBlock(2555436, sidecarUrl));
+	console.log(await singleBlock(2619293, sidecarUrl));
 }
 
 main().catch(console.log);
