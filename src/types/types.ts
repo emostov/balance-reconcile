@@ -14,9 +14,12 @@ export type ReconcileInfo = {
   endowment: bigint;
   stakingRewards: bigint;
   tips: bigint;
+  slashes: bigint;
   claimed: bigint;
   repatriatedReserves: bigint;
   blockReward: bigint;
+  relevantExtrinsics: string[];
+  relevantEvents: string;
 };
 
 export type AddressAndBlock = {
@@ -70,7 +73,7 @@ export type Signature = {
 export type Extrinsic = {
   signature: Signature | null;
   nonce: string;
-  method?: string;
+  method: string;
   callIndex: Record<string, unknown[]>;
   args: string[];
   tip: string;

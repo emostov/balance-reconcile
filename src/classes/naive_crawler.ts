@@ -1,5 +1,5 @@
 import { AddressAndBlock, BlockResponse, ReconcileInfo } from "../types/types";
-import Reconciler from "./reconciler";
+import Reconciler from "./one_time_reconciler";
 import SideCarApi from "./sidecar_api";
 
 export default class NaiveCrawler {
