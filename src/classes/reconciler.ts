@@ -35,6 +35,7 @@ export default class Reconciler {
     const endowment = this.endowment(address, block);
     const stakingRewards = await this.stakingRewards(address, block);
     const claimed = this.claimed(address, block);
+    const blockReward = this.blockReward(address, block);
     // TODO? if endowed then expected_previous_balance == 0
     const lostDust = this.lostDust(address, block);
     const repatriatedReserves = this.repatriatedReserved(address, block);
@@ -50,7 +51,8 @@ export default class Reconciler {
       incomingTransfers +
       stakingRewards +
       claimed +
-      repatriatedReserves;
+      repatriatedReserves +
+      blockReward;
 
     return {
       // maybe should add a notes section
@@ -72,6 +74,7 @@ export default class Reconciler {
       tips,
       claimed,
       repatriatedReserves,
+      blockReward,
     };
   }
 
@@ -259,8 +262,8 @@ export default class Reconciler {
   }
 
   private repatriatedReserved(address: string, block: BlockResponse): bigint {
-    let repatriated = BigInt(0);
     const { extrinsics } = block;
+    let repatriated = BigInt(0);
 
     extrinsics.forEach((ext): void => {
       const { events } = ext;
@@ -280,6 +283,25 @@ export default class Reconciler {
     });
 
     return repatriated;
+  }
+
+  private blockReward(address: string, block: BlockResponse): bigint {
+    const { extrinsics } = block;
+    let reward = BigInt(0);
+
+    for (const ext of extrinsics) {
+      const { events } = ext;
+
+      for (const event of events) {
+        const { method, data } = event;
+        const [blockAuthor, amount] = data;
+        if (method === "balances.Deposit" && blockAuthor === address) {
+          reward += BigInt(amount);
+        }
+      }
+    }
+
+    return reward;
   }
 
   // boolean "is" methods

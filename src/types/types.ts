@@ -16,6 +16,7 @@ export type ReconcileInfo = {
   tips: bigint;
   claimed: bigint;
   repatriatedReserves: bigint;
+  blockReward: bigint;
 };
 
 export type AddressAndBlock = {
