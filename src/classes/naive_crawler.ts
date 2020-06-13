@@ -41,7 +41,7 @@ export default class NaiveCrawler {
       (address): AddressAndBlock => {
         return {
           address,
-          block: height,
+          block: height.toString(),
         };
       }
     );
@@ -55,7 +55,7 @@ export default class NaiveCrawler {
     // my brain is sleepy, pls help me name variables
 
     const reconcilePromises = toCheck.map(async ({ address, block }) => {
-      return await this.reconciler.reconcileAtHeight(address, block);
+      return await this.reconciler.reconcileAtHeight(address, Number(block));
     });
 
     return await Promise.all(reconcilePromises);
@@ -72,11 +72,12 @@ export default class NaiveCrawler {
     updates.push(`Log for block number ${infos[0].block}`);
 
     infos.forEach((info) => {
-      if (info.actualVsExpectedDiff !== 0) {
+      if (info.actualVsExpectedDiff !== BigInt(0)) {
         // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         console.log(`${info.block} has an issue`);
         console.log(info);
         updates.push(`${info.block} has an issue`);
+        updates.push(JSON.stringify(info));
         count += 1;
       } else {
         // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
