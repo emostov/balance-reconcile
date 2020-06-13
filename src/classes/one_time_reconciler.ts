@@ -8,7 +8,7 @@ import SideCarApi from "./sidecar_api";
 
 export default class OneTimeReconciler {
   api: SideCarApi;
-  methods: string[];
+  extrinsics: string[];
   events: PEvent[];
   readonly DOLLAR = 10_000_000_000;
   //TODO
@@ -16,7 +16,7 @@ export default class OneTimeReconciler {
   // height: number;
   constructor(sidecarBaseUrl: string) {
     this.api = new SideCarApi(sidecarBaseUrl);
-    this.methods = [];
+    this.extrinsics = [];
     this.events = [];
 
     // TODO replace address and height as params and just use these instead
@@ -88,7 +88,7 @@ export default class OneTimeReconciler {
       claimed,
       repatriatedReserves,
       blockReward,
-      relevantMethods: this.methods,
+      relevantExtrinsics: this.extrinsics,
       relevantEvents: JSON.stringify(this.events),
     };
   }
@@ -126,7 +126,7 @@ export default class OneTimeReconciler {
       // if(ext.method == "utility.batch"){}
       if (this.isTransferOutOfAddress(address, ext) && this.isSuccess(ext)) {
         sum += BigInt(ext.args[1]);
-        this.methods.push(ext.method);
+        this.extrinsics.push(ext.method);
       }
     });
 
@@ -141,7 +141,7 @@ export default class OneTimeReconciler {
       // if(ext.method == "utility.batch"){}
       if (this.isTransferIntoAddress(address, ext) && this.isSuccess(ext)) {
         sum += BigInt(ext.args[1]);
-        this.methods.push("'incoming' " + ext.method);
+        this.extrinsics.push("'incoming' " + ext.method);
       }
     });
 

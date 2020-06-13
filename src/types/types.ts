@@ -17,7 +17,7 @@ export type ReconcileInfo = {
   claimed: bigint;
   repatriatedReserves: bigint;
   blockReward: bigint;
-  relevantMethods: string[];
+  relevantExtrinsics: string[];
   relevantEvents: string;
 };
 
