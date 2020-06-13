@@ -1,25 +1,25 @@
 export type ReconcileInfo = {
   block: number;
   address: string;
-  actualVsExpectedDiff: number;
-  expectedBalance: number;
-  currFreeBalance: number;
-  currReserveBalance: number;
-  prevFreeBalance: number;
-  prevReserveBalance: number;
-  partialFees: number;
-  lostDust: number;
-  transfers: number;
-  incomingTransfers: number;
-  endowment: number;
-  stakingRewards: number;
-  tips: number;
-  claimed: number;
-  repatriatedReserves: number;
+  actualVsExpectedDiff: bigint;
+  expectedBalance: bigint;
+  currFreeBalance: bigint;
+  currReserveBalance: bigint;
+  prevFreeBalance: bigint;
+  prevReserveBalance: bigint;
+  partialFees: bigint;
+  lostDust: bigint;
+  transfers: bigint;
+  incomingTransfers: bigint;
+  endowment: bigint;
+  stakingRewards: bigint;
+  tips: bigint;
+  claimed: bigint;
+  repatriatedReserves: bigint;
 };
 
 export type AddressAndBlock = {
-  block: number;
+  block: string;
   address: string;
 };
 
@@ -68,14 +68,14 @@ export type Signature = {
 // This will need to be changed soon
 export type Extrinsic = {
   signature: Signature | null;
-  nonce: number;
+  nonce: string;
   method?: string;
   callIndex: Record<string, unknown[]>;
   args: string[];
   tip: string;
   hash: string;
   info: {
-    weight: number;
+    weight: string;
     class: string; // could put enum?
     partialFee?: string;
     paysFee?: boolean;
@@ -95,7 +95,7 @@ export type Balance = {
     hash: string;
     height: string;
   };
-  nonce: number;
+  nonce: string;
   free: string;
   reserved: string;
   miscFrozen: string;

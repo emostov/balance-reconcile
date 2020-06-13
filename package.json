@@ -2,11 +2,10 @@
   "name": "balance-reconcile",
   "version": "1.0.0",
   "description": "reconcile account balances on substrate based chains",
-  "main": "main.js",
   "author": "Zeke Mostov",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/main.ts",
+    "start": "ts-node src/examples/main.ts",
     "lint": "tsc --noEmit && eslint . --ext ts"
   },
   "devDependencies": {

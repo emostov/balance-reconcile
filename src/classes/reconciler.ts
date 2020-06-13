@@ -23,10 +23,10 @@ export default class Reconciler {
     const curBalance = await this.api.getBalance(address, height);
     const block = await this.api.getBlock(height);
 
-    const prevFreeBalance = this.parseNumber(prevBalance.free);
-    const prevReserveBalance = this.parseNumber(prevBalance.reserved);
-    const currFreeBalance = this.parseNumber(curBalance.free);
-    const currReserveBalance = this.parseNumber(curBalance.reserved);
+    const prevFreeBalance = BigInt(prevBalance.free);
+    const prevReserveBalance = BigInt(prevBalance.reserved);
+    const currFreeBalance = BigInt(curBalance.free);
+    const currReserveBalance = BigInt(curBalance.reserved);
 
     const partialFees = this.partialFees(address, block);
     const transfers = this.transfers(address, block);
@@ -39,7 +39,7 @@ export default class Reconciler {
     const lostDust = this.lostDust(address, block);
     const repatriatedReserves = this.repatriatedReserved(address, block);
 
-    const expectedBalance: number =
+    const expectedBalance: bigint =
       prevFreeBalance +
       prevReserveBalance -
       transfers -
@@ -80,9 +80,10 @@ export default class Reconciler {
 
   // Also these functions could be broken up so that operate within a loop that goes
   // through extrinsics instead of each doing there own loop.
-  private partialFees(address: string, block: BlockResponse): number {
+  private partialFees(address: string, block: BlockResponse): bigint {
     const { extrinsics } = block;
-    let sum = 0;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+    let sum = BigInt(0);
     extrinsics.forEach((ext: Extrinsic): void => {
       // TODO deal with any type of nested calls
       // if(ext.method == "utility.batch"){}
@@ -91,81 +92,49 @@ export default class Reconciler {
         info: { partialFee },
       } = ext;
 
-      if (signature && signature.signer === address && partialFee) {
-        sum += this.parseNumber(partialFee);
+      if (signature?.signer === address && typeof partialFee === "string") {
+        sum += BigInt(partialFee);
       }
     });
 
     return sum;
   }
 
-  private isTransferOutOfAddress(
-    address: string,
-    ext: Extrinsic
-  ): boolean | null {
-    return (
-      ext.signature &&
-      ext.signature.signer == address &&
-      (ext.method == "balances.transferKeepAlive" ||
-        ext.method == "balances.transfer")
-    );
-  }
-
-  private isSuccess(ext: Extrinsic) {
-    return ext.success;
-  }
-
-  private transfers(address: string, block: BlockResponse): number {
+  private transfers(address: string, block: BlockResponse): bigint {
     const { extrinsics } = block;
-    let sum = 0;
+    let sum = BigInt(0);
     extrinsics.forEach((ext: Extrinsic): void => {
       // TODO deal with any type of nested calls like
       // if(ext.method == "utility.batch"){}
       if (this.isTransferOutOfAddress(address, ext) && this.isSuccess(ext)) {
-        sum += this.parseNumber(ext.args[1]);
+        sum += BigInt(ext.args[1]);
       }
     });
 
     return sum;
   }
 
-  private isTransferIntoAddress(
-    address: string,
-    ext: Extrinsic
-  ): boolean | null {
-    const [dest] = ext.args;
-    return (
-      (ext.method == "balances.transferKeepAlive" ||
-        ext.method == "balances.transfer") &&
-      dest === address
-    );
-  }
-
-  private incomingTransfers(address: string, block: BlockResponse): number {
+  private incomingTransfers(address: string, block: BlockResponse): bigint {
     const { extrinsics } = block;
-    let sum = 0;
+    let sum = BigInt(0);
     extrinsics.forEach((ext: Extrinsic): void => {
       // TODO deal with any type of nested calls like
       // if(ext.method == "utility.batch"){}
       if (this.isTransferIntoAddress(address, ext) && this.isSuccess(ext)) {
-        sum += this.parseNumber(ext.args[1]);
+        sum += BigInt(ext.args[1]);
       }
     });
 
     return sum;
   }
 
-  private isSigner(address: string, ext: Extrinsic) {
-    return ext.signature && ext.signature.signer == address;
-  }
-
-  private tips(address: string, block: BlockResponse): number {
+  private tips(address: string, block: BlockResponse): bigint {
     const { extrinsics } = block;
-    let tips = 0;
+    let tips = BigInt(0);
 
     extrinsics.forEach((ext) => {
       if (ext.tip && this.isSigner(address, ext)) {
-        tips += this.parseNumber(ext.tip);
+        tips += BigInt(ext.tip);
       }
     });
 
@@ -175,16 +144,15 @@ export default class Reconciler {
   private async stakingRewards(
     address: string,
     block: BlockResponse
-  ): Promise<number> {
+  ): Promise<bigint> {
     const { extrinsics, number } = block;
-    let rewards = 0;
+    let rewards = BigInt(0);
     for (const ext of extrinsics) {
       const { events } = ext;
 
       for (const event of events) {
         const { method, data } = event;
         const [stash, amount] = data;
-        console.log(method);
         // we should have these methods as constants somewhere to avoid fat thumb errors
         if (!(method === "staking.Reward")) continue;
 
@@ -197,9 +165,9 @@ export default class Reconciler {
           (rewardDestination === "Staked" || rewardDestination === "Stash") &&
           stash === address
         ) {
-          rewards += this.parseNumber(amount);
+          rewards += BigInt(amount);
         } else if (rewardDestination === "Controller" && bonded === address) {
-          rewards += this.parseNumber(amount);
+          rewards += BigInt(amount);
         }
       }
     }
@@ -207,9 +175,9 @@ export default class Reconciler {
     return rewards;
   }
 
-  private endowment(address: string, block: BlockResponse): number {
+  private endowment(address: string, block: BlockResponse): bigint {
     const { extrinsics } = block;
-    let endowed = 0;
+    let endowed = BigInt(0);
     extrinsics.forEach((ext): void => {
       const { events } = ext;
 
@@ -219,7 +187,7 @@ export default class Reconciler {
 
         // we should have these methods as constants somewhere to avoid fat thumb errors
         if (method === "balances.Endowed" && endowAddr === address) {
-          endowed += this.parseNumber(amount);
+          endowed += BigInt(amount);
         }
       });
     });
@@ -227,13 +195,13 @@ export default class Reconciler {
     return endowed;
   }
 
-  private lostDust(address: string, block: BlockResponse): number {
+  private lostDust(address: string, block: BlockResponse): bigint {
     const killed = this.killedAccounts(block);
 
-    if (!(address in killed)) return 0;
+    if (!(address in killed)) return BigInt(0);
 
     const { extrinsics } = block;
-    let dust = 0;
+    let dust = BigInt(0);
     extrinsics.forEach((ext): void => {
       const { events } = ext;
 
@@ -242,7 +210,7 @@ export default class Reconciler {
         const [deadAddr, amount] = data;
 
         if (method === "balances.DustLost" && deadAddr === address) {
-          dust += this.parseNumber(amount);
+          dust += BigInt(amount);
         }
       });
     });
@@ -270,8 +238,8 @@ export default class Reconciler {
     return killed;
   }
 
-  private claimed(address: string, block: BlockResponse): number {
-    let claimed = 0;
+  private claimed(address: string, block: BlockResponse): bigint {
+    let claimed = BigInt(0);
     const { extrinsics } = block;
 
     extrinsics.forEach((ext): void => {
@@ -282,7 +250,7 @@ export default class Reconciler {
         const [claimsAddr, , amount] = data;
 
         if (method === "claims.Claimed" && claimsAddr === address) {
-          claimed += this.parseNumber(amount);
+          claimed += BigInt(amount);
         }
       });
     });
@@ -290,8 +258,8 @@ export default class Reconciler {
     return claimed;
   }
 
-  private repatriatedReserved(address: string, block: BlockResponse): number {
-    let repatriated = 0;
+  private repatriatedReserved(address: string, block: BlockResponse): bigint {
+    let repatriated = BigInt(0);
     const { extrinsics } = block;
 
     extrinsics.forEach((ext): void => {
@@ -306,12 +274,45 @@ export default class Reconciler {
           isSuccess &&
           reporter === address
         ) {
-          repatriated += 5 * this.DOLLAR;
+          repatriated += BigInt(5 * this.DOLLAR);
         }
       });
     });
 
     return repatriated;
+  }
+
+  // boolean "is" methods
+  private isTransferOutOfAddress(
+    address: string,
+    ext: Extrinsic
+  ): boolean | null {
+    return (
+      ext.signature &&
+      ext.signature.signer == address &&
+      (ext.method == "balances.transferKeepAlive" ||
+        ext.method == "balances.transfer")
+    );
+  }
+
+  private isSuccess(ext: Extrinsic) {
+    return ext.success;
+  }
+
+  private isTransferIntoAddress(
+    address: string,
+    ext: Extrinsic
+  ): boolean | null {
+    const [dest] = ext.args;
+    return (
+      (ext.method == "balances.transferKeepAlive" ||
+        ext.method == "balances.transfer") &&
+      dest === address
+    );
+  }
+
+  private isSigner(address: string, ext: Extrinsic) {
+    return ext.signature && ext.signature.signer == address;
   }
 
   private parseNumber(n: string): number {
