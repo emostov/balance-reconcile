@@ -38,3 +38,25 @@ export async function rangeLogKM(
     }
   }
 }
+
+```
+let numSlashingSpans = () => {
+	if (slashingSpans.isSome) {
+	const span = slashingSpans.unwrap();
+	return span.prior.length + 1;
+} else {
+	return  0;
+}
+}()
+```
+vs.
+
+```
+let numSlashingSpans;
+if (slashingSpans.isSome) {
+	const span = slashingSpans.unwrap();
+	numSlashingSpans = span.prior.length + 1;
+} else {
+	numSlashingSpans = 0;
+}
+```
