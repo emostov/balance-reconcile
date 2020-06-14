@@ -1,25 +1,25 @@
 export type ReconcileInfo = {
   block: number;
   address: string;
-  actualVsExpectedDiff: bigint;
-  expectedBalance: bigint;
-  currFreeBalance: bigint;
-  currReserveBalance: bigint;
-  prevFreeBalance: bigint;
-  prevReserveBalance: bigint;
-  partialFees: bigint;
-  lostDust: bigint;
-  transfers: bigint;
-  incomingTransfers: bigint;
-  endowment: bigint;
-  stakingRewards: bigint;
-  tips: bigint;
-  slashes: bigint;
-  claimed: bigint;
-  repatriatedReserves: bigint;
-  blockReward: bigint;
+  actualVsExpectedDiff: string;
+  expectedBalance: string;
+  currFreeBalance: string;
+  currReserveBalance: string;
+  prevFreeBalance: string;
+  prevReserveBalance: string;
+  partialFees: string;
+  lostDust: string;
+  transfers: string;
+  incomingTransfers: string;
+  endowment: string;
+  stakingRewards: string;
+  tips: string;
+  slashes: string;
+  claimed: string;
+  repatriatedReserves: string;
+  blockReward: string;
   relevantExtrinsics: string[];
-  relevantEvents: string;
+  relevantEvents: string[];
 };
 
 export type AddressAndBlock = {

@@ -8,8 +8,6 @@ import SideCarApi from "./sidecar_api";
 
 export default class OneTimeReconciler {
   api: SideCarApi;
-  extrinsics: string[];
-  events: PEvent[];
   readonly DOLLAR = 10_000_000_000;
   //TODO
   // address: string;
@@ -58,7 +56,7 @@ export default class OneTimeReconciler {
     );
     const blockReward = this.blockReward(address, block, events);
     // TODO test this on a block that actually has slashing.
-    const slashes = this.slashes(address, block);
+    const slashes = this.slashes(address, block, events);
 
     const expectedBalance: bigint =
       prevFreeBalance +
@@ -79,26 +77,29 @@ export default class OneTimeReconciler {
       // maybe should add a notes section
       block: height,
       address,
-      actualVsExpectedDiff:
-        currFreeBalance + currReserveBalance - expectedBalance,
-      currFreeBalance,
-      currReserveBalance,
-      expectedBalance,
-      prevFreeBalance,
-      prevReserveBalance,
-      partialFees,
-      lostDust,
-      transfers,
-      incomingTransfers,
-      endowment,
-      stakingRewards,
-      tips,
-      slashes,
-      claimed,
-      repatriatedReserves,
-      blockReward,
-      relevantExtrinsics: this.extrinsics,
-      relevantEvents: JSON.stringify(this.events),
+      actualVsExpectedDiff: (
+        currFreeBalance +
+        currReserveBalance -
+        expectedBalance
+      ).toString(),
+      expectedBalance: expectedBalance.toString(),
+      currFreeBalance: currFreeBalance.toString(),
+      currReserveBalance: currReserveBalance.toString(),
+      prevFreeBalance: prevFreeBalance.toString(),
+      prevReserveBalance: prevReserveBalance.toString(),
+      partialFees: partialFees.toString(),
+      lostDust: lostDust.toString(),
+      transfers: transfers.toString(),
+      incomingTransfers: incomingTransfers.toString(),
+      endowment: endowment.toString(),
+      stakingRewards: stakingRewards.toString(),
+      tips: tips.toString(),
+      slashes: slashes.toString(),
+      claimed: claimed.toString(),
+      repatriatedReserves: repatriatedReserves.toString(),
+      blockReward: blockReward.toString(),
+      relevantExtrinsics: extrinsics,
+      relevantEvents: events,
     };
   }
 
@@ -174,7 +175,7 @@ export default class OneTimeReconciler {
     let tips = BigInt(0);
 
     extrinsics.forEach((ext) => {
-      if (ext.tip && this.isSigner(address, ext)) {
+      if (BigInt(ext.tip) > 0 && this.isSigner(address, ext)) {
         tips += BigInt(ext.tip);
         events.push("tip");
       }
@@ -285,7 +286,6 @@ export default class OneTimeReconciler {
           const [deadAddr] = event.data;
           if (!(deadAddr in killed)) {
             killed[deadAddr] = true;
-            this.events.push(event);
           }
         }
       });
@@ -331,16 +331,14 @@ export default class OneTimeReconciler {
       const { events } = ext;
 
       events.forEach((event: PEvent): void => {
-        const { method, data } = event;
-        const [, reporter, isSuccess] = data;
-
-        if (
-          method === "electionsPhragmen.VoterReported" &&
-          isSuccess &&
-          reporter === address
-        ) {
+        if (this.isVoterReported(event, address)) {
           repatriated += BigInt(5 * this.DOLLAR);
-          eventsTrack.push(method);
+          eventsTrack.push(event.method);
+        } else if (this.isJudgementGiven(event, address, ext)) {
+          eventsTrack.push(event.method);
+
+          // This is a hardcoded guess! In reality this is not a constant
+          repatriated += BigInt("5000000000000");
         }
       });
     });
@@ -427,6 +425,25 @@ export default class OneTimeReconciler {
 
   private isSigner(address: string, ext: Extrinsic) {
     return ext.signature && ext.signature.signer == address;
+  }
+
+  private isJudgementGiven(
+    event: PEvent,
+    address: string,
+    ext: Extrinsic
+  ): boolean | null {
+    const { method } = event;
+    return this.isSigner(address, ext) && method === "identity.JudgementGiven";
+  }
+
+  private isVoterReported(event: PEvent, address: string): boolean | string {
+    const { method, data } = event;
+    const [, reporter, isSuccess] = data;
+    return (
+      method === "electionsPhragmen.VoterReported" &&
+      isSuccess &&
+      reporter === address
+    );
   }
 
   private parseNumber(n: string): number {

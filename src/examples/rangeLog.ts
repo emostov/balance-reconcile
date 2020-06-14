@@ -5,15 +5,15 @@ import NaiveCrawler from "../classes/naive_crawler";
 export async function rangeLogKM(
   start: number,
   end: number,
-  sidecarUrl: string
+  sidecarUrl: string,
+  logName?: string
 ): Promise<void> {
-  const crawler = new NaiveCrawler(sidecarUrl);
-
   // Change file prefix/naming here
-  const fileName = `log_KM_${start}_to_${end}`;
+  const fileName = logName ?? `log_KM_${start}_to_${end}`;
 
   for (let i = start; i < end; i += 1) {
-    console.log(`Checking block ${i}`);
+    const crawler = new NaiveCrawler(sidecarUrl);
+    // console.log(`Checking block ${i}`);
     try {
       const result = await crawler.crawlBlock(i);
       crawler.warnWhenDiff(result).forEach((line) => {

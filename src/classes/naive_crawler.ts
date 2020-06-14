@@ -69,11 +69,10 @@ export default class NaiveCrawler {
       return updates;
     }
 
-    updates.push(`Log for block number ${infos[0].block}`);
-
     infos.forEach((info) => {
-      if (info.actualVsExpectedDiff !== BigInt(0)) {
+      if (BigInt(info.actualVsExpectedDiff) !== BigInt(0)) {
         // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        updates.push(`Log for block number ${infos[0].block}`);
         console.log(`${info.block} has an issue`);
         console.log(info);
         updates.push(`${info.block} has an issue`);
@@ -81,12 +80,14 @@ export default class NaiveCrawler {
         count += 1;
       } else {
         // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-        console.log(`${info.block} looks ok`);
-        updates.push(`${info.block} looks ok`);
+        // console.log(`${info.block} looks ok`);
+        // updates.push(`${info.block} looks ok`);
       }
     });
 
-    console.log(`Found ${count} discrepancies`);
+    if (updates.length) {
+      console.log(`Found ${count} discrepancies`);
+    }
 
     return updates;
   }
