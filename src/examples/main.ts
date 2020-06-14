@@ -1,10 +1,10 @@
 import NaiveCrawler from "../classes/naive_crawler";
-import { b1 } from "./ksmBatch1";
+// import { b1 } from "./ksmBatch1";
 async function main(): Promise<void> {
-  // const sidecarUrl = "http://127.0.0.1:6161/";
+  const sidecarUrl = "http://127.0.0.1:6161/";
   // console.log(await singleBlock(2619293, sidecarUrl));
 
-  await b1();
+  await singleBlock(2318830, sidecarUrl);
 }
 
 main().catch(console.log);

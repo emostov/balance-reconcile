@@ -16,8 +16,6 @@ export default class OneTimeReconciler {
   // height: number;
   constructor(sidecarBaseUrl: string) {
     this.api = new SideCarApi(sidecarBaseUrl);
-    this.extrinsics = [];
-    this.events = [];
 
     // TODO replace address and height as params and just use these instead
     // this.address = address;
@@ -29,6 +27,8 @@ export default class OneTimeReconciler {
     address: string,
     height: number
   ): Promise<ReconcileInfo> {
+    const extrinsics: string[] = [];
+    const events: string[] = [];
     const prevBalance = await this.api.getBalance(address, height - 1);
     const curBalance = await this.api.getBalance(address, height);
     const block = await this.api.getBlock(height);
@@ -39,16 +39,24 @@ export default class OneTimeReconciler {
     const currReserveBalance = BigInt(curBalance.reserved);
 
     const partialFees = this.partialFees(address, block);
-    const transfers = this.transfers(address, block);
-    const tips = this.tips(address, block);
-    const incomingTransfers = this.incomingTransfers(address, block);
-    const endowment = this.endowment(address, block);
-    const stakingRewards = await this.stakingRewards(address, block);
-    const claimed = this.claimed(address, block);
-    const blockReward = this.blockReward(address, block);
+    const transfers = this.transfers(address, block, extrinsics);
+    const incomingTransfers = this.incomingTransfers(
+      address,
+      block,
+      extrinsics
+    );
+    const tips = this.tips(address, block, events);
+    const stakingRewards = await this.stakingRewards(address, block, events);
+    const endowment = this.endowment(address, block, events);
+    const claimed = this.claimed(address, block, events);
     // TODO? if endowed then expected_previous_balance == 0
-    const lostDust = this.lostDust(address, block);
-    const repatriatedReserves = this.repatriatedReserved(address, block);
+    const lostDust = this.lostDust(address, block, events);
+    const repatriatedReserves = this.repatriatedReserved(
+      address,
+      block,
+      events
+    );
+    const blockReward = this.blockReward(address, block, events);
     // TODO test this on a block that actually has slashing.
     const slashes = this.slashes(address, block);
 
@@ -119,7 +127,11 @@ export default class OneTimeReconciler {
     return sum;
   }
 
-  private transfers(address: string, block: BlockResponse): bigint {
+  private transfers(
+    address: string,
+    block: BlockResponse,
+    extrins: string[]
+  ): bigint {
     const { extrinsics } = block;
     let sum = BigInt(0);
     extrinsics.forEach((ext: Extrinsic): void => {
@@ -127,14 +139,18 @@ export default class OneTimeReconciler {
       // if(ext.method == "utility.batch"){}
       if (this.isTransferOutOfAddress(address, ext) && this.isSuccess(ext)) {
         sum += BigInt(ext.args[1]);
-        this.extrinsics.push(ext.method);
+        extrins.push(ext.method);
       }
     });
 
     return sum;
   }
 
-  private incomingTransfers(address: string, block: BlockResponse): bigint {
+  private incomingTransfers(
+    address: string,
+    block: BlockResponse,
+    extrins: string[]
+  ): bigint {
     const { extrinsics } = block;
     let sum = BigInt(0);
     extrinsics.forEach((ext: Extrinsic): void => {
@@ -142,20 +158,25 @@ export default class OneTimeReconciler {
       // if(ext.method == "utility.batch"){}
       if (this.isTransferIntoAddress(address, ext) && this.isSuccess(ext)) {
         sum += BigInt(ext.args[1]);
-        this.extrinsics.push("'incoming' " + ext.method);
+        extrins.push("'incoming' " + ext.method);
       }
     });
 
     return sum;
   }
 
-  private tips(address: string, block: BlockResponse): bigint {
+  private tips(
+    address: string,
+    block: BlockResponse,
+    events: string[]
+  ): bigint {
     const { extrinsics } = block;
     let tips = BigInt(0);
 
     extrinsics.forEach((ext) => {
       if (ext.tip && this.isSigner(address, ext)) {
         tips += BigInt(ext.tip);
+        events.push("tip");
       }
     });
 
@@ -164,7 +185,8 @@ export default class OneTimeReconciler {
 
   private async stakingRewards(
     address: string,
-    block: BlockResponse
+    block: BlockResponse,
+    eventsTrack: string[]
   ): Promise<bigint> {
     const { extrinsics, number } = block;
     let rewards = BigInt(0);
@@ -186,11 +208,11 @@ export default class OneTimeReconciler {
           (rewardDestination === "Staked" || rewardDestination === "Stash") &&
           stash === address
         ) {
-          this.events.push(event);
+          eventsTrack.push(method);
           rewards += BigInt(amount);
         } else if (rewardDestination === "Controller" && bonded === address) {
           rewards += BigInt(amount);
-          this.events.push(event);
+          eventsTrack.push(method);
         }
       }
     }
@@ -198,7 +220,11 @@ export default class OneTimeReconciler {
     return rewards;
   }
 
-  private endowment(address: string, block: BlockResponse): bigint {
+  private endowment(
+    address: string,
+    block: BlockResponse,
+    eventsTrack: string[]
+  ): bigint {
     const { extrinsics } = block;
     let endowed = BigInt(0);
     extrinsics.forEach((ext): void => {
@@ -211,7 +237,7 @@ export default class OneTimeReconciler {
         // we should have these methods as constants somewhere to avoid fat thumb errors
         if (method === "balances.Endowed" && endowAddr === address) {
           endowed += BigInt(amount);
-          this.events.push(event);
+          eventsTrack.push(method);
         }
       });
     });
@@ -219,7 +245,11 @@ export default class OneTimeReconciler {
     return endowed;
   }
 
-  private lostDust(address: string, block: BlockResponse): bigint {
+  private lostDust(
+    address: string,
+    block: BlockResponse,
+    eventsTrack: string[]
+  ): bigint {
     const killed = this.killedAccounts(block);
 
     if (!(address in killed)) return BigInt(0);
@@ -235,7 +265,7 @@ export default class OneTimeReconciler {
 
         if (method === "balances.DustLost" && deadAddr === address) {
           dust += BigInt(amount);
-          this.events.push(event);
+          eventsTrack.push(method);
         }
       });
     });
@@ -244,7 +274,7 @@ export default class OneTimeReconciler {
   }
 
   private killedAccounts(block: BlockResponse): Record<string, boolean> {
-    const killed: Record<string, boolean> = {}; // Should this be Set instead?
+    const killed: Record<string, boolean> = {};
     const { extrinsics } = block;
 
     extrinsics.forEach((ext): void => {
@@ -264,7 +294,11 @@ export default class OneTimeReconciler {
     return killed;
   }
 
-  private claimed(address: string, block: BlockResponse): bigint {
+  private claimed(
+    address: string,
+    block: BlockResponse,
+    eventsTrack: string[]
+  ): bigint {
     let claimed = BigInt(0);
     const { extrinsics } = block;
 
@@ -277,7 +311,7 @@ export default class OneTimeReconciler {
 
         if (method === "claims.Claimed" && claimsAddr === address) {
           claimed += BigInt(amount);
-          this.events.push(event);
+          eventsTrack.push(method);
         }
       });
     });
@@ -285,7 +319,11 @@ export default class OneTimeReconciler {
     return claimed;
   }
 
-  private repatriatedReserved(address: string, block: BlockResponse): bigint {
+  private repatriatedReserved(
+    address: string,
+    block: BlockResponse,
+    eventsTrack: string[]
+  ): bigint {
     const { extrinsics } = block;
     let repatriated = BigInt(0);
 
@@ -302,7 +340,7 @@ export default class OneTimeReconciler {
           reporter === address
         ) {
           repatriated += BigInt(5 * this.DOLLAR);
-          this.events.push(event);
+          eventsTrack.push(method);
         }
       });
     });
@@ -310,7 +348,11 @@ export default class OneTimeReconciler {
     return repatriated;
   }
 
-  private blockReward(address: string, block: BlockResponse): bigint {
+  private blockReward(
+    address: string,
+    block: BlockResponse,
+    eventsTrack: string[]
+  ): bigint {
     const { extrinsics } = block;
     let reward = BigInt(0);
 
@@ -322,7 +364,7 @@ export default class OneTimeReconciler {
         const [blockAuthor, amount] = data;
         if (method === "balances.Deposit" && blockAuthor === address) {
           reward += BigInt(amount);
-          this.events.push(event);
+          eventsTrack.push(method);
         }
       }
     }
@@ -330,7 +372,11 @@ export default class OneTimeReconciler {
     return reward;
   }
 
-  private slashes(address: string, block: BlockResponse): bigint {
+  private slashes(
+    address: string,
+    block: BlockResponse,
+    eventsTrack: string[]
+  ): bigint {
     const { extrinsics } = block;
     let reward = BigInt(0);
 
@@ -342,7 +388,7 @@ export default class OneTimeReconciler {
         const [validator, amount] = data;
         if (method === "staking.Slash" && validator === address) {
           reward += BigInt(amount);
-          this.events.push(event);
+          eventsTrack.push(method);
         }
       }
     }
