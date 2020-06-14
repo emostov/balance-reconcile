@@ -62,32 +62,16 @@ export default class NaiveCrawler {
   }
 
   warnWhenDiff(infos: ReconcileInfo[]): string[] {
-    let count = 0;
     const updates: string[] = [];
-
-    if (!infos.length) {
-      return updates;
-    }
 
     infos.forEach((info) => {
       if (BigInt(info.actualVsExpectedDiff) !== BigInt(0)) {
         // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         updates.push(`Log for block number ${infos[0].block}`);
-        console.log(`${info.block} has an issue`);
-        console.log(info);
-        updates.push(`${info.block} has an issue`);
-        updates.push(JSON.stringify(info));
-        count += 1;
-      } else {
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-        // console.log(`${info.block} looks ok`);
-        // updates.push(`${info.block} looks ok`);
+        updates.push(`issue ${info.block}`);
+        updates.push(JSON.stringify(info, null, "  "));
       }
     });
-
-    if (updates.length) {
-      console.log(`Found ${count} discrepancies`);
-    }
 
     return updates;
   }

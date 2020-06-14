@@ -1,0 +1,110 @@
+
+Log for block number 2581997 
+issue 2581997 
+{
+  "block": 2581997,
+  "address": "FiShke2RQheCbvvZTUibwTC3VFJRrwP4CMGtjncioVhSNjE",
+  "actualVsExpectedDiff": "-361575",
+  "expectedBalance": "15799880680",
+  "currFreeBalance": "15799519105",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "206800000000",
+  "prevReserveBalance": "0",
+  "partialFees": "1000119320",
+  "lostDust": "0",
+  "transfers": "190000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2581998 
+issue 2581998 
+{
+  "block": 2581998,
+  "address": "HRRiXxqfUHqLNwcQUsiBjiUyqvb1VssRCSwDovhQSnEgQ4T",
+  "actualVsExpectedDiff": "-1045517",
+  "expectedBalance": "4807999669286",
+  "currFreeBalance": "4807998623769",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "4809000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "1000330714",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [],
+  "relevantEvents": []
+} 
+
+Log for block number 2581997 
+issue 2581997 
+{
+  "block": 2581997,
+  "address": "FiShke2RQheCbvvZTUibwTC3VFJRrwP4CMGtjncioVhSNjE",
+  "actualVsExpectedDiff": "-361575",
+  "expectedBalance": "15799880680",
+  "currFreeBalance": "15799519105",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "206800000000",
+  "prevReserveBalance": "0",
+  "partialFees": "1000119320",
+  "lostDust": "0",
+  "transfers": "190000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2581998 
+issue 2581998 
+{
+  "block": 2581998,
+  "address": "HRRiXxqfUHqLNwcQUsiBjiUyqvb1VssRCSwDovhQSnEgQ4T",
+  "actualVsExpectedDiff": "-1045517",
+  "expectedBalance": "4807999669286",
+  "currFreeBalance": "4807998623769",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "4809000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "1000330714",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 

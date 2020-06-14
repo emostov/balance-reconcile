@@ -25,11 +25,12 @@ export default class OneTimeReconciler {
     address: string,
     height: number
   ): Promise<ReconcileInfo> {
-    const extrinsics: string[] = [];
-    const events: string[] = [];
     const prevBalance = await this.api.getBalance(address, height - 1);
     const curBalance = await this.api.getBalance(address, height);
     const block = await this.api.getBlock(height);
+
+    const events: string[] = [];
+    const extrinsics = this.extrinsics(address, block);
 
     const prevFreeBalance = BigInt(prevBalance.free);
     const prevReserveBalance = BigInt(prevBalance.reserved);
@@ -37,12 +38,8 @@ export default class OneTimeReconciler {
     const currReserveBalance = BigInt(curBalance.reserved);
 
     const partialFees = this.partialFees(address, block);
-    const transfers = this.transfers(address, block, extrinsics);
-    const incomingTransfers = this.incomingTransfers(
-      address,
-      block,
-      extrinsics
-    );
+    const transfers = this.transfers(address, block);
+    const incomingTransfers = this.incomingTransfers(address, block);
     const tips = this.tips(address, block, events);
     const stakingRewards = await this.stakingRewards(address, block, events);
     const endowment = this.endowment(address, block, events);
@@ -105,6 +102,17 @@ export default class OneTimeReconciler {
 
   // In the future, it may be nice to log all the relevant extrinsics to the address
   // for better records.
+  private extrinsics(address: string, block: BlockResponse): string[] {
+    const extrinsicsTrack: string[] = [];
+    const { extrinsics } = block;
+    for (const ext of extrinsics) {
+      if (this.isSigner(address, ext)) {
+        extrinsicsTrack.push(ext.method);
+      }
+    }
+
+    return extrinsicsTrack;
+  }
 
   // Also these functions could be broken up so that operate within a loop that goes
   // through extrinsics instead of each doing there own loop.
@@ -128,11 +136,7 @@ export default class OneTimeReconciler {
     return sum;
   }
 
-  private transfers(
-    address: string,
-    block: BlockResponse,
-    extrins: string[]
-  ): bigint {
+  private transfers(address: string, block: BlockResponse): bigint {
     const { extrinsics } = block;
     let sum = BigInt(0);
     extrinsics.forEach((ext: Extrinsic): void => {
@@ -140,18 +144,13 @@ export default class OneTimeReconciler {
       // if(ext.method == "utility.batch"){}
       if (this.isTransferOutOfAddress(address, ext) && this.isSuccess(ext)) {
         sum += BigInt(ext.args[1]);
-        extrins.push(ext.method);
       }
     });
 
     return sum;
   }
 
-  private incomingTransfers(
-    address: string,
-    block: BlockResponse,
-    extrins: string[]
-  ): bigint {
+  private incomingTransfers(address: string, block: BlockResponse): bigint {
     const { extrinsics } = block;
     let sum = BigInt(0);
     extrinsics.forEach((ext: Extrinsic): void => {
@@ -159,7 +158,6 @@ export default class OneTimeReconciler {
       // if(ext.method == "utility.batch"){}
       if (this.isTransferIntoAddress(address, ext) && this.isSuccess(ext)) {
         sum += BigInt(ext.args[1]);
-        extrins.push("'incoming' " + ext.method);
       }
     });
 

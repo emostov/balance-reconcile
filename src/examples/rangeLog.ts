@@ -16,15 +16,18 @@ export async function rangeLogKM(
     // console.log(`Checking block ${i}`);
     try {
       const result = await crawler.crawlBlock(i);
-      crawler.warnWhenDiff(result).forEach((line) => {
+      const diff = crawler.warnWhenDiff(result);
+      diff.forEach((line) => {
+        console.log(line);
         const withNewLine = `\n${line} `;
-        console.log(withNewLine);
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
         fs.writeFileSync(fileName, withNewLine, {
           flag: "a+",
         });
       });
-      if (result.length) {
+
+      // Write a newline character if a block with an issue was found
+      if (diff.length) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
         fs.writeFileSync(fileName, "\n", {
           flag: "a+",
