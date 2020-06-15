@@ -1562,6 +1562,7 @@ issue 2294335
   "relevantEvents": []
 } 
 
+// cannot resolve - zeke
 Log for block number 2294337 
 issue 2294337 
 {
@@ -1590,6 +1591,7 @@ issue 2294337
   "relevantEvents": []
 } 
 
+cannot resolve - zeke
 Log for block number 2214883 
 issue 2214883 
 {
@@ -1618,6 +1620,8 @@ issue 2214883
   "relevantEvents": []
 } 
 
+// unsuccessful transfer
+// cannot resolve
 Log for block number 2255504 
 issue 2255504 
 {
@@ -1646,6 +1650,8 @@ issue 2255504
   "relevantEvents": []
 } 
 
+// unsuccessful transfer
+// cannot resolve
 Log for block number 2255505 
 issue 2255505 
 {
@@ -1674,6 +1680,8 @@ issue 2255505
   "relevantEvents": []
 } 
 
+// faucet
+// cannot resolve
 Log for block number 2234594 
 issue 2234594 
 {
@@ -1702,10 +1710,11 @@ issue 2234594
   "relevantEvents": []
 } 
 
+// rewards - zeke
 Log for block number 2275388 
 issue 2275388 
 {
-  "block": 2275388,
+  "block": 2275388, 
   "address": "FUzSoTz1gqjY4uj2zyJ4kqNE4H53uhJE1VatL9rV8kx7sfM",
   "actualVsExpectedDiff": "-3624437086492",
   "expectedBalance": "4109437086492",
@@ -1752,6 +1761,7 @@ issue 2275388
   ]
 } 
 
+// rewards - zeke
 Log for block number 2215003 
 issue 2215003 
 {
@@ -1798,6 +1808,7 @@ issue 2215003
   ]
 } 
 
+// hardcoded amount off
 Log for block number 2275644 
 issue 2275644 
 {
@@ -1828,6 +1839,9 @@ issue 2275644
   ]
 } 
 
+// account was created here as well
+// treasuary.deposit + balances.deposit = 1000323343
+// cannot resolve - zeke
 Log for block number 2256103 
 issue 2256103 
 {
@@ -1856,6 +1870,8 @@ issue 2256103
   "relevantEvents": []
 } 
 
+// treasury.deposit + staking.deposit = 1000007983
+// cannot resolve - zeke
 Log for block number 2256105 
 issue 2256105 
 {
@@ -1884,6 +1900,8 @@ issue 2256105
   "relevantEvents": []
 } 
 
+cannot resolve - zeke
+// balances.deposit + treasury.deposit = 1000323343
 Log for block number 2215478 
 issue 2215478 
 {
@@ -1912,6 +1930,9 @@ issue 2215478
   "relevantEvents": []
 } 
 
+
+// balance.deposit + treasury.deposit = 1000008515
+// cannot resolve - zeke
 Log for block number 2215480 
 issue 2215480 
 {
@@ -1940,6 +1961,9 @@ issue 2215480
   "relevantEvents": []
 } 
 
+
+// balances.deposit + treasurary.deposit = 1000483908
+// cannot resolve - zeke
 Log for block number 2216072 
 issue 2216072 
 {
@@ -1968,6 +1992,8 @@ issue 2216072
   "relevantEvents": []
 } 
 
+// treasury.deposit + balance.deposit = 1000166973
+// cannot resolve - zeke
 Log for block number 2216074 
 issue 2216074 
 {
@@ -1996,6 +2022,9 @@ issue 2216074
   "relevantEvents": []
 } 
 
+
+// balances.deposit + treasury.deposit = 6000173105
+// cannot resolve - zeke
 Log for block number 2236378 
 issue 2236378 
 {
@@ -2026,6 +2055,8 @@ issue 2236378
   ]
 } 
 
+// balances.deposit + treasury.deposit = 6000173105
+// cannot resolve - zeke
 Log for block number 2216667 
 issue 2216667 
 {
@@ -2054,6 +2085,8 @@ issue 2216667
   "relevantEvents": []
 } 
 
+// balances.deposit + treasuary.deposit = 6000173105
+// cannot resolve zeke
 Log for block number 2216668 
 issue 2216668 
 {
@@ -2084,6 +2117,8 @@ issue 2216668
   ]
 } 
 
+// balances.deposit + treasury.deposit = 6000173105
+// cannot resolve - zeke
 Log for block number 2216670 
 issue 2216670 
 {
@@ -2113,6 +2148,8 @@ issue 2216670
     "tip"
   ]
 } 
+
+// zeke cannot resolve
 Log for block number 2216670 
 issue 2216670 
 {
