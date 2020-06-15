@@ -36,10 +36,7 @@ export default class SideCarApi {
     return response.data as StakingResponse;
   }
 
-  async getPayoutInfo(
-    account: string,
-    height?: number
-  ): Promise<PayoutResponse> {
+  async getPayout(account: string, height?: number): Promise<PayoutResponse> {
     const response = height
       ? await this.api.get(`/payout/${account}/${height}`)
       : await this.api.get(`/payout/${account}`);

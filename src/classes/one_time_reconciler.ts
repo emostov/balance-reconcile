@@ -198,7 +198,7 @@ export default class OneTimeReconciler {
         // we should have these methods as constants somewhere to avoid fat thumb errors
         if (!(method === "staking.Reward")) continue;
 
-        const { rewardDestination, bonded } = await this.api.getPayoutInfo(
+        const { rewardDestination, bonded } = await this.api.getPayout(
           stash,
           this.parseNumber(number)
         );
@@ -209,9 +209,11 @@ export default class OneTimeReconciler {
         ) {
           eventsTrack.push(method);
           rewards += BigInt(amount);
+          console.log("staked");
         } else if (rewardDestination === "Controller" && bonded === address) {
           rewards += BigInt(amount);
           eventsTrack.push(method);
+          console.log("controller");
         }
       }
     }
