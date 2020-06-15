@@ -209,11 +209,9 @@ export default class OneTimeReconciler {
         ) {
           eventsTrack.push(method);
           rewards += BigInt(amount);
-          console.log("staked");
         } else if (rewardDestination === "Controller" && bonded === address) {
           rewards += BigInt(amount);
           eventsTrack.push(method);
-          console.log("controller");
         }
       }
     }

@@ -6,11 +6,14 @@ const sleep = promisify(setTimeout);
 
 import NaiveCrawler from "../classes/naive_crawler";
 
-export async function cC1Subscribe(sidecarUrl: string): Promise<void> {
-  const outputFileName = "CC1_subscribe.txt";
+export async function subscribe(
+  sidecarUrl: string,
+  outputFileName: string,
+  wsUrl: string
+): Promise<void> {
   const crawler = new NaiveCrawler(sidecarUrl);
 
-  const wsProvider = new WsProvider("wss://rpc.polkadot.io");
+  const wsProvider = new WsProvider(wsUrl);
   const api = await ApiPromise.create({ provider: wsProvider });
 
   await api.rpc.chain.subscribeNewHeads(async ({ number }) => {
@@ -22,7 +25,8 @@ export async function cC1Subscribe(sidecarUrl: string): Promise<void> {
 
     try {
       const results = await crawler.crawlBlock(number.toNumber());
-      crawler.warnWhenDiff(results).forEach((line) => {
+      const diff = crawler.warnWhenDiff(results);
+      diff.forEach((line) => {
         const withNewLine = `\n${line} `;
 
         fs.writeFileSync(outputFileName, withNewLine, {
@@ -30,7 +34,7 @@ export async function cC1Subscribe(sidecarUrl: string): Promise<void> {
         });
       });
 
-      if (results.length) {
+      if (diff.length) {
         fs.writeFileSync(outputFileName, "\n", {
           flag: "a+",
         });
