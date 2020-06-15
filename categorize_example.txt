@@ -1,0 +1,165 @@
+{
+  "1062": {
+    "staking": {
+      "bondExtra": [
+        {
+          "block": 2257900,
+          "address": "GyksMavvnwPapLTjUuAuJqwatYUy5JBXCetnY4FG4iqH5pY",
+          "actualVsExpectedDiff": "-276180",
+          "expectedBalance": "13999824249",
+          "currFreeBalance": "13999548069",
+          "currReserveBalance": "0",
+          "prevFreeBalance": "15000000000",
+          "prevReserveBalance": "0",
+          "partialFees": "1000175751",
+          "lostDust": "0",
+          "transfers": "0",
+          "incomingTransfers": "0",
+          "endowment": "0",
+          "stakingRewards": "0",
+          "tips": "0",
+          "slashes": "0",
+          "claimed": "0",
+          "repatriatedReserves": "0",
+          "blockReward": "0",
+          "relevantExtrinsics": [
+            "staking.bondExtra"
+          ],
+          "relevantEvents": []
+        }
+      ]
+    },
+    "utility": {
+      "batch": [
+        {
+          "block": 2217889,
+          "address": "DAsHM6GUQhMFGqj5dBkGkwUeGJU58koqLfSSBWKiGcM2kc7",
+          "actualVsExpectedDiff": "-337430458997",
+          "expectedBalance": "2306430458997",
+          "currFreeBalance": "1969000000000",
+          "currReserveBalance": "0",
+          "prevFreeBalance": "1970000000000",
+          "prevReserveBalance": "0",
+          "partialFees": "1000000000",
+          "lostDust": "0",
+          "transfers": "0",
+          "incomingTransfers": "0",
+          "endowment": "0",
+          "stakingRewards": "337430458997",
+          "tips": "0",
+          "slashes": "0",
+          "claimed": "0",
+          "repatriatedReserves": "0",
+          "blockReward": "0",
+          "relevantExtrinsics": [
+            "utility.batch"
+          ],
+          "relevantEvents": [
+            "staking.Reward",
+            "staking.Reward",
+            "staking.Reward",
+            "staking.Reward",
+            "staking.Reward",
+            "staking.Reward",
+            "staking.Reward",
+            "staking.Reward",
+            "staking.Reward",
+            "staking.Reward",
+            "staking.Reward"
+          ]
+        }
+      ]
+    },
+    "electionsPhragmen": {
+      "reportDefunctVoter": [
+        {
+          "block": 2610074,
+          "address": "EXAK2eErCzDKK79EA5fDQKtNTRvJLYhphAuBstQ8YrTXpTb",
+          "actualVsExpectedDiff": "-50000000000",
+          "expectedBalance": "1029115142430631",
+          "currFreeBalance": "1029005142430631",
+          "currReserveBalance": "60000000000",
+          "prevFreeBalance": "1029006142430631",
+          "prevReserveBalance": "60000000000",
+          "partialFees": "1000000000",
+          "lostDust": "0",
+          "transfers": "0",
+          "incomingTransfers": "0",
+          "endowment": "0",
+          "stakingRewards": "0",
+          "tips": "0",
+          "slashes": "0",
+          "claimed": "0",
+          "repatriatedReserves": "50000000000",
+          "blockReward": "0",
+          "relevantExtrinsics": [
+            "electionsPhragmen.reportDefunctVoter"
+          ],
+          "relevantEvents": [
+            "electionsPhragmen.VoterReported"
+          ]
+        }
+      ]
+    }
+  },
+  "2005": {
+    "balances": {
+      "transfer": [
+        {
+          "block": 2681075,
+          "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+          "actualVsExpectedDiff": "-833333334",
+          "expectedBalance": "20862371610157267",
+          "currFreeBalance": "20862370776823933",
+          "currReserveBalance": "0",
+          "prevFreeBalance": "20866274848913933",
+          "prevReserveBalance": "0",
+          "partialFees": "166666666",
+          "lostDust": "0",
+          "transfers": "3903072090000",
+          "incomingTransfers": "0",
+          "endowment": "0",
+          "stakingRewards": "0",
+          "tips": "0",
+          "slashes": "0",
+          "claimed": "0",
+          "repatriatedReserves": "0",
+          "blockReward": "0",
+          "relevantExtrinsics": [
+            "balances.transfer"
+          ],
+          "relevantEvents": []
+        }
+      ]
+    },
+    "staking": {
+      "nominate": [
+        {
+          "block": 2695070,
+          "address": "G2dnjsLpUZGf3EUoBsHXsk9p3gFkACW6nerLKhfgg1n2g3k",
+          "actualVsExpectedDiff": "-833333334",
+          "expectedBalance": "10103833333334",
+          "currFreeBalance": "10103000000000",
+          "currReserveBalance": "0",
+          "prevFreeBalance": "10104000000000",
+          "prevReserveBalance": "0",
+          "partialFees": "166666666",
+          "lostDust": "0",
+          "transfers": "0",
+          "incomingTransfers": "0",
+          "endowment": "0",
+          "stakingRewards": "0",
+          "tips": "0",
+          "slashes": "0",
+          "claimed": "0",
+          "repatriatedReserves": "0",
+          "blockReward": "0",
+          "relevantExtrinsics": [
+            "staking.nominate"
+          ],
+          "relevantEvents": []
+        }
+      ]
+    }
+  }
+}

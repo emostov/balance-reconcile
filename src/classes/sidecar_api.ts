@@ -5,6 +5,7 @@ import {
   BlockResponse,
   PayoutResponse,
   StakingResponse,
+  TxArtifactsResponse,
 } from "../types/types";
 
 export default class SideCarApi {
@@ -42,5 +43,13 @@ export default class SideCarApi {
       : await this.api.get(`/payout/${account}`);
 
     return response.data as PayoutResponse;
+  }
+
+  async getTxArtifacts(height?: number): Promise<TxArtifactsResponse> {
+    const response = height
+      ? await this.api.get(`tx/artifacts/${height}`)
+      : await this.api.get(`tx/artifacts`);
+
+    return response.data as TxArtifactsResponse;
   }
 }

@@ -106,3 +106,18 @@ export type Balance = {
   feeFrozen: string;
   locks: any[]; // ?
 };
+
+export type TxArtifactsResponse = {
+  at: string;
+  genesisHash: string;
+  chainName: string;
+  specName: string;
+  specVersion: string;
+  txversion: string;
+  metadata: string;
+};
+
+export type CategorizeInfos = Record<
+  string,
+  Record<string, Record<string, ReconcileInfo[]>>
+>;

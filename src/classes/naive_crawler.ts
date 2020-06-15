@@ -1,4 +1,9 @@
-import { AddressAndBlock, BlockResponse, ReconcileInfo } from "../types/types";
+import {
+  AddressAndBlock,
+  BlockResponse,
+  CategorizeInfos,
+  ReconcileInfo,
+} from "../types/types";
 import Reconciler from "./one_time_reconciler";
 import SideCarApi from "./sidecar_api";
 
@@ -74,6 +79,36 @@ export default class NaiveCrawler {
     });
 
     return updates;
+  }
+
+  async categorize(
+    infos: ReconcileInfo[],
+    preBuiltCategorize?: CategorizeInfos
+  ): Promise<string> {
+    const categorizeInfos: CategorizeInfos = preBuiltCategorize ?? {};
+
+    for (const info of infos) {
+      if (BigInt(info.actualVsExpectedDiff) !== BigInt(0)) {
+        // query for version
+        const { specVersion } = await this.api.getTxArtifacts(info.block);
+        if (!(specVersion in categorizeInfos))
+          categorizeInfos[specVersion] = {};
+
+        for (const ext of info.relevantExtrinsics) {
+          const [module, call] = ext.split(".");
+
+          if (!(module in categorizeInfos[specVersion]))
+            categorizeInfos[specVersion][module] = {};
+
+          if (!(call in categorizeInfos[specVersion][module]))
+            categorizeInfos[specVersion][module][call] = [];
+
+          categorizeInfos[specVersion][module][call].push(info);
+        }
+      }
+    }
+
+    return JSON.stringify(categorizeInfos, null, "  ");
   }
 
   private findSigners(block: BlockResponse): string[] {

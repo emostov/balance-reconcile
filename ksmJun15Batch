@@ -2808,3 +2808,3994 @@ issue 2716058
   ],
   "relevantEvents": []
 } 
+
+Log for block number 2692064 
+issue 2692064 
+{
+  "block": 2692064,
+  "address": "HB9zqfm7DksPDkCKbP3aogKzP9UTwnPUU5KF1mkQgptpDKR",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "53233333334",
+  "currFreeBalance": "52400000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "13416400000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "13363000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2690051 
+issue 2690051 
+{
+  "block": 2690051,
+  "address": "EPpKWsEPMCSViEqjWFjqtx4AyCh77jCRH9vo82dBgjSFL6v",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1000154066598",
+  "currFreeBalance": "999320733264",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "12866320733264",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "11866000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2686059 
+issue 2686059 
+{
+  "block": 2686059,
+  "address": "DfyDF9aumWDoF6FhUEsw6LJVvCfv3eCV8EnM3zunEkoiwSG",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "281755833333334",
+  "currFreeBalance": "271755000000000",
+  "currReserveBalance": "10000000000000",
+  "prevFreeBalance": "1521756000000000",
+  "prevReserveBalance": "10000000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "1250000000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2696069 
+issue 2696069 
+{
+  "block": 2696069,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "23336262889197267",
+  "currFreeBalance": "23336262055863933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "23376263055863933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "40000000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2681074 
+issue 2681074 
+{
+  "block": 2681074,
+  "address": "JBkMW6CooKT3b3WPRFKecHpwuNVMyUsPtKLst6hkJJGQsPc",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "3028768610304875",
+  "currFreeBalance": "3028317776971541",
+  "currReserveBalance": "450000000000",
+  "prevFreeBalance": "3028518776971541",
+  "prevReserveBalance": "450000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "200000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2662071 
+issue 2662071 
+{
+  "block": 2662071,
+  "address": "HcUWapkGqSTe8p4DpouApK5Pc7DBT4bZxAoVtWkKeBq3V3n",
+  "actualVsExpectedDiff": "-1000000000",
+  "expectedBalance": "12473998470000",
+  "currFreeBalance": "12472998470000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "12473998470000",
+  "prevReserveBalance": "0",
+  "partialFees": "0",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bond"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2695070 
+issue 2695070 
+{
+  "block": 2695070,
+  "address": "G2dnjsLpUZGf3EUoBsHXsk9p3gFkACW6nerLKhfgg1n2g3k",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "10103833333334",
+  "currFreeBalance": "10103000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "10104000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2689059 
+issue 2689059 
+{
+  "block": 2689059,
+  "address": "ErNKuPVtGAWNLDT8QNQnLFypwqK899kG13ti4MzhhiFJCrb",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "17005933333334",
+  "currFreeBalance": "17005100000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "17006100000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2681075 
+issue 2681075 
+{
+  "block": 2681075,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "20862371610157267",
+  "currFreeBalance": "20862370776823933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "20866274848913933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "3903072090000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2712069 
+issue 2712069 
+{
+  "block": 2712069,
+  "address": "H9M22FTqs1kKRAUiEk1BCVNQfWdMzVV3HbHuMwkirirxk85",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "4998833333334",
+  "currFreeBalance": "4998000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "19999000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "15000000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2673050 
+issue 2673050 
+{
+  "block": 2673050,
+  "address": "FXJqVqitG2eMJYNHkmmUAoWAMZc5hgG7N9gLgbouworti89",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1825871661213677",
+  "currFreeBalance": "1825870827880343",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "1825871827880343",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bondExtra"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2684071 
+issue 2684071 
+{
+  "block": 2684071,
+  "address": "GLVeryFRbg5hEKvQZcAnLvXZEXhiYaBjzSDwrXBXrfPF7wj",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "560743275835723",
+  "currFreeBalance": "549692442502389",
+  "currReserveBalance": "11050000000000",
+  "prevFreeBalance": "549693442502389",
+  "prevReserveBalance": "11050000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "treasury.closeTip"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2716065 
+issue 2716065 
+{
+  "block": 2716065,
+  "address": "EFteY6Fg4BsFfWdfkS6XmsgyWLK2G3UZQnk87DsNHNcWSEW",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "747833009991",
+  "currFreeBalance": "746999676657",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "747999676657",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.forceTransfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2696073 
+issue 2696073 
+{
+  "block": 2696073,
+  "address": "FMTf7dmEaWrgpiTYWGA1gjFVQSTzdjex97Jx9m7jZiB1add",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "200995833333334",
+  "currFreeBalance": "200995000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "200996000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2723083 
+issue 2723083 
+{
+  "block": 2723083,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "63936994545227267",
+  "currFreeBalance": "63936993711893933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "63954394711893933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "17400000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2691075 
+issue 2691075 
+{
+  "block": 2691075,
+  "address": "D8SUgBqqbjg32RKQdSxS9XuaQ6UWKuGNgrVyofzD5kXhaJT",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "26380808764759317",
+  "currFreeBalance": "26380807931425983",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "26380808931425983",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2673051 
+issue 2673051 
+{
+  "block": 2673051,
+  "address": "EaPLRbznkX6gjXNj3GcxWA58tmUGYgABHbRYuoiTxv1aD8q",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "39833333334",
+  "currFreeBalance": "39000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "80000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "40000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2690059 
+issue 2690059 
+{
+  "block": 2690059,
+  "address": "EXWN5ymgSed5MxLo6oT6bPDZnaMomADuQN8bvq9hBvmnb8e",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1000425711948",
+  "currFreeBalance": "999592378614",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "17515592378614",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "16515000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2689063 
+issue 2689063 
+{
+  "block": 2689063,
+  "address": "DLvoiEeNw1pKC5G8964zqqSdY9an7WtcPWZX2c4U3GRY8m5",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "986833333334",
+  "currFreeBalance": "986000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "987000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2707084 
+issue 2707084 
+{
+  "block": 2707084,
+  "address": "Gbod3HVL28Sv42ad2VS9B7Raz1H5Uc2s7fQ1UCMdA1pxQcc",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "112833333334",
+  "currFreeBalance": "112000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "213000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "100000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2697076 
+issue 2697076 
+{
+  "block": 2697076,
+  "address": "JFQ2m6MDMryNUdfwf8swqkSyB27iZMVytgvj3GkyCXNgTdN",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "6897569227441",
+  "currFreeBalance": "6896735894107",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "6897735894107",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2688076 
+issue 2688076 
+{
+  "block": 2688076,
+  "address": "DtUeVJbNFPvVXu7XExfKJ2ZNzLwBR4QndyPEAsd5bVfq3Y1",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "53980915440900",
+  "currFreeBalance": "53980082107566",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "54081082107566",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "100000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2683080 
+issue 2683080 
+{
+  "block": 2683080,
+  "address": "GqAzCbaYWPpB2DQWwLagGT4uuRwoLbyun88zTLZommSJzYa",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "19833333334",
+  "currFreeBalance": "19000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "1019000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "999000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2715081 
+issue 2715081 
+{
+  "block": 2715081,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "65148277606197267",
+  "currFreeBalance": "65148276772863933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "65165327624183933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "17049851320000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2705081 
+issue 2705081 
+{
+  "block": 2705081,
+  "address": "Fksma33CdqoFyKCQJCd2aCLzcCTgYkoLj6YrrCaJREMrqWZ",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "833333334",
+  "currFreeBalance": "0",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "100000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "99000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2716070 
+issue 2716070 
+{
+  "block": 2716070,
+  "address": "Fc8PfSP1UD9tqM3GSz8RMkzSDogZsb8mLrZKefSF3vtb2RH",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "213433955848420",
+  "currFreeBalance": "213433122515086",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "213434122515086",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bondExtra"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2690062 
+issue 2690062 
+{
+  "block": 2690062,
+  "address": "CpLZA1ebDJPYvK9fx6e8rPzJX9yn9x2Gey9S6PpBbTrpnXY",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1000470754111",
+  "currFreeBalance": "999637420777",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "18453637420777",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "17453000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2682082 
+issue 2682082 
+{
+  "block": 2682082,
+  "address": "Ff65mvwgfQJeCxjq59YZMUzg9HAR4mFVMapvYF4oFMzFP9j",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "2237574923045200",
+  "currFreeBalance": "2237524089711866",
+  "currReserveBalance": "50000000000",
+  "prevFreeBalance": "2237525089711866",
+  "prevReserveBalance": "50000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.setController"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2692079 
+issue 2692079 
+{
+  "block": 2692079,
+  "address": "GhNL9Mi5KiL3Ge2jv4jUdncipZNnUFALbzmwg8QqwjxJxcp",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "54786722222223",
+  "currFreeBalance": "54785888888889",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "54786888888889",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bond"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2684078 
+issue 2684078 
+{
+  "block": 2684078,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "27734772113677267",
+  "currFreeBalance": "27734771280343933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "27734972280343933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "200000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2689067 
+issue 2689067 
+{
+  "block": 2689067,
+  "address": "EvjT2Lye32XDu8ooDfhrC3BbMQ4jzwYwa3grvrkMDM37FxD",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "123679329049770",
+  "currFreeBalance": "123678495716436",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "123679495716436",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2681086 
+issue 2681086 
+{
+  "block": 2681086,
+  "address": "HPEFFx5dXjzUa97rnB5wT6ZWeSMA9kCAuRbdBdvyBy2yAJo",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "4773000863334",
+  "currFreeBalance": "4772167530000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "4773167530000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bondExtra"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2687036 
+issue 2687036 
+{
+  "block": 2687036,
+  "address": "Cm9dJ3jajHdB8sF66DzEGCxFJUgSZiKTBAHkrNK4gefXfwN",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "127171598593142",
+  "currFreeBalance": "127170765259808",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "127113024821637",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "58740438171",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "utility.batch"
+  ],
+  "relevantEvents": [
+    "staking.Reward",
+    "staking.Reward",
+    "staking.Reward",
+    "staking.Reward",
+    "staking.Reward"
+  ]
+} 
+
+Log for block number 2717084 
+issue 2717084 
+{
+  "block": 2717084,
+  "address": "H9JS7RqUuHYLoQHjwW9p47gFFg5V7zbtSdotiPmf65X7kSP",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "5008490095745625",
+  "currFreeBalance": "5008489262412291",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "5008194655284517",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "295607127774",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.payoutStakers"
+  ],
+  "relevantEvents": [
+    "staking.Reward"
+  ]
+} 
+
+Log for block number 2697081 
+issue 2697081 
+{
+  "block": 2697081,
+  "address": "EEWyMLHgwtemr48spFNnS3U2XjaYswqAYAbadx2jr9ppp4X",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "258137438080811128",
+  "currFreeBalance": "258137437247477794",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "258137538247477794",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "100000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2705084 
+issue 2705084 
+{
+  "block": 2705084,
+  "address": "J4kFNdbiHEhaN1Z7K3LPRF2GLkdqV5YG8tHMuXaFr3EjcwH",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "904832634291",
+  "currFreeBalance": "903999300957",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "904999300957",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.validate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2662086 
+issue 2662086 
+{
+  "block": 2662086,
+  "address": "FM7Bm4WNCN6oLYj2o7TuNbHfkAR7E8zxtGvQc5646YQZC59",
+  "actualVsExpectedDiff": "-1000000000",
+  "expectedBalance": "28294100000000",
+  "currFreeBalance": "28293100000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "28294100000000",
+  "prevReserveBalance": "0",
+  "partialFees": "0",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bond"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2677078 
+issue 2677078 
+{
+  "block": 2677078,
+  "address": "EPetdBPM34CcvqFScjohjjMQRXyCVeCfT8mF1gRQXViKWxc",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "100999833333334",
+  "currFreeBalance": "100999000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "101000000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bond"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2696084 
+issue 2696084 
+{
+  "block": 2696084,
+  "address": "DfiSM1qqP11ECaekbA64L2ENcsWEpGk8df8wf1LAfV2sBd4",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "3757694525892439",
+  "currFreeBalance": "3749693292559105",
+  "currReserveBalance": "8000400000000",
+  "prevFreeBalance": "3749694292559105",
+  "prevReserveBalance": "8000400000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "democracy.vote"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2690066 
+issue 2690066 
+{
+  "block": 2690066,
+  "address": "FUpsdxNGs9zJfEYQpAdUQXLbQALwPkseMn6T3q5EeNpKLVb",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1000464663550",
+  "currFreeBalance": "999631330216",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "12179631330216",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "11179000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2689069 
+issue 2689069 
+{
+  "block": 2689069,
+  "address": "FXDZJrhchLvprxcoRV1CcNjPkmuHRqtRwdPbkfotEkSVcTs",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "10008833333334",
+  "currFreeBalance": "10008000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "10009000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2684081 
+issue 2684081 
+{
+  "block": 2684081,
+  "address": "GLVeryFRbg5hEKvQZcAnLvXZEXhiYaBjzSDwrXBXrfPF7wj",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "560742275835723",
+  "currFreeBalance": "549691442502389",
+  "currReserveBalance": "11050000000000",
+  "prevFreeBalance": "549692442502389",
+  "prevReserveBalance": "11050000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "treasury.closeTip"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2683089 
+issue 2683089 
+{
+  "block": 2683089,
+  "address": "G1zi9oarnXFXfCAG5pW7bCSAXfFjer14vwj1teMXv6HaAa4",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "104924533333334",
+  "currFreeBalance": "104923700000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "104924700000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bond"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2727089 
+issue 2727089 
+{
+  "block": 2727089,
+  "address": "G2dnjsLpUZGf3EUoBsHXsk9p3gFkACW6nerLKhfgg1n2g3k",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "10094833333334",
+  "currFreeBalance": "10094000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "10095000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2690069 
+issue 2690069 
+{
+  "block": 2690069,
+  "address": "GfGwY3xa2ssiwjnxkPgtL9dvgn7vEqq4E5bKnChTG4JqKox",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1000699637884",
+  "currFreeBalance": "999866304550",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "14494866304550",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "13494000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2722041 
+issue 2722041 
+{
+  "block": 2722041,
+  "address": "G7Ur4BnMSfP2qE7ruSob5gwGQ5nzkGWu7Yqh14FcMqnDtgB",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "7409032412759936",
+  "currFreeBalance": "7398971579426602",
+  "currReserveBalance": "10060000000000",
+  "prevFreeBalance": "7395948941926488",
+  "prevReserveBalance": "10060000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "3023637500114",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "utility.batch"
+  ],
+  "relevantEvents": [
+    "staking.Reward",
+    "staking.Reward",
+    "staking.Reward",
+    "staking.Reward",
+    "staking.Reward",
+    "staking.Reward",
+    "staking.Reward",
+    "staking.Reward"
+  ]
+} 
+
+Log for block number 2714080 
+issue 2714080 
+{
+  "block": 2714080,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "65404821357517267",
+  "currFreeBalance": "65404820524183933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "65412583224183933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "7761700000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2727090 
+issue 2727090 
+{
+  "block": 2727090,
+  "address": "CyVGZAGjfD9bbQcN7Ja7cFrazM4yAzawRhKcWYN1ZmMrpwf",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "2375092503334",
+  "currFreeBalance": "2374259170000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "2425259170000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "50000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2696090 
+issue 2696090 
+{
+  "block": 2696090,
+  "address": "HKsMa8PovwAaSAogro9m5HB7rutSYJ2ZCADtxrFa3JsAxyC",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "53734333335",
+  "currFreeBalance": "52901000001",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "54001000001",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "100000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2713079 
+issue 2713079 
+{
+  "block": 2713079,
+  "address": "E7uoJDkNZkazXvJsruwdrUH1cpJgjyiNLJPQsE2G3v5FJD3",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "228008739927670",
+  "currFreeBalance": "228007906594336",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "227990468830824",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "18437763512",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "utility.batch"
+  ],
+  "relevantEvents": [
+    "staking.Reward",
+    "staking.Reward"
+  ]
+} 
+
+Log for block number 2699074 
+issue 2699074 
+{
+  "block": 2699074,
+  "address": "FhpetEu2oWS8GXHzMfmBU8qD1bz3Dgo1kBQSHeqmmfXJdyi",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "22463772176667",
+  "currFreeBalance": "10462938843333",
+  "currReserveBalance": "12000000000000",
+  "prevFreeBalance": "10402564972482",
+  "prevReserveBalance": "12000000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "61373870851",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "utility.batch"
+  ],
+  "relevantEvents": [
+    "staking.Reward",
+    "staking.Reward"
+  ]
+} 
+
+Log for block number 2693096 
+issue 2693096 
+{
+  "block": 2693096,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "23490109159387267",
+  "currFreeBalance": "23490108326053933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "23655999074973933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "165889748920000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2685099 
+issue 2685099 
+{
+  "block": 2685099,
+  "address": "EEWyMLHgwtemr48spFNnS3U2XjaYswqAYAbadx2jr9ppp4X",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "253489108890344618",
+  "currFreeBalance": "253489108057011284",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "253498141657011284",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "9032600000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2713080 
+issue 2713080 
+{
+  "block": 2713080,
+  "address": "GXWtbt82Hwj8aMo4vdHBQTZW5v8pvu8XKCRLjXmCrStwN2j",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "547060735749",
+  "currFreeBalance": "546227402415",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "547227402415",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2718099 
+issue 2718099 
+{
+  "block": 2718099,
+  "address": "DGhAEKoGCNGApuvSfsqgzHZ8oQE75i83xw5hUyr58HjrLEn",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "4421861774974809",
+  "currFreeBalance": "4421860941641475",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "4421861941641475",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2690074 
+issue 2690074 
+{
+  "block": 2690074,
+  "address": "EkXqBmacCbg6c5Y3q6VycAWk6i32E4yV6SVJnD6LtpFNtNc",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1000330332594",
+  "currFreeBalance": "999496999260",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "16219496999260",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "15219000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2677090 
+issue 2677090 
+{
+  "block": 2677090,
+  "address": "GthRPeteHaHjVjUdXZxnwHxXaH7tr9aVJ51dfNTbaBWR3SY",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "99833333334",
+  "currFreeBalance": "99000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "100000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "session.setKeys"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2708109 
+issue 2708109 
+{
+  "block": 2708109,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "65667441515127267",
+  "currFreeBalance": "65667440681793933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "65696645981793933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "29204300000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2697094 
+issue 2697094 
+{
+  "block": 2697094,
+  "address": "Fvr8QGrNmRvSszTXsaRf26sbnbvBkYCEtFvhTKSMaVGxqVM",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "833333334",
+  "currFreeBalance": "0",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "20000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "19000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2678097 
+issue 2678097 
+{
+  "block": 2678097,
+  "address": "FiNuPk2iPirbKC7Spse3NuE9rWjzaQonZmk6wRvk1LcEU13",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "93353814227443",
+  "currFreeBalance": "82352980894109",
+  "currReserveBalance": "11000000000000",
+  "prevFreeBalance": "83353980894109",
+  "prevReserveBalance": "10000000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "identity.requestJudgement"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2720077 
+issue 2720077 
+{
+  "block": 2720077,
+  "address": "DrBzsrxWEDX1uS33orbpN4jmhDGp2wGhA1JgLm86eGvhH7z",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "8442670648331922",
+  "currFreeBalance": "8442669814998588",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "8442389598111231",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "281216887357",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "utility.batch"
+  ],
+  "relevantEvents": [
+    "staking.Reward",
+    "staking.Reward",
+    "staking.Reward",
+    "staking.Reward"
+  ]
+} 
+Log for block number 2720077 
+issue 2720077 
+{
+  "block": 2720077,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "64723124107197267",
+  "currFreeBalance": "64723123273863933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "64773224273863933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "50100000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2683100 
+issue 2683100 
+{
+  "block": 2683100,
+  "address": "G1zi9oarnXFXfCAG5pW7bCSAXfFjer14vwj1teMXv6HaAa4",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "104923533333334",
+  "currFreeBalance": "104922700000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "104923700000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2674087 
+issue 2674087 
+{
+  "block": 2674087,
+  "address": "DcpLsomNeRicEiRkqXB21ApPA8DHpJr4bdD9FMduXZjC38K",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "22833333334",
+  "currFreeBalance": "22000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "23000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "utility.batch"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2686074 
+issue 2686074 
+{
+  "block": 2686074,
+  "address": "HWAGAxX2PAzNVg7w3ZyTprH5yvwbVwQ8rbWwuZxtQKbQupW",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "107967977964710",
+  "currFreeBalance": "83967144631376",
+  "currReserveBalance": "24000000000000",
+  "prevFreeBalance": "83658403428530",
+  "prevReserveBalance": "24000000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "309741202846",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "utility.batch"
+  ],
+  "relevantEvents": [
+    "staking.Reward",
+    "staking.Reward",
+    "staking.Reward",
+    "staking.Reward"
+  ]
+} 
+
+Log for block number 2675107 
+issue 2675107 
+{
+  "block": 2675107,
+  "address": "Ep4xYddBxnqzTQK1q8DNNAQL2PQf4recPTLvptQ1URAh595",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "150500243618982",
+  "currFreeBalance": "150499410285648",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "150500410285648",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "democracy.vote"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2689085 
+issue 2689085 
+{
+  "block": 2689085,
+  "address": "DchivRo8afQEiK731M3MtFZwbAE1tj3zzUFCpiZqpy1zYLE",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "150868833333334",
+  "currFreeBalance": "150868000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "150869000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2679104 
+issue 2679104 
+{
+  "block": 2679104,
+  "address": "JF9ZNGQmxbaZKMfXa4vFFLomjDQJufohgkSZzWa1EjNQVsw",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "211327033333334",
+  "currFreeBalance": "211326200000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "211327200000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bond"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2690078 
+issue 2690078 
+{
+  "block": 2690078,
+  "address": "CgnJccYXCod7aQeeDRUGQMZ6yTDE9qVD8tWffgvFVETPdev",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1000695770126",
+  "currFreeBalance": "999862436792",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "17343862436792",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "16343000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2682105 
+issue 2682105 
+{
+  "block": 2682105,
+  "address": "Feea63iun8Wcjv5M5ECkW2vDbqW9rP8HFg7kvi642NTAzjn",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "122796833333334",
+  "currFreeBalance": "122796000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "122797000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bond"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2667097 
+issue 2667097 
+{
+  "block": 2667097,
+  "address": "DMUbTsWJJvJyo2obFezbumwhvB2d5nFKYj7WrmzyEk5bYpf",
+  "actualVsExpectedDiff": "-1000000000",
+  "expectedBalance": "454187625718",
+  "currFreeBalance": "453187625718",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "454187625718",
+  "prevReserveBalance": "0",
+  "partialFees": "0",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bondExtra"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2663113 
+issue 2663113 
+{
+  "block": 2663113,
+  "address": "DJkjdckcSDYjVmQaFEqDYLCJwNjfJof6gKnJqVJZ6xcGh9Y",
+  "actualVsExpectedDiff": "-1000000000",
+  "expectedBalance": "192837000000000",
+  "currFreeBalance": "192836000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "192837000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "0",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "utility.batch"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2712105 
+issue 2712105 
+{
+  "block": 2712105,
+  "address": "Eyx11CmjL7ZpFoR9tbf2ndgYfrCF1wz4pf6w8payDCCzpDN",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "985434329613790",
+  "currFreeBalance": "985433496280456",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "985434496280456",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2703114 
+issue 2703114 
+{
+  "block": 2703114,
+  "address": "D3bm5eAeiRezwZp4tWTX4sZN3u8nXy2Fo21U59smznYHu3F",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "324396253431945",
+  "currFreeBalance": "314395420098611",
+  "currReserveBalance": "10000000000000",
+  "prevFreeBalance": "314446420098611",
+  "prevReserveBalance": "10000000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "50000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2690081 
+issue 2690081 
+{
+  "block": 2690081,
+  "address": "DdKgwiN1Y8QyD8KF3t2GsuWhk4JXYFCjWvniP3x45BoBVqh",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1000730023430",
+  "currFreeBalance": "999896690096",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "16222896690096",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "15222000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+Log for block number 2690081 
+issue 2690081 
+{
+  "block": 2690081,
+  "address": "EEWyMLHgwtemr48spFNnS3U2XjaYswqAYAbadx2jr9ppp4X",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "259129494660661128",
+  "currFreeBalance": "259129493827327794",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "259131605827327794",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "2111000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2683106 
+issue 2683106 
+{
+  "block": 2683106,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "27865234279247267",
+  "currFreeBalance": "27865233445913933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "27865434445913933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "200000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2676108 
+issue 2676108 
+{
+  "block": 2676108,
+  "address": "Eo4boG437k7gFy75VqPrWP5gHSGi9Sm6CZzLFFsCGYaSPzM",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "16462861977514",
+  "currFreeBalance": "16452028644180",
+  "currReserveBalance": "10000000000",
+  "prevFreeBalance": "25345060489100",
+  "prevReserveBalance": "10000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "8892031844920",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2713091 
+issue 2713091 
+{
+  "block": 2713091,
+  "address": "DMUbTsWJJvJyo2obFezbumwhvB2d5nFKYj7WrmzyEk5bYpf",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "697723182225",
+  "currFreeBalance": "696889848891",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "709389848891",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "10000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "1500000000",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": [
+    "tip"
+  ]
+} 
+Log for block number 2713091 
+issue 2713091 
+{
+  "block": 2713091,
+  "address": "EXisTr4wrYm3KutCrZQSwPGBGGLiMcNxV85DUH8GQooojC7",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "19833333334",
+  "currFreeBalance": "19000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "70000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "50000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2724079 
+issue 2724079 
+{
+  "block": 2724079,
+  "address": "JKptt2RdjqhLaGcWUDeaxKyyLYdPaWGWZk7vmyDvFPJFtUC",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "127408176098635",
+  "currFreeBalance": "127407342765301",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "127395617292382",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "12725472919",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "utility.batch"
+  ],
+  "relevantEvents": [
+    "staking.Reward",
+    "staking.Reward"
+  ]
+} 
+
+Log for block number 2684105 
+issue 2684105 
+{
+  "block": 2684105,
+  "address": "H54amT8Fw4sRCuHijZgLLS2FHKsSLbGeAAp8AFngvat78pD",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "58731803916955",
+  "currFreeBalance": "58730970583621",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "58731970583621",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "recovery.initiateRecovery"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2679112 
+issue 2679112 
+{
+  "block": 2679112,
+  "address": "JF9ZNGQmxbaZKMfXa4vFFLomjDQJufohgkSZzWa1EjNQVsw",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "211326033333334",
+  "currFreeBalance": "211325200000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "211326200000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2690084 
+issue 2690084 
+{
+  "block": 2690084,
+  "address": "DkacfyLSj9tFHtRnUiLTvHTFQ4j76BPgXYqm2CuCUaQLbEu",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1032299433333334",
+  "currFreeBalance": "1032298600000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "1037299600000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "5000000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2673089 
+issue 2673089 
+{
+  "block": 2673089,
+  "address": "HZQsexZA52TMcWW4S7o6PfxR2mtAp6E4MuN9LxBh4Bd9DLT",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "39833333334",
+  "currFreeBalance": "39000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "12493040000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "12493000000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2723123 
+issue 2723123 
+{
+  "block": 2723123,
+  "address": "FUUHa4WdgNxE1Etkf3mDPvg6dKXPmqWEy3CYfsYGxPV98Zf",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "53695494786699",
+  "currFreeBalance": "53694661453365",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "53695661453365",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bondExtra"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2686084 
+issue 2686084 
+{
+  "block": 2686084,
+  "address": "EkSmWLVjK9gA4ybE2iwxLNw9aqfPxbP3QKGaGmkWELeez5b",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1009297936509172",
+  "currFreeBalance": "1009297103175838",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "1010298103175838",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "1000000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2689096 
+issue 2689096 
+{
+  "block": 2689096,
+  "address": "FSk2iCLZEgCzfjzJaVP1SehmhbuwVonUuaYBVUDv1pzdHMa",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "149754833333334",
+  "currFreeBalance": "149754000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "149755000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bond"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2715119 
+issue 2715119 
+{
+  "block": 2715119,
+  "address": "EFteY6Fg4BsFfWdfkS6XmsgyWLK2G3UZQnk87DsNHNcWSEW",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "792833009991",
+  "currFreeBalance": "791999676657",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "872999676657",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "80000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2690085 
+issue 2690085 
+{
+  "block": 2690085,
+  "address": "DkbdmnfvC6mKDwcVeqin68TxwQx7t7f7rMJyws5fVCNC93p",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "999959391759",
+  "currFreeBalance": "999126058425",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "14248126058425",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "13248000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2695120 
+issue 2695120 
+{
+  "block": 2695120,
+  "address": "DtUeVJbNFPvVXu7XExfKJ2ZNzLwBR4QndyPEAsd5bVfq3Y1",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "53985774954875",
+  "currFreeBalance": "53984941621541",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "53985941621541",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bond"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2661112 
+issue 2661112 
+{
+  "block": 2661112,
+  "address": "CrD739cC1P5QaCcVXK5ngkT16uVF6gjiTeTTpNG4KoGXLwE",
+  "actualVsExpectedDiff": "-1000000000",
+  "expectedBalance": "31171000000000",
+  "currFreeBalance": "31120000000000",
+  "currReserveBalance": "50000000000",
+  "prevFreeBalance": "31121000000000",
+  "prevReserveBalance": "50000000000",
+  "partialFees": "0",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bondExtra"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2678115 
+issue 2678115 
+{
+  "block": 2678115,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "15821600802635539",
+  "currFreeBalance": "15821599969302205",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "16437255499542205",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "615654530240000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2691118 
+issue 2691118 
+{
+  "block": 2691118,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "24274399845237267",
+  "currFreeBalance": "24274399011903933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "24292513611903933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "18113600000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2672080 
+issue 2672080 
+{
+  "block": 2672080,
+  "address": "E8GaqxX9XQ5Kxf34dSYTqgVucvXWmodymBJJnipMyMmr4Ug",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "6751676335948",
+  "currFreeBalance": "6750843002614",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "5429842274788",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "1322000727826",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "utility.batch"
+  ],
+  "relevantEvents": [
+    "staking.Reward",
+    "staking.Reward",
+    "staking.Reward"
+  ]
+} 
+
+Log for block number 2722068 
+issue 2722068 
+{
+  "block": 2722068,
+  "address": "CmzqVnKJfpiK5cMjY3V4TiexGijsnJreDz2v62FozaVwtHT",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "899833333334",
+  "currFreeBalance": "899000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "1000000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "100000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2676116 
+issue 2676116 
+{
+  "block": 2676116,
+  "address": "Eo4boG437k7gFy75VqPrWP5gHSGi9Sm6CZzLFFsCGYaSPzM",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "12188666990123",
+  "currFreeBalance": "12177833656789",
+  "currReserveBalance": "10000000000",
+  "prevFreeBalance": "16452028644180",
+  "prevReserveBalance": "10000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "4273194987391",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2686087 
+issue 2686087 
+{
+  "block": 2686087,
+  "address": "EkSmWLVjK9gA4ybE2iwxLNw9aqfPxbP3QKGaGmkWELeez5b",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1008296936509172",
+  "currFreeBalance": "1008296103175838",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "1009297103175838",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "1000000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2677112 
+issue 2677112 
+{
+  "block": 2677112,
+  "address": "GthRPeteHaHjVjUdXZxnwHxXaH7tr9aVJ51dfNTbaBWR3SY",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "98833333334",
+  "currFreeBalance": "98000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "99000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.validate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2695123 
+issue 2695123 
+{
+  "block": 2695123,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "23376263889197267",
+  "currFreeBalance": "23376263055863933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "23380374955863933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "4110900000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2690088 
+issue 2690088 
+{
+  "block": 2690088,
+  "address": "EzU9s7bhDkqvZynyXLKjEVo5AgzMwq1eVr2g59YEtTY7PvQ",
+  "actualVsExpectedDiff": "-833734840",
+  "expectedBalance": "1000118278636",
+  "currFreeBalance": "999284543796",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "17445285025604",
+  "prevReserveBalance": "0",
+  "partialFees": "166746968",
+  "lostDust": "0",
+  "transfers": "16445000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2682121 
+issue 2682121 
+{
+  "block": 2682121,
+  "address": "Feea63iun8Wcjv5M5ECkW2vDbqW9rP8HFg7kvi642NTAzjn",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "122795833333334",
+  "currFreeBalance": "122795000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "122796000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2685124 
+issue 2685124 
+{
+  "block": 2685124,
+  "address": "GvyHm3o8ECQtFECLUsH7k39tjx8jkJbGs1odWtB7g5xtiHe",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "437045710746908",
+  "currFreeBalance": "437044877413574",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "437045877413574",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2707128 
+issue 2707128 
+{
+  "block": 2707128,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "65696646815127267",
+  "currFreeBalance": "65696645981793933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "65861846981793933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "165200000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2683118 
+issue 2683118 
+{
+  "block": 2683118,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "27757573879247267",
+  "currFreeBalance": "27757573045913933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "27865233445913933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "107659400000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2684114 
+issue 2684114 
+{
+  "block": 2684114,
+  "address": "EGVQCe73TpFyAZx5uKfE1222XfkT3BSKozjgcqzLBnc5eYo",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "3292007339897494",
+  "currFreeBalance": "3292006506564160",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "3292007506564160",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2702123 
+issue 2702123 
+{
+  "block": 2702123,
+  "address": "G2dnjsLpUZGf3EUoBsHXsk9p3gFkACW6nerLKhfgg1n2g3k",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "10101833333334",
+  "currFreeBalance": "10101000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "10102000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2716113 
+issue 2716113 
+{
+  "block": 2716113,
+  "address": "EkSMApGKsCm2kGg39ADLrBQfPqpkM8FphPZCnexRmKuJGkz",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "23832333334",
+  "currFreeBalance": "22999000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "24000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "1000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2701122 
+issue 2701122 
+{
+  "block": 2701122,
+  "address": "J45CtuF7Qj6tMTtESZWaQuj3DraDX1YzaMHRA7miTE6wcnd",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "579001833333334",
+  "currFreeBalance": "579001000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "579002000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.chill"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2700120 
+issue 2700120 
+{
+  "block": 2700120,
+  "address": "EZnvefir4bQfzEVFFdTzqjWohxM8Wpx7KxbRJJ5CHo3nCBH",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1119287075656841",
+  "currFreeBalance": "1119286242323507",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "1119201033332613",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "86208990894",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "utility.batch"
+  ],
+  "relevantEvents": [
+    "staking.Reward",
+    "staking.Reward"
+  ]
+} 
+
+Log for block number 2687078 
+issue 2687078 
+{
+  "block": 2687078,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "26115750666567267",
+  "currFreeBalance": "26115749833233933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "26142699433233933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "26948600000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2676121 
+issue 2676121 
+{
+  "block": 2676121,
+  "address": "Eo4boG437k7gFy75VqPrWP5gHSGi9Sm6CZzLFFsCGYaSPzM",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "9271390365810",
+  "currFreeBalance": "9260557032476",
+  "currReserveBalance": "10000000000",
+  "prevFreeBalance": "12177833656789",
+  "prevReserveBalance": "10000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "2916276624313",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2690091 
+issue 2690091 
+{
+  "block": 2690091,
+  "address": "FRwDF6SNSCrbqtfHpoNVnYJrWcmsmrETeLiMVBjj59MeoY4",
+  "actualVsExpectedDiff": "-833342234",
+  "expectedBalance": "1000565746410",
+  "currFreeBalance": "999732404176",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "13931732414856",
+  "prevReserveBalance": "0",
+  "partialFees": "166668446",
+  "lostDust": "0",
+  "transfers": "12931000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2686091 
+issue 2686091 
+{
+  "block": 2686091,
+  "address": "EEWyMLHgwtemr48spFNnS3U2XjaYswqAYAbadx2jr9ppp4X",
+  "actualVsExpectedDiff": "-833408325",
+  "expectedBalance": "254188805890329619",
+  "currFreeBalance": "254188805056921294",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "254489107057011284",
+  "prevReserveBalance": "0",
+  "partialFees": "166681665",
+  "lostDust": "0",
+  "transfers": "300301000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2689106 
+issue 2689106 
+{
+  "block": 2689106,
+  "address": "FSk2iCLZEgCzfjzJaVP1SehmhbuwVonUuaYBVUDv1pzdHMa",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "149753833333334",
+  "currFreeBalance": "149753000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "149754000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2684117 
+issue 2684117 
+{
+  "block": 2684117,
+  "address": "DrBzsrxWEDX1uS33orbpN4jmhDGp2wGhA1JgLm86eGvhH7z",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "8442079033333334",
+  "currFreeBalance": "8442078200000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "8442079200000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "utility.batch"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2715129 
+issue 2715129 
+{
+  "block": 2715129,
+  "address": "FJVxSgo9ycVZSVHrtPZSVXQrjHQNAi1gQHmLwD5nnTnUFoh",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "79833333334",
+  "currFreeBalance": "79000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "80000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "proxy.addProxy"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2688129 
+issue 2688129 
+{
+  "block": 2688129,
+  "address": "FG78iuAYrn43g8b3DFjroC6mTyMDqc5xk6cbETsH1MFGCKa",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "9862832888339",
+  "currFreeBalance": "7461999555005",
+  "currReserveBalance": "2400000000000",
+  "prevFreeBalance": "7462999555005",
+  "prevReserveBalance": "2400000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "multisig.approveAsMulti"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2683125 
+issue 2683125 
+{
+  "block": 2683125,
+  "address": "FBL1t4FnLy274B7wnLckFeNrSmqSHjhf58SHYtBvZNDf4U2",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "27734973113677267",
+  "currFreeBalance": "27734972280343933",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "27757573045913933",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "22599765570000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2700124 
+issue 2700124 
+{
+  "block": 2700124,
+  "address": "D8QadRAodXMxjered2KQUBzV1JMrpCLpKbq1mv2PBq2QCRD",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "86833333333",
+  "currFreeBalance": "85999999999",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "96999999999",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "10000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2690094 
+issue 2690094 
+{
+  "block": 2690094,
+  "address": "HKo9cenaBGRx7kRbLr1Qv4y49KQ2ajve4dmtuTFunA8YkUM",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1000828537984",
+  "currFreeBalance": "999995204650",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "20444995204650",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "19444000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2663133 
+issue 2663133 
+{
+  "block": 2663133,
+  "address": "HySP6bAFvW4FPQFrZMa9wf7bcXemrygMwHKULCSJQrm24Kf",
+  "actualVsExpectedDiff": "-1000000000",
+  "expectedBalance": "205284850029812",
+  "currFreeBalance": "205283850029812",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "205284850029812",
+  "prevReserveBalance": "0",
+  "partialFees": "0",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bondExtra"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2701127 
+issue 2701127 
+{
+  "block": 2701127,
+  "address": "J45CtuF7Qj6tMTtESZWaQuj3DraDX1YzaMHRA7miTE6wcnd",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "579000833333334",
+  "currFreeBalance": "579000000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "579001000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.unbond"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2678129 
+issue 2678129 
+{
+  "block": 2678129,
+  "address": "FUUSFUcZsRQq5sL65xC94D6VFTxGYZGnk2t9ZNdYWm62pXp",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "649743599618",
+  "currFreeBalance": "648910266284",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "6460116328746",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "5810206062462",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2712127 
+issue 2712127 
+{
+  "block": 2712127,
+  "address": "DasX1jVCRMe5e2DN8XJjGQrWFkBkNvtRDRf5dkb6iUUGFfz",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "999833333334",
+  "currFreeBalance": "999000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "1000000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "utility.batch"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2674105 
+issue 2674105 
+{
+  "block": 2674105,
+  "address": "GcKYdVEDkTdCVWSxZ6J8yJ9np6YsKTLd5KZDUDp75AXdzgf",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "31318485190084",
+  "currFreeBalance": "31317651856750",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "31313725736178",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "4926120572",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.payoutStakers"
+  ],
+  "relevantEvents": [
+    "staking.Reward"
+  ]
+} 
+
+Log for block number 2723141 
+issue 2723141 
+{
+  "block": 2723141,
+  "address": "GRaA1KGwPjbjrzs9CVxcKhYKwVzY7rfCMbc7nZ7hVAYLJZC",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "907001843333334",
+  "currFreeBalance": "907001010000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "1011902010000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "104900000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2684121 
+issue 2684121 
+{
+  "block": 2684121,
+  "address": "EEWyMLHgwtemr48spFNnS3U2XjaYswqAYAbadx2jr9ppp4X",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "254381736390344618",
+  "currFreeBalance": "254381735557011284",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "254417536557011284",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "35800000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2711139 
+issue 2711139 
+{
+  "block": 2711139,
+  "address": "Gbod3HVL28Sv42ad2VS9B7Raz1H5Uc2s7fQ1UCMdA1pxQcc",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "111833333334",
+  "currFreeBalance": "111000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "112000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2717135 
+issue 2717135 
+{
+  "block": 2717135,
+  "address": "FLhcMDV8TrCAsLiPdtSn78bNcCeEyfGTmgFrJjHyLkgDkse",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "494999833333334",
+  "currFreeBalance": "494999000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "535000000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "40000000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2691125 
+issue 2691125 
+{
+  "block": 2691125,
+  "address": "J3hDWHg2UarWcUkU7aj5KvRdfx72xQiuBxuY32XcNSeDbWK",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1166833333334",
+  "currFreeBalance": "1166000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "1167000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.payoutStakers"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2686097 
+issue 2686097 
+{
+  "block": 2686097,
+  "address": "H9mebevW45bpiNLnQUWDnzVUKsFXywF4NQ66wQbySzGLvV9",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "999833333334",
+  "currFreeBalance": "999000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "1000000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bond"
+  ],
+  "relevantEvents": []
+} 
+Log for block number 2686097 
+issue 2686097 
+{
+  "block": 2686097,
+  "address": "GeT1kx2Z2RGwREbc4WM7mm5yejLtZqM4YQkaVBPxEbwwy4S",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "19833333334",
+  "currFreeBalance": "19000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "1250019000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "1249999000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2702134 
+issue 2702134 
+{
+  "block": 2702134,
+  "address": "GcwTLgVdLLiZxrNEii45oThh9wvthcBcLCUi6qg2NwGrEmr",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "4999833333334",
+  "currFreeBalance": "4999000000000",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "5000000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "utility.batch"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2690097 
+issue 2690097 
+{
+  "block": 2690097,
+  "address": "HvuKoPxdDqFsptnistbe23WrvTrQ63xyHXJ89natRebLQ1A",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "1000525325597",
+  "currFreeBalance": "999691992263",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "12891691992263",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "11891000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2704142 
+issue 2704142 
+{
+  "block": 2704142,
+  "address": "FP2J8KAd8iP65KWDjH5PND5Eq8vUJq85W9WBzMRiLwUfGsn",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "20146795454528",
+  "currFreeBalance": "20145962121194",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "20146962121194",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.nominate"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2712131 
+issue 2712131 
+{
+  "block": 2712131,
+  "address": "DKSMaFnKKHNju2DCa6skQ8v4s2wPyaX1puC5ezDLLKmiNJF",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "15099833333334",
+  "currFreeBalance": "5099000000000",
+  "currReserveBalance": "10000000000000",
+  "prevFreeBalance": "15100000000000",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "identity.setIdentity"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2715138 
+issue 2715138 
+{
+  "block": 2715138,
+  "address": "EFteY6Fg4BsFfWdfkS6XmsgyWLK2G3UZQnk87DsNHNcWSEW",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "751833009991",
+  "currFreeBalance": "750999676657",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "791999676657",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "40000000000",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2673114 
+issue 2673114 
+{
+  "block": 2673114,
+  "address": "DNVgED4QJQZ5wqbgJhcLhrRagkvjpp5yGyMonSJrSKzghRQ",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "8157183909561",
+  "currFreeBalance": "8156350576227",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "8157350576227",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bondExtra"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2676134 
+issue 2676134 
+{
+  "block": 2676134,
+  "address": "Eo4boG437k7gFy75VqPrWP5gHSGi9Sm6CZzLFFsCGYaSPzM",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "7131232736590",
+  "currFreeBalance": "7120399403256",
+  "currReserveBalance": "10000000000",
+  "prevFreeBalance": "9260557032476",
+  "prevReserveBalance": "10000000000",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "2139157629220",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "balances.transfer"
+  ],
+  "relevantEvents": []
+} 
+
+Log for block number 2693142 
+issue 2693142 
+{
+  "block": 2693142,
+  "address": "HcUWapkGqSTe8p4DpouApK5Pc7DBT4bZxAoVtWkKeBq3V3n",
+  "actualVsExpectedDiff": "-833333334",
+  "expectedBalance": "181496262645578",
+  "currFreeBalance": "181495429312244",
+  "currReserveBalance": "0",
+  "prevFreeBalance": "181496429312244",
+  "prevReserveBalance": "0",
+  "partialFees": "166666666",
+  "lostDust": "0",
+  "transfers": "0",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.bondExtra"
+  ],
+  "relevantEvents": []
+} 
