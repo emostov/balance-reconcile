@@ -1,3 +1,13 @@
+/**
+ * OneTimeReconciler is a class meant to generate a ReconcileInfo object for
+ * an address (AccountId) at a given block height.
+ *
+ * Known limitations:
+ *  - Keeping track of repatriated reserves in older versions of Kusama and Polkadot.
+ *  - Taking into account Calls nested as arguments to an extrinsic (such as in a `utility.batch`).
+ * 	- Handling older `staking.Reward` events where the address can be either stash or controller.
+ */
+
 import {
   BlockResponse,
   Extrinsic,
@@ -6,20 +16,124 @@ import {
 } from "../types/types";
 import SideCarApi from "./sidecar_api";
 
+/**
+ * Return type for fetchReferenceBalances.
+ */
+type ReferenceBalances = {
+  prevFreeBalance: bigint;
+  prevReserveBalance: bigint;
+  currFreeBalance: bigint;
+  currReserveBalance: bigint;
+};
+
 export default class OneTimeReconciler {
-  api: SideCarApi;
+  readonly api: SideCarApi;
   readonly DOLLAR = 10_000_000_000;
-  //TODO
-  // address: string;
-  // height: number;
-  constructor(sidecarBaseUrl: string) {
+  readonly address: string;
+  readonly height: number;
+  private block!: BlockResponse;
+  private eventsAffectingAddressBalance: string[];
+  private reconcileInfo?: ReconcileInfo;
+  // eslint-disable-next-line prettier/prettier
+  constructor(
+    sidecarBaseUrl: string,
+    address: string,
+    height: number,
+    blockResponse?: BlockResponse
+  ) {
     this.api = new SideCarApi(sidecarBaseUrl);
+    this.address = address;
+    this.height = height;
+    this.eventsAffectingAddressBalance = [];
+    if (blockResponse) {
+      this.block = blockResponse;
+    }
+  }
 
-    // TODO replace address and height as params and just use these instead
-    // this.address = address;
-    // this.height = height;
+  /**
+   * Get the `reconcileInfo` for this reconciler. If the reconcileInfo has
+   * already been generated it will return the previously generated object.
+   * If it has not been generated it will make necessary network calls and
+   * operations, which can be expensive.
+   *
+   * To force generation use the method `forceGetReconcileInfo`
+   */
+  async getReconcileInfo(): Promise<ReconcileInfo> {
+    return this.reconcileInfo
+      ? this.reconcileInfo
+      : await this._getReconcileInfo();
+  }
 
-    // TODO call everything in reconcileAtHeight into constructor and make it readonly
+  /**
+   * Always generate `reconcileInfo` and will not try and used cached information.
+   * This is always costly and it is recommended to use `getReconcileInfo`
+   * for 99% of use cases.
+   */
+  async forceGetReconcileInfo(): Promise<ReconcileInfo> {
+    return await this._getReconcileInfo();
+  }
+
+  private async _getReconcileInfo(): Promise<ReconcileInfo> {
+    // Ideally this would be in constructor but you cannot put async ops in
+    this.block = this.block ?? (await this.api.getBlock(this.height));
+
+    const extrinsicsSignedByAddress = this.getExtrinsicsSignedByAddress();
+
+    // Extrinsics based sums
+    const outgoingTransfers = this.sumTransfersSignedByAddress();
+    const incomingTransfers = this.sumTransfersIntoAddress();
+
+    // Fees, tips sums
+    const partialFees = this.sumPartialFeesForExtrinsicsSignedByAddress();
+    const tips = this.sumTipsByAddress();
+
+    // Event based sums
+
+    this.reconcileInfo = {
+      // maybe should add a notes section
+      block: height,
+      address,
+      actualVsExpectedDiff: (
+        currFreeBalance +
+        currReserveBalance -
+        expectedBalance
+      ).toString(),
+      expectedBalance: expectedBalance.toString(),
+      currFreeBalance: currFreeBalance.toString(),
+      currReserveBalance: currReserveBalance.toString(),
+      prevFreeBalance: prevFreeBalance.toString(),
+      prevReserveBalance: prevReserveBalance.toString(),
+      lostDust: lostDust.toString(),
+      transfers: outgoingTransfers.toString(),
+      partialFees: partialFees.toString(),
+      incomingTransfers: incomingTransfers.toString(),
+      endowment: endowment.toString(),
+      stakingRewards: stakingRewards.toString(),
+      tips: tips.toString(),
+      slashes: slashes.toString(),
+      claimed: claimed.toString(),
+      repatriatedReserves: repatriatedReserves.toString(),
+      blockReward: blockReward.toString(),
+      relevantExtrinsics: extrinsicsSignedByAddress,
+      relevantEvents: this.events,
+    };
+
+    return this.reconcileInfo;
+  }
+
+  private async fetchReferenceBalances(): Promise<ReferenceBalances> {
+    const prevBalance = await this.api.getBalance(
+      this.address,
+      this.height - 1
+    );
+    const curBalance = await this.api.getBalance(this.address, this.height);
+
+    return {
+      prevFreeBalance: BigInt(prevBalance.free),
+      prevReserveBalance: BigInt(prevBalance.reserved),
+      currFreeBalance: BigInt(curBalance.free),
+      currReserveBalance: BigInt(curBalance.reserved),
+    };
   }
 
   // Work on a graceful exit?
@@ -104,13 +218,11 @@ export default class OneTimeReconciler {
     };
   }
 
-  // In the future, it may be nice to log all the relevant extrinsics to the address
-  // for better records.
-  private extrinsics(address: string, block: BlockResponse): string[] {
+  private getExtrinsicsSignedByAddress(): string[] {
     const extrinsicsTrack: string[] = [];
-    const { extrinsics } = block;
+    const { extrinsics } = this.block;
     for (const ext of extrinsics) {
-      if (this.isSigner(address, ext)) {
+      if (this.isSigner(this.address, ext)) {
         extrinsicsTrack.push(ext.method);
       }
     }
@@ -118,73 +230,83 @@ export default class OneTimeReconciler {
     return extrinsicsTrack;
   }
 
-  // Also these functions could be broken up so that operate within a loop that goes
-  // through extrinsics instead of each doing there own loop.
-
-  // getPartialFeeForSignerAtBlock ?
-  // name of function should answer what should this function do
-  private partialFees(address: string, block: BlockResponse): bigint {
-    const { extrinsics } = block;
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+  /**
+   * Sum up the value of `balances.transfer` and `balances.transferKeepAlive`
+   * signed by `address`.
+   */
+  private sumTransfersSignedByAddress(): bigint {
+    const { extrinsics } = this.block;
     let sum = BigInt(0);
     extrinsics.forEach((ext: Extrinsic): void => {
-      // TODO deal with any type of nested calls
+      // TODO deal with any type of nested calls like
       // if(ext.method == "utility.batch"){}
+      if (
+        this.isTransferOutOfAddress(this.address, ext) &&
+        this.isSuccess(ext)
+      ) {
+        sum += BigInt(ext.args[1]);
+      }
+    });
+
+    return sum;
+  }
+
+  /**
+   * Sum up the `partialFee`s for all the `Extrinsic`s signed by `address`
+   */
+  private sumPartialFeesForExtrinsicsSignedByAddress(): bigint {
+    const { extrinsics } = this.block;
+    let sum = BigInt(0);
+    for (const ext of extrinsics) {
       const {
-        signature,
         info: { partialFee },
       } = ext;
 
-      if (signature?.signer === address && typeof partialFee === "string") {
+      if (this.isSigner(this.address, ext) && typeof partialFee === "string") {
         sum += BigInt(partialFee);
       }
-    });
+    }
 
     return sum;
   }
 
-  private transfers(address: string, block: BlockResponse): bigint {
-    const { extrinsics } = block;
+  /**
+   * Sum the amounts transferred into the `address` from
+   * `balances.transferKeepAlive` and `balances.transfer`.
+   */
+  private sumTransfersIntoAddress(): bigint {
+    const { extrinsics } = this.block;
     let sum = BigInt(0);
-    extrinsics.forEach((ext: Extrinsic): void => {
+
+    for (const ext of extrinsics) {
       // TODO deal with any type of nested calls like
       // if(ext.method == "utility.batch"){}
-      if (this.isTransferOutOfAddress(address, ext) && this.isSuccess(ext)) {
+      if (
+        this.isTransferIntoAddress(this.address, ext) &&
+        this.isSuccess(ext)
+      ) {
         sum += BigInt(ext.args[1]);
       }
-    });
+    }
 
     return sum;
   }
 
-  private incomingTransfers(address: string, block: BlockResponse): bigint {
-    const { extrinsics } = block;
-    let sum = BigInt(0);
-    extrinsics.forEach((ext: Extrinsic): void => {
-      // TODO deal with any type of nested calls like
-      // if(ext.method == "utility.batch"){}
-      if (this.isTransferIntoAddress(address, ext) && this.isSuccess(ext)) {
-        sum += BigInt(ext.args[1]);
-      }
-    });
-
-    return sum;
-  }
-
-  private tips(
-    address: string,
-    block: BlockResponse,
-    events: string[]
-  ): bigint {
-    const { extrinsics } = block;
+  /**
+   * Sum up the tips from extrinsics signed by `address`.
+   */
+  private sumTipsByAddress(): bigint {
+    const { extrinsics } = this.block;
     let tips = BigInt(0);
 
-    extrinsics.forEach((ext) => {
+    for (const ext of extrinsics) {
       if (BigInt(ext.tip) > 0 && this.isSigner(address, ext)) {
         tips += BigInt(ext.tip);
-        events.push("tip");
+
+        // TODO this isn't actually an event... need to clarify naming
+        this.eventsAffectingAddressBalance.push("tip");
       }
-    });
+    }
 
     return tips;
   }
