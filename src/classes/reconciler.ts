@@ -1,17 +1,25 @@
-import { ReconcileInfo } from "../types/types";
+import { BlockResponse, ReconcileInfo } from "../types/types";
 import OneTimeReconciler from "./one_time_reconciler";
 
 export default class Reconciler {
   sideCarUrl: string;
+  // polkaApiWSUrl: string;
   constructor(sideCarUrl: string) {
     this.sideCarUrl = sideCarUrl;
+    // this.polkaApiWSUrl = polkaApiWSUrl;
   }
 
-  async reconcileAtHeight(
+  async reconcileAddressAtHeight(
     address: string,
-    height: number
+    height: number,
+    block?: BlockResponse
   ): Promise<ReconcileInfo> {
-    const oneTimeReconciler = new OneTimeReconciler(this.sideCarUrl);
-    return await oneTimeReconciler.reconcileAtHeight(address, height);
+    const oneTimeReconciler = new OneTimeReconciler(
+      this.sideCarUrl,
+      address,
+      height,
+      block
+    );
+    return await oneTimeReconciler.getReconcileInfo();
   }
 }

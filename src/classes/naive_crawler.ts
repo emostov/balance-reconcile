@@ -4,7 +4,7 @@ import {
   CategorizeInfos,
   ReconcileInfo,
 } from "../types/types";
-import Reconciler from "./one_time_reconciler";
+import Reconciler from "./reconciler";
 import SideCarApi from "./sidecar_api";
 
 export default class NaiveCrawler {
@@ -64,7 +64,10 @@ export default class NaiveCrawler {
     // my brain is sleepy, pls help me name variables
 
     const reconcilePromises = toCheck.map(async ({ address, block }) => {
-      return await this.reconciler.reconcileAtHeight(address, Number(block));
+      return await this.reconciler.reconcileAddressAtHeight(
+        address,
+        Number(block)
+      );
     });
 
     return await Promise.all(reconcilePromises);
