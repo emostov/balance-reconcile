@@ -79,20 +79,51 @@ export default class OneTimeReconciler {
 
     const extrinsicsSignedByAddress = this.getExtrinsicsSignedByAddress();
 
-    // Extrinsics based sums
+    // Extrinsics based amounts
     const outgoingTransfers = this.sumTransfersSignedByAddress();
     const incomingTransfers = this.sumTransfersIntoAddress();
 
-    // Fees, tips sums
+    // Fees, tips amounts
     const partialFees = this.sumPartialFeesForExtrinsicsSignedByAddress();
     const tips = this.sumTipsByAddress();
 
-    // Event based sums
+    // Event based amounts
+    const stakingRewards = this.sumStakingRewardsForAddress();
+    const claimed = this.sumClaimsForAddress();
+    const repatriatedReserves = this.sumRepatriatedReservesByAddress();
+    const blockReward = this.getBlockRewardIfAddressIsAuthor();
+    const slashes = this.sumSlashesOfAddress();
+    // Beginning & End of life events
+    // Get because an address should only be endowed once, which is when it is created.
+    const endowment = this.getEndowmentToAddress();
+    const lostDust = this.getLostDustFromAddress();
+
+    const {
+      prevFreeBalance,
+      prevReserveBalance,
+      currFreeBalance,
+      currReserveBalance,
+    } = await this.fetchReferenceBalances();
+
+    const expectedBalance: bigint =
+      prevFreeBalance +
+      prevFreeBalance -
+      transfers -
+      lostDust -
+      tips -
+      partialFees -
+      slashes +
+      endowment +
+      incomingTransfers +
+      stakingRewards +
+      claimed +
+      repatriatedReserves +
+      blockReward;
 
     this.reconcileInfo = {
       // maybe should add a notes section
-      block: height,
-      address,
+      block: this.height,
+      address: this.address,
       actualVsExpectedDiff: (
         currFreeBalance +
         currReserveBalance -
@@ -115,7 +146,7 @@ export default class OneTimeReconciler {
       repatriatedReserves: repatriatedReserves.toString(),
       blockReward: blockReward.toString(),
       relevantExtrinsics: extrinsicsSignedByAddress,
-      relevantEvents: this.events,
+      relevantEvents: this.eventsAffectingAddressBalance,
     };
 
     return this.reconcileInfo;
@@ -137,86 +168,86 @@ export default class OneTimeReconciler {
   }
 
   // Work on a graceful exit?
-  async reconcileAtHeight(
-    address: string,
-    height: number
-  ): Promise<ReconcileInfo> {
-    const prevBalance = await this.api.getBalance(address, height - 1);
-    const curBalance = await this.api.getBalance(address, height);
-    const block = await this.api.getBlock(height);
+  // async reconcileAtHeight(
+  //   address: string,
+  //   height: number
+  // ): Promise<ReconcileInfo> {
+  //   const prevBalance = await this.api.getBalance(address, height - 1);
+  //   const curBalance = await this.api.getBalance(address, height);
+  //   const block = await this.api.getBlock(height);
 
-    // each function should return events field with relevant events for that function
-    const events: string[] = [];
-    const extrinsics = this.extrinsics(address, block);
+  //   // each function should return events field with relevant events for that function
+  //   const events: string[] = [];
+  //   const extrinsics = this.extrinsics(address, block);
 
-    const prevFreeBalance = BigInt(prevBalance.free);
-    const prevReserveBalance = BigInt(prevBalance.reserved);
-    const currFreeBalance = BigInt(curBalance.free);
-    const currReserveBalance = BigInt(curBalance.reserved);
+  //   const prevFreeBalance = BigInt(prevBalance.free);
+  //   const prevReserveBalance = BigInt(prevBalance.reserved);
+  //   const currFreeBalance = BigInt(curBalance.free);
+  //   const currReserveBalance = BigInt(curBalance.reserved);
 
-    const partialFees = this.partialFees(address, block);
-    const transfers = this.transfers(address, block);
-    const incomingTransfers = this.incomingTransfers(address, block);
-    const tips = this.tips(address, block, events);
-    const stakingRewards = await this.stakingRewards(address, block, events);
-    const endowment = this.endowment(address, block, events);
-    const claimed = this.claimed(address, block, events);
-    // TODO? if endowed then expected_previous_balance == 0
-    const lostDust = this.lostDust(address, block, events);
-    const repatriatedReserves = this.repatriatedReserved(
-      address,
-      block,
-      events
-    );
-    const blockReward = this.blockReward(address, block, events);
-    // TODO test this on a block that actually has slashing.
-    const slashes = this.slashes(address, block, events);
+  //   const partialFees = this.partialFees(address, block);
+  //   const transfers = this.transfers(address, block);
+  //   const incomingTransfers = this.incomingTransfers(address, block);
+  //   const tips = this.tips(address, block, events);
+  //   const stakingRewards = await this.stakingRewards(address, block, events);
+  //   const endowment = this.endowment(address, block, events);
+  //   const claimed = this.claimed(address, block, events);
+  //   // TODO? if endowed then expected_previous_balance == 0
+  //   const lostDust = this.lostDust(address, block, events);
+  //   const repatriatedReserves = this.repatriatedReserved(
+  //     address,
+  //     block,
+  //     events
+  //   );
+  //   const blockReward = this.blockReward(address, block, events);
+  //   // TODO test this on a block that actually has slashing.
+  //   const slashes = this.slashes(address, block, events);
 
-    // Possibly pull out into its own function and pass parameters in as objects
-    const expectedBalance: bigint =
-      prevFreeBalance +
-      prevReserveBalance -
-      transfers -
-      lostDust -
-      tips -
-      partialFees -
-      slashes +
-      endowment +
-      incomingTransfers +
-      stakingRewards +
-      claimed +
-      repatriatedReserves +
-      blockReward;
+  //   // Possibly pull out into its own function and pass parameters in as objects
+  //   const expectedBalance: bigint =
+  //     prevFreeBalance +
+  //     prevReserveBalance -
+  //     transfers -
+  //     lostDust -
+  //     tips -
+  //     partialFees -
+  //     slashes +
+  //     endowment +
+  //     incomingTransfers +
+  //     stakingRewards +
+  //     claimed +
+  //     repatriatedReserves +
+  //     blockReward;
 
-    return {
-      // maybe should add a notes section
-      block: height,
-      address,
-      actualVsExpectedDiff: (
-        currFreeBalance +
-        currReserveBalance -
-        expectedBalance
-      ).toString(),
-      expectedBalance: expectedBalance.toString(),
-      currFreeBalance: currFreeBalance.toString(),
-      currReserveBalance: currReserveBalance.toString(),
-      prevFreeBalance: prevFreeBalance.toString(),
-      prevReserveBalance: prevReserveBalance.toString(),
-      partialFees: partialFees.toString(),
-      lostDust: lostDust.toString(),
-      transfers: transfers.toString(),
-      incomingTransfers: incomingTransfers.toString(),
-      endowment: endowment.toString(),
-      stakingRewards: stakingRewards.toString(),
-      tips: tips.toString(),
-      slashes: slashes.toString(),
-      claimed: claimed.toString(),
-      repatriatedReserves: repatriatedReserves.toString(),
-      blockReward: blockReward.toString(),
-      relevantExtrinsics: extrinsics,
-      relevantEvents: events,
-    };
-  }
+  //   return {
+  //     // maybe should add a notes section
+  //     block: height,
+  //     address,
+  //     actualVsExpectedDiff: (
+  //       currFreeBalance +
+  //       currReserveBalance -
+  //       expectedBalance
+  //     ).toString(),
+  //     expectedBalance: expectedBalance.toString(),
+  //     currFreeBalance: currFreeBalance.toString(),
+  //     currReserveBalance: currReserveBalance.toString(),
+  //     prevFreeBalance: prevFreeBalance.toString(),
+  //     prevReserveBalance: prevReserveBalance.toString(),
+  //     partialFees: partialFees.toString(),
+  //     lostDust: lostDust.toString(),
+  //     transfers: transfers.toString(),
+  //     incomingTransfers: incomingTransfers.toString(),
+  //     endowment: endowment.toString(),
+  //     stakingRewards: stakingRewards.toString(),
+  //     tips: tips.toString(),
+  //     slashes: slashes.toString(),
+  //     claimed: claimed.toString(),
+  //     repatriatedReserves: repatriatedReserves.toString(),
+  //     blockReward: blockReward.toString(),
+  //     relevantExtrinsics: extrinsics,
+  //     relevantEvents: events,
+  //   };
+  // }
 
   private getExtrinsicsSignedByAddress(): string[] {
     const extrinsicsTrack: string[] = [];
@@ -311,13 +342,16 @@ export default class OneTimeReconciler {
     return tips;
   }
 
-  private async stakingRewards(
-    address: string,
-    block: BlockResponse,
-    eventsTrack: string[]
-  ): Promise<bigint> {
-    const { extrinsics, number } = block;
+  // TODO adjust for older events
+  /**
+   * Sum staking rewards for `address` by looking at the `staking.Reward` event
+   * and, making an additional call to find reward destination, and adding to
+   * sum if the reward destination === `address`.
+   */
+  private async sumStakingRewardsForAddress(): Promise<bigint> {
+    const { extrinsics, number } = this.block;
     let rewards = BigInt(0);
+
     for (const ext of extrinsics) {
       const { events } = ext;
 
@@ -332,22 +366,27 @@ export default class OneTimeReconciler {
 
         const [stash, amount] = data;
 
+        // Make this memoized/tabulated/cached inorder to increase efficiency
         const { rewardDestination, bonded } = await this.api.getPayout(
           stash,
           this.parseNumber(number)
         );
 
         if (
+          // use is{} boolean functions here
           (rewardDestination === "Staked" || rewardDestination === "Stash") &&
-          stash === address
+          stash === this.address
         ) {
           // The awards go to the stash
           rewards += BigInt(amount);
-          eventsTrack.push(method);
-        } else if (rewardDestination === "Controller" && bonded === address) {
+          this.eventsAffectingAddressBalance.push(method);
+        } else if (
+          rewardDestination === "Controller" &&
+          bonded === this.address
+        ) {
           // The awards go to the controller
           rewards += BigInt(amount);
-          eventsTrack.push(method);
+          this.eventsAffectingAddressBalance.push(method);
         }
         // Otherwise we do not care since
       }
@@ -356,55 +395,163 @@ export default class OneTimeReconciler {
     return rewards;
   }
 
-  private endowment(
-    address: string,
-    block: BlockResponse,
-    eventsTrack: string[]
-  ): bigint {
-    const { extrinsics } = block;
+  /**
+   * Get the amount that may have been endowed to an address. Note: if return
+   * value is greater than the account was created this block.
+   */
+  private getEndowmentToAddress(): bigint {
+    const { extrinsics } = this.block;
     let endowed = BigInt(0);
-    extrinsics.forEach((ext): void => {
+
+    for (const ext of extrinsics) {
       const { events } = ext;
 
-      events.forEach((event: PEvent): void => {
+      for (const event of events) {
         const { method, data } = event;
         const [endowAddr, amount] = data;
 
-        // we should have these methods as constants somewhere to avoid fat thumb errors
-        if (method === "balances.Endowed" && endowAddr === address) {
+        if (method === "balances.Endowed" && endowAddr === this.address) {
           endowed += BigInt(amount);
-          eventsTrack.push(method);
+          this.eventsAffectingAddressBalance.push(method);
+
+          return endowed;
         }
-      });
-    });
+      }
+    }
 
     return endowed;
   }
 
-  private lostDust(
-    address: string,
-    block: BlockResponse,
-    eventsTrack: string[]
-  ): bigint {
-    const { extrinsics } = block;
+  /**
+   * Get the dust that may have been lost from `address`. Note: If return value
+   *  is greater than zero the account has been killed.
+   */
+  private getLostDustFromAddress(): bigint {
+    const { extrinsics } = this.block;
     let dust = BigInt(0);
-    extrinsics.forEach((ext): void => {
+
+    for (const ext of extrinsics) {
       const { events } = ext;
 
-      events.forEach((event: PEvent): void => {
+      for (const event of events) {
         const { method, data } = event;
         const [deadAddr, amount] = data;
 
-        if (method === "balances.DustLost" && deadAddr === address) {
+        if (method === "balances.DustLost" && deadAddr === this.address) {
           dust += BigInt(amount);
-          eventsTrack.push(method);
+          this.eventsAffectingAddressBalance.push(method);
+
+          return dust;
         }
-      });
-    });
+      }
+    }
 
     return dust;
   }
 
+  /**
+   * Sum the successful claims incoming to `address`.
+   */
+  private sumClaimsForAddress(): bigint {
+    let claimed = BigInt(0);
+    const { extrinsics } = this.block;
+
+    for (const ext of extrinsics) {
+      const { events } = ext;
+
+      for (const event of events) {
+        const { method, data } = event;
+        const [claimsAddr, , amount] = data;
+
+        if (method === "claims.Claimed" && claimsAddr === this.address) {
+          claimed += BigInt(amount);
+          this.eventsAffectingAddressBalance.push(method);
+        }
+      }
+    }
+
+    return claimed;
+  }
+
+  // TODO account for repatriated reserve events in newer versions
+  /**
+   * Best effort attempt to sum reserves that where repatriated by `address`.
+   * The term best effort is used because in older versions of Kusama and Polkadot
+   * there was no event for repatriated reserves, so this method uses educated
+   * or sometimes known constants. In the future this method may be broken up to
+   * reflect specific events.
+   */
+  private sumRepatriatedReservesByAddress(): bigint {
+    const { extrinsics } = this.block;
+    let repatriated = BigInt(0);
+
+    extrinsics.forEach((ext): void => {
+      const { events } = ext;
+
+      events.forEach((event: PEvent): void => {
+        if (this.isVoterReported(event, this.address)) {
+          repatriated += BigInt(5 * this.DOLLAR);
+          this.eventsAffectingAddressBalance.push(event.method);
+        } else if (this.isJudgementGiven(event, this.address, ext)) {
+          this.eventsAffectingAddressBalance.push(event.method);
+
+          // This is a hardcoded guess! In reality this is not a constant
+          repatriated += BigInt("5000000000000");
+        }
+      });
+    });
+
+    return repatriated;
+  }
+
+  /**
+   * Sum up all balances.Deposit events that indicate funds moving into `address`.
+   */
+  private getBlockRewardIfAddressIsAuthor(): bigint {
+    const { extrinsics } = this.block;
+    let reward = BigInt(0);
+
+    for (const ext of extrinsics) {
+      const { events } = ext;
+
+      for (const event of events) {
+        const { method, data } = event;
+        const [blockAuthor, amount] = data;
+        if (method === "balances.Deposit" && blockAuthor === this.address) {
+          reward += BigInt(amount);
+          this.eventsAffectingAddressBalance.push(method);
+        }
+      }
+    }
+
+    return reward;
+  }
+
+  /**
+   * Sum up the amount of slashes from `address` by looking at the
+   * staking.Slash event.
+   */
+  private sumSlashesOfAddress(): bigint {
+    const { extrinsics } = this.block;
+    let reward = BigInt(0);
+
+    for (const ext of extrinsics) {
+      const { events } = ext;
+
+      for (const event of events) {
+        const { method, data } = event;
+        const [validator, amount] = data;
+        if (method === "staking.Slash" && validator === this.address) {
+          reward += BigInt(amount);
+          this.eventsAffectingAddressBalance.push(method);
+        }
+      }
+    }
+
+    return reward;
+  }
+
+  // Currently not used
   private killedAccounts(block: BlockResponse): Record<string, boolean> {
     const killed: Record<string, boolean> = {};
     const { extrinsics } = block;
@@ -423,106 +570,6 @@ export default class OneTimeReconciler {
     });
 
     return killed;
-  }
-
-  private claimed(
-    address: string,
-    block: BlockResponse,
-    eventsTrack: string[]
-  ): bigint {
-    let claimed = BigInt(0);
-    const { extrinsics } = block;
-
-    extrinsics.forEach((ext): void => {
-      const { events } = ext;
-
-      events.forEach((event: PEvent): void => {
-        const { method, data } = event;
-        const [claimsAddr, , amount] = data;
-
-        if (method === "claims.Claimed" && claimsAddr === address) {
-          claimed += BigInt(amount);
-          eventsTrack.push(method);
-        }
-      });
-    });
-
-    return claimed;
-  }
-
-  private repatriatedReserved(
-    address: string,
-    block: BlockResponse,
-    eventsTrack: string[]
-  ): bigint {
-    const { extrinsics } = block;
-    let repatriated = BigInt(0);
-
-    extrinsics.forEach((ext): void => {
-      const { events } = ext;
-
-      events.forEach((event: PEvent): void => {
-        if (this.isVoterReported(event, address)) {
-          repatriated += BigInt(5 * this.DOLLAR);
-          eventsTrack.push(event.method);
-        } else if (this.isJudgementGiven(event, address, ext)) {
-          eventsTrack.push(event.method);
-
-          // This is a hardcoded guess! In reality this is not a constant
-          repatriated += BigInt("5000000000000");
-        }
-      });
-    });
-
-    return repatriated;
-  }
-
-  private blockReward(
-    address: string,
-    block: BlockResponse,
-    eventsTrack: string[]
-  ): bigint {
-    const { extrinsics } = block;
-    let reward = BigInt(0);
-
-    for (const ext of extrinsics) {
-      const { events } = ext;
-
-      for (const event of events) {
-        const { method, data } = event;
-        const [blockAuthor, amount] = data;
-        if (method === "balances.Deposit" && blockAuthor === address) {
-          reward += BigInt(amount);
-          eventsTrack.push(method);
-        }
-      }
-    }
-
-    return reward;
-  }
-
-  private slashes(
-    address: string,
-    block: BlockResponse,
-    eventsTrack: string[]
-  ): bigint {
-    const { extrinsics } = block;
-    let reward = BigInt(0);
-
-    for (const ext of extrinsics) {
-      const { events } = ext;
-
-      for (const event of events) {
-        const { method, data } = event;
-        const [validator, amount] = data;
-        if (method === "staking.Slash" && validator === address) {
-          reward += BigInt(amount);
-          eventsTrack.push(method);
-        }
-      }
-    }
-
-    return reward;
   }
 
   // boolean "is" methods
