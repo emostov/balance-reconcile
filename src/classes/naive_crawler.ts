@@ -54,6 +54,10 @@ export default class NaiveCrawler {
     return await this.crawlAddressAndBlock(toCheck);
   }
 
+  // AddressAndBlock -> AddressAtBlock
+  // fn name -> reconcileAddressesAtBlock
+  // For the input: have an array of addresses, and the block
+  // to make it more clear
   async crawlAddressAndBlock(
     toCheck: AddressAndBlock[]
   ): Promise<ReconcileInfo[]> {
@@ -66,6 +70,7 @@ export default class NaiveCrawler {
     return await Promise.all(reconcilePromises);
   }
 
+  // Look into having this automatically happen in crawling when env is dev
   warnWhenDiff(infos: ReconcileInfo[]): string[] {
     const updates: string[] = [];
 
@@ -81,6 +86,7 @@ export default class NaiveCrawler {
     return updates;
   }
 
+  // TODO potentially use a SQL database to be able to do queries
   async categorize(
     infos: ReconcileInfo[],
     preBuiltCategorize?: CategorizeInfos

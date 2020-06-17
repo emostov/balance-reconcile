@@ -18,6 +18,8 @@ export default class OneTimeReconciler {
     // TODO replace address and height as params and just use these instead
     // this.address = address;
     // this.height = height;
+
+    // TODO call everything in reconcileAtHeight into constructor and make it readonly
   }
 
   // Work on a graceful exit?
@@ -29,6 +31,7 @@ export default class OneTimeReconciler {
     const curBalance = await this.api.getBalance(address, height);
     const block = await this.api.getBlock(height);
 
+    // each function should return events field with relevant events for that function
     const events: string[] = [];
     const extrinsics = this.extrinsics(address, block);
 
@@ -55,6 +58,7 @@ export default class OneTimeReconciler {
     // TODO test this on a block that actually has slashing.
     const slashes = this.slashes(address, block, events);
 
+    // Possibly pull out into its own function and pass parameters in as objects
     const expectedBalance: bigint =
       prevFreeBalance +
       prevReserveBalance -
@@ -116,6 +120,9 @@ export default class OneTimeReconciler {
 
   // Also these functions could be broken up so that operate within a loop that goes
   // through extrinsics instead of each doing there own loop.
+
+  // getPartialFeeForSignerAtBlock ?
+  // name of function should answer what should this function do
   private partialFees(address: string, block: BlockResponse): bigint {
     const { extrinsics } = block;
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
@@ -194,9 +201,14 @@ export default class OneTimeReconciler {
 
       for (const event of events) {
         const { method, data } = event;
-        const [stash, amount] = data;
+
         // we should have these methods as constants somewhere to avoid fat thumb errors
-        if (!(method === "staking.Reward")) continue;
+        // TODO create isStakingReward
+        if (!(method === "staking.Reward")) {
+          continue;
+        }
+
+        const [stash, amount] = data;
 
         const { rewardDestination, bonded } = await this.api.getPayout(
           stash,
@@ -207,12 +219,15 @@ export default class OneTimeReconciler {
           (rewardDestination === "Staked" || rewardDestination === "Stash") &&
           stash === address
         ) {
-          eventsTrack.push(method);
+          // The awards go to the stash
           rewards += BigInt(amount);
+          eventsTrack.push(method);
         } else if (rewardDestination === "Controller" && bonded === address) {
+          // The awards go to the controller
           rewards += BigInt(amount);
           eventsTrack.push(method);
         }
+        // Otherwise we do not care since
       }
     }
 
@@ -249,10 +264,6 @@ export default class OneTimeReconciler {
     block: BlockResponse,
     eventsTrack: string[]
   ): bigint {
-    const killed = this.killedAccounts(block);
-
-    if (!(address in killed)) return BigInt(0);
-
     const { extrinsics } = block;
     let dust = BigInt(0);
     extrinsics.forEach((ext): void => {

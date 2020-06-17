@@ -17,7 +17,7 @@ export async function subscribe(
   const api = await ApiPromise.create({ provider: wsProvider });
 
   await api.rpc.chain.subscribeNewHeads(async ({ number }) => {
-    // I need this because it gets the head to quickly and then sidecar errors
+    // I need this because it gets the head too quickly and then sidecar errors
     // out because it thinks the block does not exist
     await sleep(1000);
 
