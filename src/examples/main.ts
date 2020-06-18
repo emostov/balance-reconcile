@@ -9,8 +9,10 @@ import { categorizeExample } from "./categorize";
 
 async function main(): Promise<void> {
   const sidecarUrl = "http://127.0.0.1:8080/";
-  const wsUrl = "wss://rpc.polkadot.io";
-  await singleBlock(324511, sidecarUrl, wsUrl);
+  // const wsUrl = "wss://rpc.polkadot.io";
+  const wsUrl = "wss://kusama-rpc.polkadot.io/";
+
+  await singleBlock(2217889, sidecarUrl, wsUrl);
 }
 
 main().catch(console.log);
