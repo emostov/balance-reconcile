@@ -276,18 +276,25 @@ export default class OneTimeReconciler {
    *
    * @param event reward.Staking event
    */
-  private async fetchRewardDestination(event: PEvent): Promise<string | null> {
-		
+  private async fetchRewardDestinationAddress(event: PEvent): Promise<string | null> {
     if (!this.isStakingReward(event)) {
       return null;
 		}
-		const { extrinsics, hash } = this.block
 
-		this.polkadotApi.query.staking.bonded.at(hash, stash)
+		const { hash } = this.block
+		const { data } = event;
 
-    // Do remaining logic
+		// TODO deal with edge cases when staking.Reward has a controllers
+		const [stash, ] = data;
 
-    return "stub";
+		// logic assuming staking.Reward has stash account
+		const rewardDestinationType = await this.polkadotApi.query.staking.payee.at(hash, stash);
+
+		// If there rewardDestination is the controller than we fetch the controller
+		// address, otherwise we just return the stash
+		return rewardDestinationType.isController
+			? (await this.polkadotApi.query.staking.bonded.at(hash, stash)).unwrap().toString()
+			: stash
   }
 
   // TODO adjust for older events
@@ -311,30 +318,13 @@ export default class OneTimeReconciler {
           continue;
         }
 
-        const rewardDestination = await this.fetchRewardDestination(event);
+				const rewardDestination = await this.fetchRewardDestinationAddress(event);
 
         if (rewardDestination === this.address) {
           const { data } = event;
           const [, amount] = data;
           rewards += BigInt(amount);
         }
-        // if (
-        //   // use is{} boolean functions here
-        //   (rewardDestination === "Staked" || rewardDestination === "Stash") &&
-        //   stash === this.address
-        // ) {
-        //   // The awards go to the stash
-        //   rewards += BigInt(amount);
-        //   this.eventsAffectingAddressBalance.push(method);
-        // } else if (
-        //   rewardDestination === "Controller" &&
-        //   bonded === this.address
-        // ) {
-        //   // The awards go to the controller
-        //   rewards += BigInt(amount);
-        //   this.eventsAffectingAddressBalance.push(method);
-        // }
-        // Otherwise we do not care since
       }
     }
 
