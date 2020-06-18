@@ -277,34 +277,62 @@ export default class OneTimeReconciler {
    * @param event reward.Staking event
    */
   private async fetchRewardDestinationAddress(
-    event: PEvent
-  ): Promise<string | null> {
+    event: PEvent,
+    ext: Extrinsic
+  ): Promise<string | undefined> {
     if (!this.isStakingReward(event)) {
-      return null;
+      return undefined;
     }
 
     const { hash } = this.block;
     const { data } = event;
 
-    // TODO deal with edge cases when staking.Reward has a controllers
-    const [stash] = data;
-    console.log(stash, this.address);
-    // logic assuming staking.Reward has stash account
+    // In staking.payoutStakers, rewardAddress is a stash, but in
+    // staking.payout{Nominators, Validators} rewardAddress is the controller
+    const rewardEventAddressType = this.isLegacyPayoutMethod(ext)
+      ? "controller"
+      : "stash";
+    const [rewardEventAddress] = data;
+
+    // If we know the address from within the event is the stash we do not need
+    // to do any extra fetching. But if it is not the stash, we need to fetch
+    // the StakingLedger to get the stash address.
+    const stash =
+      rewardEventAddressType === "stash"
+        ? rewardEventAddress
+        : (
+            await this.polkadotApi.query.staking.ledger.at(
+              hash,
+              rewardEventAddress
+            )
+          ).unwrapOr(null)?.stash;
+
+    // Using the stash address, we can query for the RewardDestination, which can
+    // be Staked, Stash
     const rewardDestinationType = await this.polkadotApi.query.staking.payee.at(
       hash,
       stash
     );
 
-    // If there rewardDestination is the controller than we fetch the controller
-    // address, otherwise we just return the stash
-    return rewardDestinationType.isController
-      ? (await this.polkadotApi.query.staking.bonded.at(hash, stash))
-          .unwrap()
-          .toString()
-      : stash;
+    if (
+      rewardDestinationType.toString() === "Controller" &&
+      rewardEventAddressType === "stash"
+    ) {
+      // The rewardDestination is the controller but we only have the stash,
+      // so go and query for the controller and return it.
+      return await this.polkadotApi.query.staking.bonded.at(hash, stash);
+    }
+
+    if (rewardDestinationType.toString() === "Controller") {
+      // The rewardDestination is the controller and we have it, so return it
+      return rewardEventAddress;
+    }
+
+    // Reward destination is the stash, and we will always have it because it
+    // was necessary to fetch rewardDestinationType, so we can just return it
+    return stash?.toString();
   }
 
-  // TODO adjust for older events
   /**
    * Sum staking rewards for `address` by looking at the `staking.Reward` event
    * and, making an additional call to find reward destination, and adding to
@@ -326,7 +354,8 @@ export default class OneTimeReconciler {
         }
 
         const rewardDestination = await this.fetchRewardDestinationAddress(
-          event
+          event,
+          ext
         );
 
         if (rewardDestination === this.address) {
@@ -497,6 +526,29 @@ export default class OneTimeReconciler {
   }
 
   // boolean "is" methods
+  /**
+   * Returns if an extrinsic is a staking.payout{Nominator, Validator} or
+   * if it has an argument of calls that is staking.payout{Nominator, Validator}
+   *
+   * @param ext an extrinsic
+   */
+  private isLegacyPayoutMethod(ext: Extrinsic): boolean | undefined {
+    const {
+      method,
+      newArgs: { calls },
+    } = ext;
+
+    const isLegacy = (md: string) =>
+      md === "staking.payoutNominator" || md === "staking.payoutValidator";
+
+    if (isLegacy(method)) {
+      return true;
+    }
+
+    // This would be the case in something like a batch call
+    return calls && calls.some((c) => isLegacy(c.method));
+  }
+
   private isTransferOutOfAddress(
     address: string,
     ext: Extrinsic
