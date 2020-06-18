@@ -6,6 +6,7 @@ interface RangeLogArgs {
   start: number;
   end: number;
   sidecarUrl: string;
+  wsUrl: string;
   fileName: string;
 }
 
@@ -31,10 +32,11 @@ export async function rangeLog({
   start,
   end,
   sidecarUrl,
+  wsUrl,
   fileName,
 }: RangeLogArgs): Promise<void> {
   for (let i = start; i < end; i += 1) {
-    const crawler = new NaiveCrawler(sidecarUrl);
+    const crawler = new NaiveCrawler(sidecarUrl, wsUrl);
 
     try {
       const result = await crawler.crawlBlock(i);
@@ -75,7 +77,7 @@ export function asyncRangeCrawl({
   sidecarUrl,
   callback,
 }: AsyncRangeCrawlArgs): void {
-  const crawler = new NaiveCrawler(sidecarUrl);
+  const crawler = new NaiveCrawler(sidecarUrl, sidecarUrl);
   for (let i = start; i < end; i += 1) {
     void callback(crawler, i);
   }

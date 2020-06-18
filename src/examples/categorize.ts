@@ -4,8 +4,11 @@ import NaiveCrawler from "../classes/naive_crawler";
 
 // TODO show usage of categorize with multiple threads
 
-export async function categorizeExample(sidecarUrl: string): Promise<void> {
-  const crawler = new NaiveCrawler(sidecarUrl);
+export async function categorizeExample(
+  sidecarUrl: string,
+  wsUrl: string
+): Promise<void> {
+  const crawler = new NaiveCrawler(sidecarUrl, wsUrl);
 
   // Create an array of ReconcileInfo's by crawling
   const reconcileInfos = await crawler.crawlHeightArray([

@@ -126,7 +126,7 @@ export type Balance = {
   reserved: string;
   miscFrozen: string;
   feeFrozen: string;
-  locks: any[]; // ?
+  locks: unknown[]; // ?
 };
 
 export type TxArtifactsResponse = {
