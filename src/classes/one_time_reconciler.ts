@@ -271,29 +271,6 @@ export default class OneTimeReconciler {
   }
 
   /**
-   * Returns if an extrinsic is a staking.payout{Nominator, Validator} or
-   * if it has an argument of calls that is staking.payout{Nominator, Validator}
-   *
-   * @param ext an extrinsic
-   */
-  private isLegacyPayoutMethod(ext: Extrinsic): boolean | undefined {
-    const {
-      method,
-      newArgs: { calls },
-    } = ext;
-
-    const isLegacy = (md: string) =>
-      md === "staking.payoutNominator" || md === "staking.payoutValidator";
-
-    if (isLegacy(method)) {
-      return true;
-    }
-
-    // This would be the case in something like a batch call
-    return calls && calls.some((c) => isLegacy(c.method));
-  }
-
-  /**
    * Get the address of the of the reward destination based off a staking.Reward
    * event and the block height. This requires network calls.
    *
@@ -356,7 +333,6 @@ export default class OneTimeReconciler {
     return stash?.toString();
   }
 
-  // TODO adjust for older events
   /**
    * Sum staking rewards for `address` by looking at the `staking.Reward` event
    * and, making an additional call to find reward destination, and adding to
@@ -550,6 +526,29 @@ export default class OneTimeReconciler {
   }
 
   // boolean "is" methods
+  /**
+   * Returns if an extrinsic is a staking.payout{Nominator, Validator} or
+   * if it has an argument of calls that is staking.payout{Nominator, Validator}
+   *
+   * @param ext an extrinsic
+   */
+  private isLegacyPayoutMethod(ext: Extrinsic): boolean | undefined {
+    const {
+      method,
+      newArgs: { calls },
+    } = ext;
+
+    const isLegacy = (md: string) =>
+      md === "staking.payoutNominator" || md === "staking.payoutValidator";
+
+    if (isLegacy(method)) {
+      return true;
+    }
+
+    // This would be the case in something like a batch call
+    return calls && calls.some((c) => isLegacy(c.method));
+  }
+
   private isTransferOutOfAddress(
     address: string,
     ext: Extrinsic
