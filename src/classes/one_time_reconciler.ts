@@ -30,26 +30,27 @@ type ReferenceBalances = {
 
 export default class OneTimeReconciler {
   readonly api: SideCarApi;
-	private polkadotApi!: ApiPromise;
-	readonly wsUrl: string;
+  private polkadotApi!: ApiPromise;
+  readonly wsUrl: string;
   readonly DOLLAR = 10_000_000_000;
   readonly address: string;
   readonly height: number;
   private block!: BlockResponse;
   private eventsAffectingAddressBalance: string[];
   private reconcileInfo?: ReconcileInfo;
-  // eslint-disable-next-line prettier/prettier
+
+  // Change this be an object for argument
   constructor(
-		sidecarBaseUrl: string,
-		nodeWSUrl: string;
+    sidecarBaseUrl: string,
+    nodeWSUrl: string,
     address: string,
     height: number,
     blockResponse?: BlockResponse
   ) {
     this.api = new SideCarApi(sidecarBaseUrl);
     this.address = address;
-		this.height = height;
-		this.wsUrl = nodeWSUrl;
+    this.height = height;
+    this.wsUrl = nodeWSUrl;
     this.eventsAffectingAddressBalance = [];
     if (blockResponse) {
       this.block = blockResponse;
@@ -117,7 +118,6 @@ export default class OneTimeReconciler {
     // though because it would take more space to pass in arguments and then extract
     const expectedBalance: bigint =
       prevFreeBalance +
-      prevFreeBalance -
       outgoingTransfers -
       lostDust -
       tips -
@@ -276,25 +276,32 @@ export default class OneTimeReconciler {
    *
    * @param event reward.Staking event
    */
-  private async fetchRewardDestinationAddress(event: PEvent): Promise<string | null> {
+  private async fetchRewardDestinationAddress(
+    event: PEvent
+  ): Promise<string | null> {
     if (!this.isStakingReward(event)) {
       return null;
-		}
+    }
 
-		const { hash } = this.block
-		const { data } = event;
+    const { hash } = this.block;
+    const { data } = event;
 
-		// TODO deal with edge cases when staking.Reward has a controllers
-		const [stash, ] = data;
+    // TODO deal with edge cases when staking.Reward has a controllers
+    const [stash] = data;
+    console.log(stash, this.address);
+    // logic assuming staking.Reward has stash account
+    const rewardDestinationType = await this.polkadotApi.query.staking.payee.at(
+      hash,
+      stash
+    );
 
-		// logic assuming staking.Reward has stash account
-		const rewardDestinationType = await this.polkadotApi.query.staking.payee.at(hash, stash);
-
-		// If there rewardDestination is the controller than we fetch the controller
-		// address, otherwise we just return the stash
-		return rewardDestinationType.isController
-			? (await this.polkadotApi.query.staking.bonded.at(hash, stash)).unwrap().toString()
-			: stash
+    // If there rewardDestination is the controller than we fetch the controller
+    // address, otherwise we just return the stash
+    return rewardDestinationType.isController
+      ? (await this.polkadotApi.query.staking.bonded.at(hash, stash))
+          .unwrap()
+          .toString()
+      : stash;
   }
 
   // TODO adjust for older events
@@ -318,7 +325,9 @@ export default class OneTimeReconciler {
           continue;
         }
 
-				const rewardDestination = await this.fetchRewardDestinationAddress(event);
+        const rewardDestination = await this.fetchRewardDestinationAddress(
+          event
+        );
 
         if (rewardDestination === this.address) {
           const { data } = event;

@@ -9,7 +9,8 @@ import { categorizeExample } from "./categorize";
 
 async function main(): Promise<void> {
   const sidecarUrl = "http://127.0.0.1:8080/";
-  await singleBlock(345, sidecarUrl);
+  const wsUrl = "wss://rpc.polkadot.io";
+  await singleBlock(324511, sidecarUrl, wsUrl);
 }
 
 main().catch(console.log);
@@ -21,8 +22,12 @@ main().catch(console.log);
  * @param height block height
  * @param sidecarUrl base url of an instance of sidecar
  */
-async function singleBlock(height: number, sidecarUrl: string): Promise<void> {
-  const crawler = new NaiveCrawler(sidecarUrl);
+async function singleBlock(
+  height: number,
+  sidecarUrl: string,
+  wsUrl: string
+): Promise<void> {
+  const crawler = new NaiveCrawler(sidecarUrl, wsUrl);
 
   const results = await crawler.crawlBlock(height);
   console.log(results);

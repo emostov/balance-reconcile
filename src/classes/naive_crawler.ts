@@ -10,8 +10,8 @@ import SideCarApi from "./sidecar_api";
 export default class NaiveCrawler {
   reconciler: Reconciler;
   api: SideCarApi;
-  constructor(sideCarUrl: string) {
-    this.reconciler = new Reconciler(sideCarUrl);
+  constructor(sideCarUrl: string, nodeWsUrl: string) {
+    this.reconciler = new Reconciler(sideCarUrl, nodeWsUrl);
     this.api = new SideCarApi(sideCarUrl);
   }
 
