@@ -7,6 +7,8 @@
  *  - Taking into account Calls nested as arguments to an extrinsic (such as in a `utility.batch`).
  * 	- Handling older `staking.Reward` events where the address can be either stash or controller.
  */
+import { ApiPromise } from "@polkadot/api";
+import { WsProvider } from "@polkadot/rpc-provider";
 
 import {
   BlockResponse,
@@ -28,15 +30,19 @@ type ReferenceBalances = {
 
 export default class OneTimeReconciler {
   readonly api: SideCarApi;
+  private polkadotApi!: ApiPromise;
+  readonly wsUrl: string;
   readonly DOLLAR = 10_000_000_000;
   readonly address: string;
   readonly height: number;
   private block!: BlockResponse;
   private eventsAffectingAddressBalance: string[];
   private reconcileInfo?: ReconcileInfo;
-  // eslint-disable-next-line prettier/prettier
+
+  // Change this be an object for argument
   constructor(
     sidecarBaseUrl: string,
+    nodeWSUrl: string,
     address: string,
     height: number,
     blockResponse?: BlockResponse
@@ -44,6 +50,7 @@ export default class OneTimeReconciler {
     this.api = new SideCarApi(sidecarBaseUrl);
     this.address = address;
     this.height = height;
+    this.wsUrl = nodeWSUrl;
     this.eventsAffectingAddressBalance = [];
     if (blockResponse) {
       this.block = blockResponse;
@@ -65,17 +72,18 @@ export default class OneTimeReconciler {
   }
 
   /**
-   * Always generate `reconcileInfo` and will not try and used cached information.
-   * This is always costly and it is recommended to use `getReconcileInfo`
-   * for 99% of use cases.
+   * Coordinate the creation of the ReconcileInfo object for `address` at `height`.
+   *
+   * Primarily because it mutates `eventsAffectingAddressBalance`, this
+   * method should only be called once per lifetime of an instance of this class.
+   * This method should be thought of as a lazy extension of the constructor.
    */
-  async forceGetReconcileInfo(): Promise<ReconcileInfo> {
-    return await this._getReconcileInfo();
-  }
-
   private async _getReconcileInfo(): Promise<ReconcileInfo> {
-    // Ideally this would be in constructor but you cannot put async ops in
+    // Ideally this would be in constructor but you cannot put async ops in bc TS
     this.block = this.block ?? (await this.api.getBlock(this.height));
+    this.polkadotApi = await ApiPromise.create({
+      provider: new WsProvider(this.wsUrl),
+    });
 
     const extrinsicsSignedByAddress = this.getExtrinsicsSignedByAddress();
 
@@ -88,7 +96,8 @@ export default class OneTimeReconciler {
     const tips = this.sumTipsByAddress();
 
     // Event based amounts
-    const stakingRewards = this.sumStakingRewardsForAddress();
+    const stakingRewards = await this.sumStakingRewardsForAddress();
+    // const stakingRewards = this.sumStakingRewardsForAddress();
     const claimed = this.sumClaimsForAddress();
     const repatriatedReserves = this.sumRepatriatedReservesByAddress();
     const blockReward = this.getBlockRewardIfAddressIsAuthor();
@@ -105,10 +114,11 @@ export default class OneTimeReconciler {
       currReserveBalance,
     } = await this.fetchReferenceBalances();
 
+    // Dan recommended moving this to its own function. Leaving here for now
+    // though because it would take more space to pass in arguments and then extract
     const expectedBalance: bigint =
       prevFreeBalance +
-      prevFreeBalance -
-      transfers -
+      outgoingTransfers -
       lostDust -
       tips -
       partialFees -
@@ -147,7 +157,7 @@ export default class OneTimeReconciler {
       blockReward: blockReward.toString(),
       relevantExtrinsics: extrinsicsSignedByAddress,
       relevantEvents: this.eventsAffectingAddressBalance,
-    };
+    } as ReconcileInfo;
 
     return this.reconcileInfo;
   }
@@ -166,88 +176,6 @@ export default class OneTimeReconciler {
       currReserveBalance: BigInt(curBalance.reserved),
     };
   }
-
-  // Work on a graceful exit?
-  // async reconcileAtHeight(
-  //   address: string,
-  //   height: number
-  // ): Promise<ReconcileInfo> {
-  //   const prevBalance = await this.api.getBalance(address, height - 1);
-  //   const curBalance = await this.api.getBalance(address, height);
-  //   const block = await this.api.getBlock(height);
-
-  //   // each function should return events field with relevant events for that function
-  //   const events: string[] = [];
-  //   const extrinsics = this.extrinsics(address, block);
-
-  //   const prevFreeBalance = BigInt(prevBalance.free);
-  //   const prevReserveBalance = BigInt(prevBalance.reserved);
-  //   const currFreeBalance = BigInt(curBalance.free);
-  //   const currReserveBalance = BigInt(curBalance.reserved);
-
-  //   const partialFees = this.partialFees(address, block);
-  //   const transfers = this.transfers(address, block);
-  //   const incomingTransfers = this.incomingTransfers(address, block);
-  //   const tips = this.tips(address, block, events);
-  //   const stakingRewards = await this.stakingRewards(address, block, events);
-  //   const endowment = this.endowment(address, block, events);
-  //   const claimed = this.claimed(address, block, events);
-  //   // TODO? if endowed then expected_previous_balance == 0
-  //   const lostDust = this.lostDust(address, block, events);
-  //   const repatriatedReserves = this.repatriatedReserved(
-  //     address,
-  //     block,
-  //     events
-  //   );
-  //   const blockReward = this.blockReward(address, block, events);
-  //   // TODO test this on a block that actually has slashing.
-  //   const slashes = this.slashes(address, block, events);
-
-  //   // Possibly pull out into its own function and pass parameters in as objects
-  //   const expectedBalance: bigint =
-  //     prevFreeBalance +
-  //     prevReserveBalance -
-  //     transfers -
-  //     lostDust -
-  //     tips -
-  //     partialFees -
-  //     slashes +
-  //     endowment +
-  //     incomingTransfers +
-  //     stakingRewards +
-  //     claimed +
-  //     repatriatedReserves +
-  //     blockReward;
-
-  //   return {
-  //     // maybe should add a notes section
-  //     block: height,
-  //     address,
-  //     actualVsExpectedDiff: (
-  //       currFreeBalance +
-  //       currReserveBalance -
-  //       expectedBalance
-  //     ).toString(),
-  //     expectedBalance: expectedBalance.toString(),
-  //     currFreeBalance: currFreeBalance.toString(),
-  //     currReserveBalance: currReserveBalance.toString(),
-  //     prevFreeBalance: prevFreeBalance.toString(),
-  //     prevReserveBalance: prevReserveBalance.toString(),
-  //     partialFees: partialFees.toString(),
-  //     lostDust: lostDust.toString(),
-  //     transfers: transfers.toString(),
-  //     incomingTransfers: incomingTransfers.toString(),
-  //     endowment: endowment.toString(),
-  //     stakingRewards: stakingRewards.toString(),
-  //     tips: tips.toString(),
-  //     slashes: slashes.toString(),
-  //     claimed: claimed.toString(),
-  //     repatriatedReserves: repatriatedReserves.toString(),
-  //     blockReward: blockReward.toString(),
-  //     relevantExtrinsics: extrinsics,
-  //     relevantEvents: events,
-  //   };
-  // }
 
   private getExtrinsicsSignedByAddress(): string[] {
     const extrinsicsTrack: string[] = [];
@@ -331,7 +259,7 @@ export default class OneTimeReconciler {
     let tips = BigInt(0);
 
     for (const ext of extrinsics) {
-      if (BigInt(ext.tip) > 0 && this.isSigner(address, ext)) {
+      if (BigInt(ext.tip) > 0 && this.isSigner(this.address, ext)) {
         tips += BigInt(ext.tip);
 
         // TODO this isn't actually an event... need to clarify naming
@@ -342,53 +270,70 @@ export default class OneTimeReconciler {
     return tips;
   }
 
+  /**
+   * Get the address of the of the reward destination based off a staking.Reward
+   * event and the block height. This requires network calls.
+   *
+   * @param event reward.Staking event
+   */
+  private async fetchRewardDestinationAddress(
+    event: PEvent
+  ): Promise<string | null> {
+    if (!this.isStakingReward(event)) {
+      return null;
+    }
+
+    const { hash } = this.block;
+    const { data } = event;
+
+    // TODO deal with edge cases when staking.Reward has a controllers
+    const [stash] = data;
+    console.log(stash, this.address);
+    // logic assuming staking.Reward has stash account
+    const rewardDestinationType = await this.polkadotApi.query.staking.payee.at(
+      hash,
+      stash
+    );
+
+    // If there rewardDestination is the controller than we fetch the controller
+    // address, otherwise we just return the stash
+    return rewardDestinationType.isController
+      ? (await this.polkadotApi.query.staking.bonded.at(hash, stash))
+          .unwrap()
+          .toString()
+      : stash;
+  }
+
   // TODO adjust for older events
   /**
    * Sum staking rewards for `address` by looking at the `staking.Reward` event
    * and, making an additional call to find reward destination, and adding to
    * sum if the reward destination === `address`.
    */
+  // private async sumStakingRewardsForAddress(): Promise<bigint> {
   private async sumStakingRewardsForAddress(): Promise<bigint> {
-    const { extrinsics, number } = this.block;
+    const { extrinsics } = this.block;
     let rewards = BigInt(0);
 
     for (const ext of extrinsics) {
       const { events } = ext;
 
       for (const event of events) {
-        const { method, data } = event;
-
         // we should have these methods as constants somewhere to avoid fat thumb errors
         // TODO create isStakingReward
-        if (!(method === "staking.Reward")) {
+        if (!this.isStakingReward(event)) {
           continue;
         }
 
-        const [stash, amount] = data;
-
-        // Make this memoized/tabulated/cached inorder to increase efficiency
-        const { rewardDestination, bonded } = await this.api.getPayout(
-          stash,
-          this.parseNumber(number)
+        const rewardDestination = await this.fetchRewardDestinationAddress(
+          event
         );
 
-        if (
-          // use is{} boolean functions here
-          (rewardDestination === "Staked" || rewardDestination === "Stash") &&
-          stash === this.address
-        ) {
-          // The awards go to the stash
+        if (rewardDestination === this.address) {
+          const { data } = event;
+          const [, amount] = data;
           rewards += BigInt(amount);
-          this.eventsAffectingAddressBalance.push(method);
-        } else if (
-          rewardDestination === "Controller" &&
-          bonded === this.address
-        ) {
-          // The awards go to the controller
-          rewards += BigInt(amount);
-          this.eventsAffectingAddressBalance.push(method);
         }
-        // Otherwise we do not care since
       }
     }
 
@@ -624,6 +569,12 @@ export default class OneTimeReconciler {
     );
   }
 
+  private isStakingReward(event: PEvent) {
+    const { method } = event;
+    return method == "staking.Reward";
+  }
+
+  // Not used methods
   private parseNumber(n: string): number {
     const num = Number(n);
 
@@ -632,5 +583,25 @@ export default class OneTimeReconciler {
     }
 
     return num;
+  }
+
+  private killedAccounts(block: BlockResponse): Record<string, boolean> {
+    const killed: Record<string, boolean> = {};
+    const { extrinsics } = block;
+
+    extrinsics.forEach((ext): void => {
+      const { events } = ext;
+
+      events.forEach((event: PEvent): void => {
+        if (event.method === "system.KilledAccount") {
+          const [deadAddr] = event.data;
+          if (!(deadAddr in killed)) {
+            killed[deadAddr] = true;
+          }
+        }
+      });
+    });
+
+    return killed;
   }
 }
