@@ -21,7 +21,7 @@ export async function subscribe(
   wsUrl: string,
   callback: (infos: ReconcileInfo[]) => void
 ): Promise<void> {
-  const crawler = new NaiveCrawler(sidecarUrl);
+  const crawler = new NaiveCrawler(sidecarUrl, wsUrl);
 
   const wsProvider = new WsProvider(wsUrl);
   const api = await ApiPromise.create({ provider: wsProvider });

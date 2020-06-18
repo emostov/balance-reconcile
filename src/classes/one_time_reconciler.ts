@@ -525,27 +525,6 @@ export default class OneTimeReconciler {
     return reward;
   }
 
-  // Currently not used
-  private killedAccounts(block: BlockResponse): Record<string, boolean> {
-    const killed: Record<string, boolean> = {};
-    const { extrinsics } = block;
-
-    extrinsics.forEach((ext): void => {
-      const { events } = ext;
-
-      events.forEach((event: PEvent): void => {
-        if (event.method === "system.KilledAccount") {
-          const [deadAddr] = event.data;
-          if (!(deadAddr in killed)) {
-            killed[deadAddr] = true;
-          }
-        }
-      });
-    });
-
-    return killed;
-  }
-
   // boolean "is" methods
   /**
    * Returns if an extrinsic is a staking.payout{Nominator, Validator} or
