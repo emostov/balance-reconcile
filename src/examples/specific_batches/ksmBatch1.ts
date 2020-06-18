@@ -1,6 +1,6 @@
 import { promisify } from "util";
 
-import { rangeLogKM } from "./rangeLog";
+import { rangeLogKM } from "../rangeLog";
 
 const sleep = promisify(setTimeout);
 //Blocks 2_201_992 - 2_671_538

@@ -87,6 +87,7 @@ export default class OneTimeReconciler {
 
     // Event based amounts
     // const stakingRewards = await this.sumStakingRewardsForAddress();
+    const stakingRewards = this.sumStakingRewardsForAddress();
     const claimed = this.sumClaimsForAddress();
     const repatriatedReserves = this.sumRepatriatedReservesByAddress();
     const blockReward = this.getBlockRewardIfAddressIsAuthor();
@@ -115,7 +116,7 @@ export default class OneTimeReconciler {
       slashes +
       endowment +
       incomingTransfers +
-      // stakingRewards +
+      stakingRewards +
       claimed +
       repatriatedReserves +
       blockReward;
@@ -147,7 +148,7 @@ export default class OneTimeReconciler {
       blockReward: blockReward.toString(),
       relevantExtrinsics: extrinsicsSignedByAddress,
       relevantEvents: this.eventsAffectingAddressBalance,
-    };
+    } as ReconcileInfo;
 
     return this.reconcileInfo;
   }
@@ -266,66 +267,67 @@ export default class OneTimeReconciler {
   //  *
   //  * @param event reward.Staking event
   //  */
-  // private async fetchRewardDestination(event: PEvent): string | null {
+  // private async fetchRewardDestination(event: PEvent): Promise<string | null> {
   //   if (this.isStakingReward(event)) {
   //     return null;
-  // 	}
-
-  // 	// Do remaining logic
-  // }
-
-  // // TODO adjust for older events
-  // /**
-  //  * Sum staking rewards for `address` by looking at the `staking.Reward` event
-  //  * and, making an additional call to find reward destination, and adding to
-  //  * sum if the reward destination === `address`.
-  //  */
-  // private async sumStakingRewardsForAddress(): Promise<bigint> {
-  //   const { extrinsics } = this.block;
-  //   let rewards = BigInt(0);
-
-  //   for (const ext of extrinsics) {
-  //     const { events } = ext;
-
-  //     for (const event of events) {
-  //       const { method, data } = event;
-
-  //       // we should have these methods as constants somewhere to avoid fat thumb errors
-  //       // TODO create isStakingReward
-  //       if (method !== "staking.Reward") {
-  //         continue;
-  //       }
-
-  //       const [stash, amount] = data;
-
-  //       // Make this memoized/tabulated/cached inorder to increase efficiency
-  //       const { rewardDestination, bonded } = await this.api.getPayout(
-  //         stash,
-  //         this.height
-  //       );
-
-  //       if (
-  //         // use is{} boolean functions here
-  //         (rewardDestination === "Staked" || rewardDestination === "Stash") &&
-  //         stash === this.address
-  //       ) {
-  //         // The awards go to the stash
-  //         rewards += BigInt(amount);
-  //         this.eventsAffectingAddressBalance.push(method);
-  //       } else if (
-  //         rewardDestination === "Controller" &&
-  //         bonded === this.address
-  //       ) {
-  //         // The awards go to the controller
-  //         rewards += BigInt(amount);
-  //         this.eventsAffectingAddressBalance.push(method);
-  //       }
-  //       // Otherwise we do not care since
-  //     }
   //   }
 
-  //   return rewards;
+  //   // Do remaining logic
   // }
+
+  // TODO adjust for older events
+  /**
+   * Sum staking rewards for `address` by looking at the `staking.Reward` event
+   * and, making an additional call to find reward destination, and adding to
+   * sum if the reward destination === `address`.
+   */
+  // private async sumStakingRewardsForAddress(): Promise<bigint> {
+  private sumStakingRewardsForAddress(): bigint {
+    // const { extrinsics } = this.block;
+    const rewards = BigInt(0);
+
+    // for (const ext of extrinsics) {
+    //   const { events } = ext;
+
+    //   for (const event of events) {
+    //     const { method, data } = event;
+
+    //     // we should have these methods as constants somewhere to avoid fat thumb errors
+    //     // TODO create isStakingReward
+    //     if (method !== "staking.Reward") {
+    //       continue;
+    //     }
+
+    //     const [stash, amount] = data;
+
+    //     // Make this memoized/tabulated/cached inorder to increase efficiency
+    //     const { rewardDestination, bonded } = await this.api.getPayout(
+    //       stash,
+    //       this.height
+    //     );
+
+    //     if (
+    //       // use is{} boolean functions here
+    //       (rewardDestination === "Staked" || rewardDestination === "Stash") &&
+    //       stash === this.address
+    //     ) {
+    //       // The awards go to the stash
+    //       rewards += BigInt(amount);
+    //       this.eventsAffectingAddressBalance.push(method);
+    //     } else if (
+    //       rewardDestination === "Controller" &&
+    //       bonded === this.address
+    //     ) {
+    //       // The awards go to the controller
+    //       rewards += BigInt(amount);
+    //       this.eventsAffectingAddressBalance.push(method);
+    //     }
+    //     // Otherwise we do not care since
+    //   }
+    // }
+
+    return rewards;
+  }
 
   /**
    * Get the amount that may have been endowed to an address. Note: if return

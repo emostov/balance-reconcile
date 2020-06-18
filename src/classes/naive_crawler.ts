@@ -74,7 +74,7 @@ export default class NaiveCrawler {
   }
 
   // Look into having this automatically happen in crawling when env is dev
-  warnWhenDiff(infos: ReconcileInfo[]): string[] {
+  static warnWhenDiff(infos: ReconcileInfo[]): string[] {
     const updates: string[] = [];
 
     infos.forEach((info) => {
