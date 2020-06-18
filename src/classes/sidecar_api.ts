@@ -1,55 +1,98 @@
-import axios, { AxiosInstance } from "axios";
+import axios, { AxiosError, AxiosInstance, AxiosResponse } from "axios";
+import { promisify } from "util";
 
 import {
   Balance,
   BlockResponse,
-  PayoutResponse,
   StakingResponse,
   TxArtifactsResponse,
 } from "../types/types";
 
+// This does not include errors
+type ApiResponse = {
+  data: BlockResponse | Balance | StakingResponse | TxArtifactsResponse;
+};
+
 export default class SideCarApi {
-  api: AxiosInstance;
+  private api: AxiosInstance;
+  readonly SECOND = 1_000;
   constructor(sidecarBaseUrl: string) {
     this.api = axios.create({ baseURL: sidecarBaseUrl });
+  }
+
+  async retryGet(uri: string, attempts = 0): Promise<ApiResponse> {
+    try {
+      return await this.api.get(uri);
+    } catch (e) {
+      // Try and tolerate a sidecar outage of up to 60 seconds with 20 attempts
+      // spaced 3 seconds apart
+      if (attempts < 20) {
+        console.error(`Attempt ${attempts} for sidecar endpoint ${uri}`);
+        // Push back into event loop cycle to let other things happen and possibly
+        // create some time between requests.
+        await this.sleep(3 * this.SECOND);
+        return await this.retryGet(uri, (attempts += 1));
+      }
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      if (e && e?.isAxiosError) {
+        const {
+          response,
+          config: { url, method },
+        } = e as AxiosError<Error>;
+
+        const res = response as AxiosResponse;
+
+        throw {
+          method,
+          url,
+          status: res?.status,
+          statusText: res?.statusText,
+        };
+      }
+
+      throw e;
+    }
   }
 
   // I think these need better error handling
   async getBlock(num?: number): Promise<BlockResponse> {
     const response = num
-      ? await this.api.get(`/block/${num}`)
-      : await this.api.get(`/block`);
+      ? await this.retryGet(`/block/${num}`)
+      : await this.retryGet(`/block`);
+
     return response.data as BlockResponse;
   }
 
   async getBalance(account: string, height?: number): Promise<Balance> {
     const response = height
-      ? await this.api.get(`/balance/${account}/${height}`)
-      : await this.api.get(`/balance/${account}`);
+      ? await this.retryGet(`/balance/${account}/${height}`)
+      : await this.retryGet(`/balance/${account}`);
     return response.data as Balance;
   }
 
   async getStaking(account: string, height?: number): Promise<StakingResponse> {
     const response = height
-      ? await this.api.get(`/staking/${account}/${height}`)
-      : await this.api.get(`/staking/${account}`);
+      ? await this.retryGet(`/staking/${account}/${height}`)
+      : await this.retryGet(`/staking/${account}`);
 
     return response.data as StakingResponse;
   }
 
-  async getPayout(account: string, height?: number): Promise<PayoutResponse> {
-    const response = height
-      ? await this.api.get(`/payout/${account}/${height}`)
-      : await this.api.get(`/payout/${account}`);
-
-    return response.data as PayoutResponse;
-  }
-
   async getTxArtifacts(height?: number): Promise<TxArtifactsResponse> {
     const response = height
-      ? await this.api.get(`tx/artifacts/${height}`)
-      : await this.api.get(`tx/artifacts`);
+      ? await this.retryGet(`tx/artifacts/${height}`)
+      : await this.retryGet(`tx/artifacts`);
 
     return response.data as TxArtifactsResponse;
+  }
+
+  /**
+   *
+   * @param ms milliseconds to sleep
+   */
+  private async sleep(ms: number): Promise<void> {
+    const s = promisify(setTimeout);
+    await s(ms);
+    return;
   }
 }
