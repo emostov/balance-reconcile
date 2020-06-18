@@ -24,12 +24,10 @@ export default class SideCarApi {
     try {
       return await this.api.get(uri);
     } catch (e) {
-      // Try and tolerate a sidecar outage of up to 60 seconds with 20 attempts
+      // Try and tolerate a sidecar outage of up to 60 seconds with max 20 attempts
       // spaced 3 seconds apart
       if (attempts < 20) {
         console.error(`Attempt ${attempts} for sidecar endpoint ${uri}`);
-        // Push back into event loop cycle to let other things happen and possibly
-        // create some time between requests.
         await this.sleep(3 * this.SECOND);
         return await this.retryGet(uri, (attempts += 1));
       }
@@ -67,6 +65,7 @@ export default class SideCarApi {
     const response = height
       ? await this.retryGet(`/balance/${account}/${height}`)
       : await this.retryGet(`/balance/${account}`);
+
     return response.data as Balance;
   }
 
