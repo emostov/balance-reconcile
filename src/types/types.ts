@@ -69,6 +69,27 @@ export type Signature = {
   signer: string;
 };
 
+// Identical to the type in sidecar
+export interface SanitizedCall {
+  method: string;
+  callIndex: Uint8Array | string;
+  args: {
+    call?: SanitizedCall;
+    calls?: SanitizedCall[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any;
+  };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
+}
+
+export type NewArgs = {
+  calls?: SanitizedCall[];
+  call?: SanitizedCall;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
+};
+
 // This will need to be changed soon
 export type Extrinsic = {
   signature: Signature | null;
@@ -76,6 +97,7 @@ export type Extrinsic = {
   method: string;
   callIndex: Record<string, unknown[]>;
   args: string[];
+  newArgs: NewArgs;
   tip: string;
   hash: string;
   info: {

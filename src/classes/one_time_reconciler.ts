@@ -271,37 +271,87 @@ export default class OneTimeReconciler {
   }
 
   /**
+   * Returns if an extrinsic is a staking.payout{Nominator, Validator} or
+   * if it has an argument of calls that is staking.payout{Nominator, Validator}
+   *
+   * @param ext an extrinsic
+   */
+  private isLegacyPayoutMethod(ext: Extrinsic): boolean | undefined {
+    const {
+      method,
+      newArgs: { calls },
+    } = ext;
+
+    const isLegacy = (md: string) =>
+      md === "staking.payoutNominator" || md === "staking.payoutValidator";
+
+    if (isLegacy(method)) {
+      return true;
+    }
+
+    // This would be the case in something like a batch call
+    return calls && calls.some((c) => isLegacy(c.method));
+  }
+
+  /**
    * Get the address of the of the reward destination based off a staking.Reward
    * event and the block height. This requires network calls.
    *
    * @param event reward.Staking event
    */
   private async fetchRewardDestinationAddress(
-    event: PEvent
+    event: PEvent,
+    ext: Extrinsic
   ): Promise<string | null> {
     if (!this.isStakingReward(event)) {
       return null;
     }
 
+    const rewardDataType = this.isLegacyPayoutMethod(ext)
+      ? "controller"
+      : "stash";
+
     const { hash } = this.block;
     const { data } = event;
 
     // TODO deal with edge cases when staking.Reward has a controllers
-    const [stash] = data;
-    console.log(stash, this.address);
-    // logic assuming staking.Reward has stash account
+    const [rewardEventAddress] = data;
+    const stash =
+      rewardDataType === "stash"
+        ? rewardEventAddress
+        : (
+            await this.polkadotApi.query.staking.ledger.at(
+              hash,
+              rewardEventAddress
+            )
+          ).unwrapOr(null)?.stash;
+
+    if (rewardDataType === "stash") {
+      const [stash] = data;
+      // logic assuming staking.Reward has stash account
+      const rewardDestinationType = await this.polkadotApi.query.staking.payee.at(
+        hash,
+        stash
+      );
+
+      // If there rewardDestination is the controller than we fetch the controller
+      // address, otherwise we just return the stash
+      return rewardDestinationType.isController
+        ? (await this.polkadotApi.query.staking.bonded.at(hash, stash))
+            .unwrap()
+            .toString()
+        : stash;
+    }
+
+    const [controller] = data;
+    const stash = (
+      await this.polkadotApi.query.staking.ledger.at(hash, controller)
+    ).unwrapOr(null)?.stash;
+
     const rewardDestinationType = await this.polkadotApi.query.staking.payee.at(
       hash,
       stash
     );
-
-    // If there rewardDestination is the controller than we fetch the controller
-    // address, otherwise we just return the stash
-    return rewardDestinationType.isController
-      ? (await this.polkadotApi.query.staking.bonded.at(hash, stash))
-          .unwrap()
-          .toString()
-      : stash;
   }
 
   // TODO adjust for older events
@@ -326,7 +376,8 @@ export default class OneTimeReconciler {
         }
 
         const rewardDestination = await this.fetchRewardDestinationAddress(
-          event
+          event,
+          ext
         );
 
         if (rewardDestination === this.address) {
