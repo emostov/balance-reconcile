@@ -4,18 +4,63 @@ import {
   CategorizeInfos,
   ReconcileInfo,
 } from "../types/types";
-import Reconciler from "./one_time_reconciler";
+import Reconciler from "./reconciler";
 import SideCarApi from "./sidecar_api";
 
 export default class NaiveCrawler {
   reconciler: Reconciler;
   api: SideCarApi;
-  constructor(sideCarUrl: string) {
-    this.reconciler = new Reconciler(sideCarUrl);
+  constructor(sideCarUrl: string, nodeWsUrl: string) {
+    this.reconciler = new Reconciler(sideCarUrl, nodeWsUrl);
     this.api = new SideCarApi(sideCarUrl);
   }
 
-  // non-inclusive
+  // Look into having this automatically happen in crawling when env is dev
+  static warnWhenDiff(infos: ReconcileInfo[]): string[] {
+    const updates: string[] = [];
+
+    infos.forEach((info) => {
+      if (BigInt(info.actualVsExpectedDiff) !== BigInt(0)) {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        updates.push(`Log for block number ${infos[0].block}`);
+        updates.push(`issue ${info.block}`);
+        updates.push(JSON.stringify(info, null, "  "));
+      }
+    });
+
+    return updates;
+  }
+
+  /**
+   * Given a valid block height, generate a ReconcileInfo for each address
+   * in the block that signed an extrinsic.
+   *
+   * Addresses that signed multiple
+   * extrinsics will only have one ReconcileInfo because the reference balance
+   * is taken from block at height-1 and the block at height.
+   *
+   * This is function likely covers the majority fo use cases for the crawler.
+   *
+   * @param height height of the block to crawl
+   */
+  async crawlBlock(height: number): Promise<ReconcileInfo[]> {
+    // We get the block here and then pass it each time we reconcile.
+    // This is a benefit because if a block has multiple addresses that can
+    // be checked, then it will prevent additional fetches within the reconciler.
+    const blockResponse = await this.api.getBlock(height);
+
+    const addresses = this.findSigners(blockResponse);
+    const infos = addresses.map(async (addr) => {
+      return await this.reconciler.reconcileAddressAtHeight(
+        addr,
+        height,
+        blockResponse
+      );
+    });
+
+    return await Promise.all(infos);
+  }
+
   async crawlRange(start: number, end: number): Promise<ReconcileInfo[]> {
     const reconcileInfos: ReconcileInfo[] = [];
 
@@ -37,53 +82,22 @@ export default class NaiveCrawler {
     return reconcileInfos;
   }
 
-  async crawlBlock(height: number): Promise<ReconcileInfo[]> {
-    const blockResponse = await this.api.getBlock(height);
-
-    const addresses = this.findSigners(blockResponse);
-
-    const toCheck = addresses.map(
-      (address): AddressAndBlock => {
-        return {
-          address,
-          block: height.toString(),
-        };
-      }
-    );
-
-    return await this.crawlAddressAndBlock(toCheck);
-  }
-
-  // AddressAndBlock -> AddressAtBlock
-  // fn name -> reconcileAddressesAtBlock
-  // For the input: have an array of addresses, and the block
-  // to make it more clear
-  async crawlAddressAndBlock(
+  /**
+   * Ideal for use with the output of @emostov/substrate-tx-seed
+   *
+   * @param toCheck
+   */
+  async reconcileAddressesAtBlock(
     toCheck: AddressAndBlock[]
   ): Promise<ReconcileInfo[]> {
-    // my brain is sleepy, pls help me name variables
-
     const reconcilePromises = toCheck.map(async ({ address, block }) => {
-      return await this.reconciler.reconcileAtHeight(address, Number(block));
+      return await this.reconciler.reconcileAddressAtHeight(
+        address,
+        Number(block)
+      );
     });
 
     return await Promise.all(reconcilePromises);
-  }
-
-  // Look into having this automatically happen in crawling when env is dev
-  warnWhenDiff(infos: ReconcileInfo[]): string[] {
-    const updates: string[] = [];
-
-    infos.forEach((info) => {
-      if (BigInt(info.actualVsExpectedDiff) !== BigInt(0)) {
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-        updates.push(`Log for block number ${infos[0].block}`);
-        updates.push(`issue ${info.block}`);
-        updates.push(JSON.stringify(info, null, "  "));
-      }
-    });
-
-    return updates;
   }
 
   // TODO potentially use a SQL database to be able to do queries
