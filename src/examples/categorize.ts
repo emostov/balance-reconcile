@@ -2,6 +2,8 @@ import fs from "fs";
 
 import NaiveCrawler from "../classes/naive_crawler";
 
+// TODO show usage of categorize with multiple threads
+
 export async function categorizeExample(sidecarUrl: string): Promise<void> {
   const crawler = new NaiveCrawler(sidecarUrl);
 

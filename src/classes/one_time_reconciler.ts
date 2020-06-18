@@ -7,6 +7,8 @@
  *  - Taking into account Calls nested as arguments to an extrinsic (such as in a `utility.batch`).
  * 	- Handling older `staking.Reward` events where the address can be either stash or controller.
  */
+import { ApiPromise } from "@polkadot/api";
+import { WsProvider } from "@polkadot/rpc-provider";
 
 import {
   BlockResponse,
@@ -28,6 +30,8 @@ type ReferenceBalances = {
 
 export default class OneTimeReconciler {
   readonly api: SideCarApi;
+	private polkadotApi!: ApiPromise;
+	readonly wsUrl: string;
   readonly DOLLAR = 10_000_000_000;
   readonly address: string;
   readonly height: number;
@@ -36,14 +40,16 @@ export default class OneTimeReconciler {
   private reconcileInfo?: ReconcileInfo;
   // eslint-disable-next-line prettier/prettier
   constructor(
-    sidecarBaseUrl: string,
+		sidecarBaseUrl: string,
+		nodeWSUrl: string;
     address: string,
     height: number,
     blockResponse?: BlockResponse
   ) {
     this.api = new SideCarApi(sidecarBaseUrl);
     this.address = address;
-    this.height = height;
+		this.height = height;
+		this.wsUrl = nodeWSUrl;
     this.eventsAffectingAddressBalance = [];
     if (blockResponse) {
       this.block = blockResponse;
@@ -74,6 +80,9 @@ export default class OneTimeReconciler {
   private async _getReconcileInfo(): Promise<ReconcileInfo> {
     // Ideally this would be in constructor but you cannot put async ops in bc TS
     this.block = this.block ?? (await this.api.getBlock(this.height));
+    this.polkadotApi = await ApiPromise.create({
+      provider: new WsProvider(this.wsUrl),
+    });
 
     const extrinsicsSignedByAddress = this.getExtrinsicsSignedByAddress();
 
@@ -86,8 +95,8 @@ export default class OneTimeReconciler {
     const tips = this.sumTipsByAddress();
 
     // Event based amounts
-    // const stakingRewards = await this.sumStakingRewardsForAddress();
-    const stakingRewards = this.sumStakingRewardsForAddress();
+    const stakingRewards = await this.sumStakingRewardsForAddress();
+    // const stakingRewards = this.sumStakingRewardsForAddress();
     const claimed = this.sumClaimsForAddress();
     const repatriatedReserves = this.sumRepatriatedReservesByAddress();
     const blockReward = this.getBlockRewardIfAddressIsAuthor();
@@ -140,7 +149,7 @@ export default class OneTimeReconciler {
       partialFees: partialFees.toString(),
       incomingTransfers: incomingTransfers.toString(),
       endowment: endowment.toString(),
-      // stakingRewards: stakingRewards.toString(),
+      stakingRewards: stakingRewards.toString(),
       tips: tips.toString(),
       slashes: slashes.toString(),
       claimed: claimed.toString(),
@@ -261,19 +270,25 @@ export default class OneTimeReconciler {
     return tips;
   }
 
-  // /**
-  //  * Get the address of the of the reward destination based off a staking.Reward
-  //  * event and the block height. This requires network calls.
-  //  *
-  //  * @param event reward.Staking event
-  //  */
-  // private async fetchRewardDestination(event: PEvent): Promise<string | null> {
-  //   if (this.isStakingReward(event)) {
-  //     return null;
-  //   }
+  /**
+   * Get the address of the of the reward destination based off a staking.Reward
+   * event and the block height. This requires network calls.
+   *
+   * @param event reward.Staking event
+   */
+  private async fetchRewardDestination(event: PEvent): Promise<string | null> {
+		
+    if (!this.isStakingReward(event)) {
+      return null;
+		}
+		const { extrinsics, hash } = this.block
 
-  //   // Do remaining logic
-  // }
+		this.polkadotApi.query.staking.bonded.at(hash, stash)
+
+    // Do remaining logic
+
+    return "stub";
+  }
 
   // TODO adjust for older events
   /**
@@ -282,49 +297,46 @@ export default class OneTimeReconciler {
    * sum if the reward destination === `address`.
    */
   // private async sumStakingRewardsForAddress(): Promise<bigint> {
-  private sumStakingRewardsForAddress(): bigint {
-    // const { extrinsics } = this.block;
-    const rewards = BigInt(0);
+  private async sumStakingRewardsForAddress(): Promise<bigint> {
+    const { extrinsics } = this.block;
+    let rewards = BigInt(0);
 
-    // for (const ext of extrinsics) {
-    //   const { events } = ext;
+    for (const ext of extrinsics) {
+      const { events } = ext;
 
-    //   for (const event of events) {
-    //     const { method, data } = event;
+      for (const event of events) {
+        // we should have these methods as constants somewhere to avoid fat thumb errors
+        // TODO create isStakingReward
+        if (!this.isStakingReward(event)) {
+          continue;
+        }
 
-    //     // we should have these methods as constants somewhere to avoid fat thumb errors
-    //     // TODO create isStakingReward
-    //     if (method !== "staking.Reward") {
-    //       continue;
-    //     }
+        const rewardDestination = await this.fetchRewardDestination(event);
 
-    //     const [stash, amount] = data;
-
-    //     // Make this memoized/tabulated/cached inorder to increase efficiency
-    //     const { rewardDestination, bonded } = await this.api.getPayout(
-    //       stash,
-    //       this.height
-    //     );
-
-    //     if (
-    //       // use is{} boolean functions here
-    //       (rewardDestination === "Staked" || rewardDestination === "Stash") &&
-    //       stash === this.address
-    //     ) {
-    //       // The awards go to the stash
-    //       rewards += BigInt(amount);
-    //       this.eventsAffectingAddressBalance.push(method);
-    //     } else if (
-    //       rewardDestination === "Controller" &&
-    //       bonded === this.address
-    //     ) {
-    //       // The awards go to the controller
-    //       rewards += BigInt(amount);
-    //       this.eventsAffectingAddressBalance.push(method);
-    //     }
-    //     // Otherwise we do not care since
-    //   }
-    // }
+        if (rewardDestination === this.address) {
+          const { data } = event;
+          const [, amount] = data;
+          rewards += BigInt(amount);
+        }
+        // if (
+        //   // use is{} boolean functions here
+        //   (rewardDestination === "Staked" || rewardDestination === "Stash") &&
+        //   stash === this.address
+        // ) {
+        //   // The awards go to the stash
+        //   rewards += BigInt(amount);
+        //   this.eventsAffectingAddressBalance.push(method);
+        // } else if (
+        //   rewardDestination === "Controller" &&
+        //   bonded === this.address
+        // ) {
+        //   // The awards go to the controller
+        //   rewards += BigInt(amount);
+        //   this.eventsAffectingAddressBalance.push(method);
+        // }
+        // Otherwise we do not care since
+      }
+    }
 
     return rewards;
   }
