@@ -341,13 +341,18 @@ export default class OneTimeReconciler {
       rewardDestinationType.toString() === "Controller" &&
       rewardEventAddressType === "stash"
     ) {
+      // The rewardDestination is the controller but we only have the stash,
+      // so go and query for the controller and return it.
       return await this.polkadotApi.query.staking.bonded.at(hash, stash);
     }
 
     if (rewardDestinationType.toString() === "Controller") {
+      // The rewardDestination is the controller and we have it, so return it
       return rewardEventAddress;
     }
 
+    // Reward destination is the stash, and we will always have it because it
+    // was necessary to fetch rewardDestinationType, so we can just return it
     return stash?.toString();
   }
 
