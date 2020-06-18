@@ -1,0 +1,28 @@
+
+Log for block number 2806051 
+issue 2806051 
+{
+  "block": 2806051,
+  "address": "Fci85YRQtdX12pxajrFipL8PtR1r9W3Cur6B2WV9hwqdNT7",
+  "actualVsExpectedDiff": "50000000000",
+  "expectedBalance": "11678858733718770",
+  "currFreeBalance": "11678858733718770",
+  "currReserveBalance": "50000000000",
+  "prevFreeBalance": "11678858900385436",
+  "prevReserveBalance": "50000000000",
+  "lostDust": "0",
+  "transfers": "0",
+  "partialFees": "166666666",
+  "incomingTransfers": "0",
+  "endowment": "0",
+  "stakingRewards": "0",
+  "tips": "0",
+  "slashes": "0",
+  "claimed": "0",
+  "repatriatedReserves": "0",
+  "blockReward": "0",
+  "relevantExtrinsics": [
+    "staking.withdrawUnbonded"
+  ],
+  "relevantEvents": []
+} 
