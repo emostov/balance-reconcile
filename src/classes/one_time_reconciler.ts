@@ -15,6 +15,7 @@ import {
   Extrinsic,
   PEvent,
   ReconcileInfo,
+  SanitizedCall,
 } from "../types/types";
 import SideCarApi from "./sidecar_api";
 
@@ -88,9 +89,10 @@ export default class OneTimeReconciler {
     const extrinsicsSignedByAddress = this.getExtrinsicsSignedByAddress();
 
     // Extrinsics based amounts
-    const outgoingTransfers = this.sumTransfersSignedByAddress();
-    const incomingTransfers = this.sumTransfersIntoAddress();
-
+    const {
+      outgoingTransfers,
+      incomingTransfers,
+    } = this.sumPossibleNestedCalls();
     // Fees, tips amounts
     const partialFees = this.sumPartialFeesForExtrinsicsSignedByAddress();
     const tips = this.sumTipsByAddress();
@@ -118,6 +120,7 @@ export default class OneTimeReconciler {
     // though because it would take more space to pass in arguments and then extract
     const expectedBalance: bigint =
       prevFreeBalance +
+      prevReserveBalance -
       outgoingTransfers -
       lostDust -
       tips -
@@ -189,25 +192,71 @@ export default class OneTimeReconciler {
     return extrinsicsTrack;
   }
 
-  /**
-   * Sum up the value of `balances.transfer` and `balances.transferKeepAlive`
-   * signed by `address`.
-   */
-  private sumTransfersSignedByAddress(): bigint {
+  private sumPossibleNestedCalls(): {
+    outgoingTransfers: bigint;
+    incomingTransfers: bigint;
+  } {
     const { extrinsics } = this.block;
-    let sum = BigInt(0);
-    extrinsics.forEach((ext: Extrinsic): void => {
-      // TODO deal with any type of nested calls like
-      // if(ext.method == "utility.batch"){}
-      if (
-        this.isTransferOutOfAddress(this.address, ext) &&
-        this.isSuccess(ext)
-      ) {
-        sum += BigInt(ext.args[1]);
-      }
-    });
+    let transfersOut = BigInt(0);
+    let transfersIn = BigInt(0);
+    for (const ext of extrinsics) {
+      transfersOut += this.getTransferOutSignedByAddress(ext);
+      transfersIn += this.getTransferIntoAddress(ext);
 
-    return sum;
+      if (ext.newArgs.calls) {
+        // Things will get wonky when we have sudo or calls are nested more
+        // than one level deep
+        for (const c of ext.newArgs.calls) {
+          transfersOut += this.getTransferOutSignedByAddress(ext, c);
+          transfersIn += this.getTransferIntoAddress(ext, c);
+        }
+      }
+    }
+
+    return { outgoingTransfers: transfersOut, incomingTransfers: transfersIn };
+  }
+
+  /**
+   * 	Based off a extrinsic or a call, get the value transferred into the
+   * `address` from `balances.transferKeepAlive` and `balances.transfer`.
+   */
+  private getTransferIntoAddress(ext: Extrinsic, call?: SanitizedCall): bigint {
+    if (!this.isSuccess(ext)) {
+      return BigInt(0);
+    }
+
+    if (call) {
+      return this.isTransferIntoAddress(call)
+        ? BigInt(call.args.dest ?? 0)
+        : BigInt(0);
+    }
+
+    return this.isTransferIntoAddress(ext)
+      ? BigInt(ext.newArgs.dest ?? 0)
+      : BigInt(0);
+  }
+
+  /**
+   * 	Based off a extrinsic or a call, get the value transferred out of the
+   * `address` from `balances.transferKeepAlive` and `balances.transfer`.
+   */
+  private getTransferOutSignedByAddress(
+    ext: Extrinsic,
+    call?: SanitizedCall
+  ): bigint {
+    if (call) {
+      return this.isSuccess(ext) &&
+        this.isTransfer(call) &&
+        this.isSigner(this.address, ext)
+        ? BigInt(call.args.value ?? 0)
+        : BigInt(0);
+    }
+
+    return this.isSuccess(ext) &&
+      this.isTransfer(ext) &&
+      this.isSigner(this.address, ext)
+      ? BigInt(ext.newArgs.value ?? 0)
+      : BigInt(0);
   }
 
   /**
@@ -223,28 +272,6 @@ export default class OneTimeReconciler {
 
       if (this.isSigner(this.address, ext) && typeof partialFee === "string") {
         sum += BigInt(partialFee);
-      }
-    }
-
-    return sum;
-  }
-
-  /**
-   * Sum the amounts transferred into the `address` from
-   * `balances.transferKeepAlive` and `balances.transfer`.
-   */
-  private sumTransfersIntoAddress(): bigint {
-    const { extrinsics } = this.block;
-    let sum = BigInt(0);
-
-    for (const ext of extrinsics) {
-      // TODO deal with any type of nested calls like
-      // if(ext.method == "utility.batch"){}
-      if (
-        this.isTransferIntoAddress(this.address, ext) &&
-        this.isSuccess(ext)
-      ) {
-        sum += BigInt(ext.args[1]);
       }
     }
 
@@ -270,6 +297,7 @@ export default class OneTimeReconciler {
     return tips;
   }
 
+  // TODO look into potential optimization of caching the stash-controller pairs
   /**
    * Get the address of the of the reward destination based off a staking.Reward
    * event and the block height. This requires network calls.
@@ -320,7 +348,9 @@ export default class OneTimeReconciler {
     ) {
       // The rewardDestination is the controller but we only have the stash,
       // so go and query for the controller and return it.
-      return await this.polkadotApi.query.staking.bonded.at(hash, stash);
+      return (
+        await this.polkadotApi.query.staking.bonded.at(hash, stash)
+      ).toString();
     }
 
     if (rewardDestinationType.toString() === "Controller") {
@@ -357,6 +387,8 @@ export default class OneTimeReconciler {
           event,
           ext
         );
+
+        console.log(rewardDestination, this.address);
 
         if (rewardDestination === this.address) {
           const { data } = event;
@@ -549,15 +581,12 @@ export default class OneTimeReconciler {
     return calls && calls.some((c) => isLegacy(c.method));
   }
 
-  private isTransferOutOfAddress(
-    address: string,
-    ext: Extrinsic
-  ): boolean | null {
+  private isTransfer(ext: Extrinsic | SanitizedCall): boolean | null {
     return (
-      ext.signature &&
-      ext.signature.signer == address &&
-      (ext.method == "balances.transferKeepAlive" ||
-        ext.method == "balances.transfer")
+      // ext.signature &&
+      // ext.signature.signer == address &&
+      ext.method === "balances.transferKeepAlive" ||
+      ext.method === "balances.transfer"
     );
   }
 
@@ -566,14 +595,16 @@ export default class OneTimeReconciler {
   }
 
   private isTransferIntoAddress(
-    address: string,
-    ext: Extrinsic
+    ext: Extrinsic | SanitizedCall
   ): boolean | null {
-    const [dest] = ext.args;
+    const dest = ext.newArgs
+      ? ((ext as Extrinsic).newArgs.dest as string)
+      : ((ext as SanitizedCall).args.dest as string);
+
     return (
       (ext.method == "balances.transferKeepAlive" ||
         ext.method == "balances.transfer") &&
-      dest === address
+      dest === this.address
     );
   }
 
