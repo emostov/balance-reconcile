@@ -165,30 +165,6 @@ export default class OneTimeReconciler {
     return this.reconcileInfo;
   }
 
-  private sumPossibleNestedCalls(): {
-    outgoingTransfers: bigint;
-    incomingTransfers: bigint;
-  } {
-    const { extrinsics } = this.block;
-    let transfersOut = BigInt(0);
-    let transfersIn = BigInt(0);
-    for (const ext of extrinsics) {
-      transfersOut += this.getTransferOutSignedByAddress(ext);
-      transfersIn += this.getTransferIntoAddress(ext);
-
-      if (ext.newArgs.calls) {
-        // Things will get wonky when we have sudo or calls are nested more
-        // than one level deep
-        for (const c of ext.newArgs.calls) {
-          transfersOut += this.getTransferOutSignedByAddress(ext, c);
-          transfersIn += this.getTransferIntoAddress(ext, c);
-        }
-      }
-    }
-
-    return { outgoingTransfers: transfersOut, incomingTransfers: transfersIn };
-  }
-
   private async fetchReferenceBalances(): Promise<ReferenceBalances> {
     const prevBalance = await this.api.getBalance(
       this.address,
@@ -216,28 +192,54 @@ export default class OneTimeReconciler {
     return extrinsicsTrack;
   }
 
+  private sumPossibleNestedCalls(): {
+    outgoingTransfers: bigint;
+    incomingTransfers: bigint;
+  } {
+    const { extrinsics } = this.block;
+    let transfersOut = BigInt(0);
+    let transfersIn = BigInt(0);
+    for (const ext of extrinsics) {
+      transfersOut += this.getTransferOutSignedByAddress(ext);
+      transfersIn += this.getTransferIntoAddress(ext);
+
+      if (ext.newArgs.calls) {
+        // Things will get wonky when we have sudo or calls are nested more
+        // than one level deep
+        for (const c of ext.newArgs.calls) {
+          transfersOut += this.getTransferOutSignedByAddress(ext, c);
+          transfersIn += this.getTransferIntoAddress(ext, c);
+        }
+      }
+    }
+
+    return { outgoingTransfers: transfersOut, incomingTransfers: transfersIn };
+  }
+
   /**
-   * Sum up the value of `balances.transfer` and `balances.transferKeepAlive`
-   * signed by `address`.
+   * 	Based off a extrinsic or a call, get the value transferred into the
+   * `address` from `balances.transferKeepAlive` and `balances.transfer`.
    */
-  // private sumTransfersSignedByAddress(): bigint {
-  //   const { extrinsics } = this.block;
-  //   let sum = BigInt(0);
-  //   extrinsics.forEach((ext: Extrinsic): void => {
-  //     // TODO deal with any type of nested calls like
-  //     // if(ext.method == "utility.batch"){}
-  //     if (
-  //       this.isTransfer(ext) &&
-  //       this.isSuccess(ext) &&
-  //       this.isSigner(this.address, ext)
-  //     ) {
-  //       sum += BigInt(ext.args[1]);
-  //     }
-  //   });
+  private getTransferIntoAddress(ext: Extrinsic, call?: SanitizedCall): bigint {
+    if (!this.isSuccess(ext)) {
+      return BigInt(0);
+    }
 
-  //   return sum;
-  // }
+    if (call) {
+      return this.isTransferIntoAddress(call)
+        ? BigInt(call.args.dest ?? 0)
+        : BigInt(0);
+    }
 
+    return this.isTransferIntoAddress(ext)
+      ? BigInt(ext.newArgs.dest ?? 0)
+      : BigInt(0);
+  }
+
+  /**
+   * 	Based off a extrinsic or a call, get the value transferred out of the
+   * `address` from `balances.transferKeepAlive` and `balances.transfer`.
+   */
   private getTransferOutSignedByAddress(
     ext: Extrinsic,
     call?: SanitizedCall
@@ -277,26 +279,6 @@ export default class OneTimeReconciler {
   }
 
   /**
-   * 	Based off a extrinsic or a call, get the value transferred into the
-   * `address` from `balances.transferKeepAlive` and `balances.transfer`.
-   */
-  private getTransferIntoAddress(ext: Extrinsic, call?: SanitizedCall): bigint {
-    if (!this.isSuccess(ext)) {
-      return BigInt(0);
-    }
-
-    if (call) {
-      return this.isTransferIntoAddress(call)
-        ? BigInt(call.args.dest ?? 0)
-        : BigInt(0);
-    }
-
-    return this.isTransferIntoAddress(ext)
-      ? BigInt(ext.newArgs.dest ?? 0)
-      : BigInt(0);
-  }
-
-  /**
    * Sum up the tips from extrinsics signed by `address`.
    */
   private sumTipsByAddress(): bigint {
@@ -315,7 +297,7 @@ export default class OneTimeReconciler {
     return tips;
   }
 
-  // TODO look into potential optimization of caching the stash- controller pairs
+  // TODO look into potential optimization of caching the stash-controller pairs
   /**
    * Get the address of the of the reward destination based off a staking.Reward
    * event and the block height. This requires network calls.
