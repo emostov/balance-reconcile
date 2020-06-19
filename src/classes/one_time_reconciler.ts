@@ -205,7 +205,7 @@ export default class OneTimeReconciler {
 
       if (ext.newArgs.calls) {
         // Things will get wonky when we have sudo or calls are nested more
-        // than one level deep
+        // than one level deep so in the future we need a more resilient solution
         for (const c of ext.newArgs.calls) {
           transfersOut += this.getTransferOutSignedByAddress(ext, c);
           transfersIn += this.getTransferIntoAddress(ext, c);
@@ -479,13 +479,38 @@ export default class OneTimeReconciler {
     return claimed;
   }
 
-  // TODO account for repatriated reserve events in newer versions
   /**
    * Best effort attempt to sum reserves that where repatriated by `address`.
    * The term best effort is used because in older versions of Kusama and Polkadot
    * there was no event for repatriated reserves, so this method uses educated
    * or sometimes known constants. In the future this method may be broken up to
    * reflect specific events.
+   */
+  // private sumRepatriatedReservesByAddress(): bigint {
+  //   const { extrinsics } = this.block;
+  //   let repatriated = BigInt(0);
+
+  //   extrinsics.forEach((ext): void => {
+  //     const { events } = ext;
+
+  //     events.forEach((event: PEvent): void => {
+  //       if (this.isVoterReported(event, this.address)) {
+  //         repatriated += BigInt(5 * this.DOLLAR);
+  //         this.eventsAffectingAddressBalance.push(event.method);
+  //       } else if (this.isJudgementGiven(event, this.address, ext)) {
+  //         this.eventsAffectingAddressBalance.push(event.method);
+
+  //         // This is a hardcoded guess! In reality this is not a constant
+  //         repatriated += BigInt("5000000000000");
+  //       }
+  //     });
+  //   });
+
+  //   return repatriated;
+  // }
+
+  /**
+   * Sum of the reserves repatriated by address.
    */
   private sumRepatriatedReservesByAddress(): bigint {
     const { extrinsics } = this.block;
@@ -495,14 +520,15 @@ export default class OneTimeReconciler {
       const { events } = ext;
 
       events.forEach((event: PEvent): void => {
-        if (this.isVoterReported(event, this.address)) {
-          repatriated += BigInt(5 * this.DOLLAR);
-          this.eventsAffectingAddressBalance.push(event.method);
-        } else if (this.isJudgementGiven(event, this.address, ext)) {
-          this.eventsAffectingAddressBalance.push(event.method);
-
-          // This is a hardcoded guess! In reality this is not a constant
-          repatriated += BigInt("5000000000000");
+        const { method, data } = event;
+        if (method === "balances.ReserveRepatriated" && this.isSuccess(ext)) {
+          /// Some balance was moved from the reserve of the first account to the second account.
+          /// Final argument indicates the destination balance type.
+          // ReserveRepatriated(AccountId, AccountId, Balance, Status),
+          const [, dest, amount] = data;
+          if (dest === this.address) {
+            repatriated += BigInt(amount);
+          }
         }
       });
     });
