@@ -23,6 +23,7 @@ async function main(): Promise<void> {
       results = [];
     }
 
+    // We are big org and different parts of the org are making requests
     void sidecar.getBlock(n).then((res) => results.push(res));
     void sidecar
       .getBalance(`13RDY9nrJpyTDBSUdBw12dGwhk19sGwsrVZ2bxkzYHBSagP2`, n)
@@ -36,20 +37,25 @@ async function main(): Promise<void> {
 
     void sidecar.getTxArtifacts(n).then((res) => results.push(res));
 
-    void sidecar.getMetadata(n).then((res) => results.push(res));
+    void sidecar.getMetadata(n).then((res) => {
+      console.log(`got metadata for block {n}`);
+      results.push(res);
+    });
 
-    // sleep a quarter second
+    // 50ms sleep, maybe a little more realistic?
     await sidecar.sleep(1 * 50);
   }
 
   console.log("Done checking cc1Blocks");
 
-  // Make sure all the requests have finished
-  await sidecar.sleep(120 * 1000);
+  // 6 requests per loop
+  // expected response time upper bound is ~5 seconds
+  // loop over 163 blocks
+  // 6 * (5 * 1_000) * 163 -> 4890000ms or 4890s or 81.5 minutes
+  await sidecar.sleep(4890000);
 
-	// finish up1
+  // finish up!
   process.exit(0);
 }
 
 main().catch(console.log);
-// main();

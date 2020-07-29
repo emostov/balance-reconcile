@@ -23,6 +23,7 @@ async function main(): Promise<void> {
       results = [];
     }
 
+    // We are big org and different parts of the org are making requests
     void sidecar.getBlock(n).then((res) => results.push(res));
     void sidecar
       .getBalance(`13RDY9nrJpyTDBSUdBw12dGwhk19sGwsrVZ2bxkzYHBSagP2`, n)
@@ -38,7 +39,7 @@ async function main(): Promise<void> {
 
     void sidecar.getMetadata(n).then((res) => results.push(res));
 
-    // sleep a quarter second
+    // 50ms sleep, maybe a little more realistic?
     await sidecar.sleep(1 * 50);
   }
 
@@ -48,9 +49,7 @@ async function main(): Promise<void> {
   // expected response time upper bound is ~5 seconds
   // 163 blocks we loop over
   // 6 * (5 * 1_000) * 163 -> 4890000ms or 4890s or 81.5 minutes
-  // await sidecar.sleep(4890000);
-  // But that is gonna take awhile so just gonna run for 40 minutes
-  await sidecar.sleep(40 * 60 * 1_000);
+  await sidecar.sleep(4890000);
 
   // finish up!
   process.exit(0);
