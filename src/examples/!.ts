@@ -44,12 +44,16 @@ async function main(): Promise<void> {
 
   console.log("Done checking cc1Blocks");
 
-  // Make sure all the requests have finished
-  await sidecar.sleep(120 * 1000);
+  // 6 requests per loop
+  // expected response time upper bound is ~5 seconds
+  // 163 blocks we loop over
+  // 6 * (5 * 1_000) * 163 -> 4890000ms or 4890s or 81.5 minutes
+  // await sidecar.sleep(4890000);
+  // But that is gonna take awhile so just gonna run for 40 minutes
+  await sidecar.sleep(40 * 60 * 1_000);
 
-	// finish up1
+  // finish up!
   process.exit(0);
 }
 
 main().catch(console.log);
-// main();

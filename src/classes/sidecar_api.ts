@@ -77,6 +77,14 @@ export default class SideCarApi {
     return response.data as StakingResponse;
   }
 
+  async getVesting(account: string, height?: number): Promise<any> {
+    const response = height
+      ? await this.retryGet(`/vesting/${account}/${height}`)
+      : await this.retryGet(`/vesting/${account}`);
+
+    return response.data;
+  }
+
   async getTxArtifacts(height?: number): Promise<TxArtifactsResponse> {
     const response = height
       ? await this.retryGet(`tx/artifacts/${height}`)
@@ -85,11 +93,28 @@ export default class SideCarApi {
     return response.data as TxArtifactsResponse;
   }
 
+  async getMetadata(height?: number): Promise<TxArtifactsResponse> {
+    const response = height
+      ? await this.retryGet(`metadata/${height}`)
+      : await this.retryGet(`metadata`);
+
+    return response.data as TxArtifactsResponse;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  async getStakingProgress(height?: number): Promise<any> {
+    const response = height
+      ? await this.retryGet(`staking-info/${height}`)
+      : await this.retryGet(`staking-info`);
+
+    return response.data;
+  }
+
   /**
    *
    * @param ms milliseconds to sleep
    */
-  private async sleep(ms: number): Promise<void> {
+  async sleep(ms: number): Promise<void> {
     const s = promisify(setTimeout);
     await s(ms);
     return;
